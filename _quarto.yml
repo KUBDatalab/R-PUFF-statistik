@@ -1,0 +1,15 @@
+project:
+  type: website
+  output-dir: docs
+
+website:
+  title: "Slides + webR"
+  navbar:
+    left:
+      - text: "Demo"
+        href: slides/demo.qmd
+
+format:
+  # fælles HTML-indstillinger for live-sider
+  live-html:
+    theme: cosmo
