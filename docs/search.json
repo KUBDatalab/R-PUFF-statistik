@@ -1,17 +1,220 @@
 [
   {
-    "objectID": "slides/demo.html#webr-i-browseren",
-    "href": "slides/demo.html#webr-i-browseren",
+    "objectID": "slides/demo2.html#webr-i-browseren",
+    "href": "slides/demo2.html#webr-i-browseren",
     "title": "webR demo",
     "section": "webR i browseren",
-    "text": "webR i browseren"
+    "text": "webR i browseren\ndemo 2\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page."
   },
   {
-    "objectID": "slides/demo.html#read-only-eksempel",
-    "href": "slides/demo.html#read-only-eksempel",
+    "objectID": "slides/demo2.html#read-only-eksempel",
+    "href": "slides/demo2.html#read-only-eksempel",
     "title": "webR demo",
     "section": "Read-only eksempel",
-    "text": "Read-only eksempel"
+    "text": "Read-only eksempel\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page."
+  },
+  {
+    "objectID": "noter/del3.html#repetition-fra-sidst-igen",
+    "href": "noter/del3.html#repetition-fra-sidst-igen",
+    "title": "Untitled",
+    "section": "Repetition fra sidst (Igen)",
+    "text": "Repetition fra sidst (Igen)\nHvordan definerer vi spredning (sd)? Svar: Et mål for fordelingen af tallene i et datasæt. En stor spredning målt som en høj standard deviation ses ved tal i datasæt med stor variation omkring middelværdien (u) omvendt for datasæt med lille variation.\nHvordan fortolkes et referenceinterval? Svar: Referenceintervallet indeholder X% af fordelingen af datapunkter i baggrundspopulationen. Eks. inkluderer u +/- 1.96*sd 95% af fordelingen af datapunkter i baggrundspopulationen.\nHvordan definerer vi standard error of the mean (SEM)? Svar: SEM er spredningen på tilfældigt udtagne stikprøvegennemsnit udregnet ud fra stikprøvestørrelse (n) og spredningen i baggrundspopulationens værdier.\nHvordan fortolkes et konfidens interval? Svar: Konfidensintervallet indeholder middelværdien i baggrundspopulationen med X sandsynlighed.  Eks. inkluderer u +/- 1.96* SEM den egentlige u i baggrundspopulationen med 95% sandsynlighed."
+  },
+  {
+    "objectID": "noter/del3.html#kommandoer-i-r",
+    "href": "noter/del3.html#kommandoer-i-r",
+    "title": "Untitled",
+    "section": "Kommandoer i R",
+    "text": "Kommandoer i R\nForskellige regressionsanalyser i R har forskellige kommandoer. De vigtigste er:\nLineær regression (Modul 2)  lm(y ~ x)\nMultipel lineær regression (Modul 3)  lm(y ~ x + z), I multiple lineær regression kan man inkludere mange flere end blot to forklarende variable. Idag!\nLogistisk regression (Modul 4)  glm(lbwt ~ factor(smoke) + age, family=binomial) Vi vender tilbage til denne!"
+  },
+  {
+    "objectID": "noter/del3.html#std.-error-t--og-p-værdi-i-lineær-regression",
+    "href": "noter/del3.html#std.-error-t--og-p-værdi-i-lineær-regression",
+    "title": "Untitled",
+    "section": "Std. Error, t- og p-værdi i lineær regression",
+    "text": "Std. Error, t- og p-værdi i lineær regression\nEstimatet har altså en usikkerhed svarende til Std. Error. Dermed kan man lave en one sample t-test for hvor sandsynligt der er at finde denne stikprøve hvis hældningskoefficienten i baggrundsbefolkningen i virkeligheden er 0 \nT-test = (Estimate -0)/Std. Error\nOvenstående giver t-værdien, og p-værdien er regnet ud fra denne! Udregning: (0.139/0.00408) =\nDvs meget usandsynligt!"
+  },
+  {
+    "objectID": "noter/del3.html#eksamensopgave",
+    "href": "noter/del3.html#eksamensopgave",
+    "title": "Untitled",
+    "section": "Eksamensopgave",
+    "text": "Eksamensopgave\nHer ser vi på multipel lineær regression, da vi har flere variable. OBS factor() betyder at variablen er kategorisk dvs. enten 0 eller 1  ikke vigtig for vores udregninger i denne opgave!\nHvordan udregner vi de manglende tal, så vi kan konkludere?"
+  },
+  {
+    "objectID": "noter/del3.html#multipel-lineær-regression",
+    "href": "noter/del3.html#multipel-lineær-regression",
+    "title": "Untitled",
+    "section": "Multipel lineær regression",
+    "text": "Multipel lineær regression\nBrugbart når man ønsker at undersøge flere variables (forklarende) betydning for en responsvariabel. Giver ofte en større akkuratesse ved prædiktion. Kan se på den individuelle effekt af variable dvs. korrigeret for andre variable. Nedenfor ses multipel lineær regression med responsvariabel FEV1 og kontinuert forklarende variable Age og Height.\n\n\nTolkning: y= responsvariabel (FEV1) B0 = interceptet, dvs. FEV1 når alder og højde er 0. B1 = koefficienten for variabel 1 B2 = koefficienten for variabel 2\nStd.error = angiver SE dvs. den usikkerhed estimaterne er givet ved, kan bruges til konfidensinterval og t-værdi.\nT = Teststørrelse for 0-hypotesen at koefficienten\nP= p-værdi for teststørrelsen"
+  },
+  {
+    "objectID": "noter/del3.html#multipel-lineær-regression-opgave",
+    "href": "noter/del3.html#multipel-lineær-regression-opgave",
+    "title": "Untitled",
+    "section": "Multipel lineær regression opgave",
+    "text": "Multipel lineær regression opgave\nEn vigtig pointe er at multipel lineær regression viser variablernes effekt med de øvrige variable fastholdt. Dvs vi kan se på de individuelle effekter af hver variabel  muliggør afsløring af confounding! Man kan eks tolke Age´s effekt som: FEV1 stiger gennemsnitligt med 0,0946 når højde øges med 1 med køn og alder fastholdt.\nOpgave 1: Fortolk nedenstående estimater (coefficients)? Er de signifikante? Opgave 2: Hvilken type variabel er variablen ”Male” og hvad siger den om piger og drenges lungefunktion? Opgave 3: Giv et 95% - konfidensinterval for højdes regressionkoefficient?\n1=JA! (P-værdi er &lt; 0.05)\n2=Kategorisk, mænd har estimeret 0.12 bedre lungefunktion end en kvinde med samme alder og højde dvs fastholdt for disse\n3= estimat +/- 1.96* std error"
+  },
+  {
+    "objectID": "noter/del3.html#eksamensopgave-fortsat",
+    "href": "noter/del3.html#eksamensopgave-fortsat",
+    "title": "Untitled",
+    "section": "Eksamensopgave fortsat",
+    "text": "Eksamensopgave fortsat\n\n\n\n\n\n\n\n\n\nDvs. en 2- sample T-test!"
+  },
+  {
+    "objectID": "noter/del3.html#eksamensopgave-fortsat-1",
+    "href": "noter/del3.html#eksamensopgave-fortsat-1",
+    "title": "Untitled",
+    "section": "Eksamensopgave fortsat",
+    "text": "Eksamensopgave fortsat"
+  },
+  {
+    "objectID": "noter/del3.html#prædiktion-ud-fra-modeller",
+    "href": "noter/del3.html#prædiktion-ud-fra-modeller",
+    "title": "Untitled",
+    "section": "Prædiktion ud fra modeller",
+    "text": "Prædiktion ud fra modeller\nFormålet med statistiske modeller er at kunne forudsige (prædiktere, predict). Husk at vi anser vores datasæt som en stikprøve ud af hele populationen. Hvis stikprøven er repræsentativ for populationen (den deskriptive statistik), vil vi kunne forudsige noget om resten af populationen på baggrund af modellen, hvis modellen er god.\nVi tager vores model igen: Ud fra denne har vi ligningen y=-5.86 + 0.139x\nVi kan bruge denne til at prædiktere FEV ved en given højde eksempelvis højde 2 meter dvs 200cm \n-5.86 + 0.139*200 = 22.1 prædikteret\nOBS resultat giver ikke mening fordi modellen er i tommer, men udregningen er korrekt"
+  },
+  {
+    "objectID": "noter/del3.html#eksamensopgave-pædiktion",
+    "href": "noter/del3.html#eksamensopgave-pædiktion",
+    "title": "Untitled",
+    "section": "Eksamensopgave pædiktion",
+    "text": "Eksamensopgave pædiktion\nDu får nedenstående model. Modellen er multipel lineær regression, derfor introduceres 2 nye regler til prædiktion: 1. Hvis variablen er factor() indikerer dette eks. om patienten har fået halothane eller ej, dvs. Den er kategorisk og indgår i prædiktion som enten 1 eller 0 gange estimatet. 2. I multipel lineær regression adderes hvert led og dens værdi på i regnestykket, dvs. intercept + leg0.79 + factor(drug) 7.41 = prædikteret værdi"
+  },
+  {
+    "objectID": "noter/del3.html#kategoriske-variable",
+    "href": "noter/del3.html#kategoriske-variable",
+    "title": "Untitled",
+    "section": "Kategoriske variable",
+    "text": "Kategoriske variable\nVi har primært kigget på kontinuerte variable indtil videre, men i mange situationer har vi kun kategoriske variable til rådighed! Eksempelvis når vi kigger på sandsynligheder for sygdom i 2 grupper:\nAntag at du har to grupper som nedenfor, hvordan afgør vi om der er større sandsynlighed for KOL som ryger vs. Ikke-ryger?\nHeldigvis er det meget nemt! Vi udregner sandsynligheden i hver gruppe:\nRygere = syge/totale = 35/135 = 0.259 = 25,9% Ikke-rygere = syge/ totale = 38/188 = 0.202 = 20,2%\nEstimaterne er jo stikprøver, så hvordan udregner vi SE for sandsynlighederne?\nS.E. \nDvs. vi har nu sandsynligheder med en usikkerhed SE  Vi kan lave alle de T-test og konfidensinterval vi kender! Eks \nEks. Sammenligne konfidensintervaller: SE rygere: √((0.259∗(1−0.259))/)135= 0.0377 SE ikke-rygere: √((0.202∗(1−0.202))/) 188= 0.029\nEks kan vi lave konfidensinterval og se om de overlapper:\nRygere = 0.259 +/- 1.960.0377 = (0.185,0.332) Ikke-rygere = 0.202 +/- 1.960.029 = (0.145, 0.256)\nOverlapper  Vi kan ikke forkaste nul-hypotesen! Vi kan også udregne SE for differensen og lave 2-sample t-test!"
+  },
+  {
+    "objectID": "noter/del3.html#relativ-risiko-rr",
+    "href": "noter/del3.html#relativ-risiko-rr",
+    "title": "Untitled",
+    "section": "Relativ risiko (RR)",
+    "text": "Relativ risiko (RR)\nRelativ risiko er en anden måde at udtrykke 2 gruppers sandsynligheder i forhold til hinanden dvs om de er signifikant forskellige. Beregningen er lidt mere kompliceret, men fortolkningen er heldigvis nem!\nVi tager KOL værdierne igen:\nRygere = syge/totale = 35/135 = 0.259 = 25,9% Ikke-rygere = syge/ totale = 38/188 = 0.202 = 20,2%\nRR= 0.259/0.202= 1.2821\nLog(SE) udregnes ved formlen\nDVS  log(SE)√((1/35)−(1/135)+(1/38)−(1/188))= 0.2\nVi udregner nu log(1.2821) så vi kan exp hele udtrykket!\nlog(1.28)=0.248\nNu udregner vi konfidensintervallet og konkluderer:\nExp(0.248 +/- 1.96*0.2) = (0.866,1.896) Bemærk  da 1 er indeholdt kan vi ikke på et 95% signifikansniveau afvise at den sande relative risiko er 1 og dermed ens mellem rygere og ikke-rygere!  Ingen signifikant forskel!"
+  },
+  {
+    "objectID": "noter/del3.html#eksamensopgave-1",
+    "href": "noter/del3.html#eksamensopgave-1",
+    "title": "Untitled",
+    "section": "Eksamensopgave",
+    "text": "Eksamensopgave"
+  },
+  {
+    "objectID": "noter/del2.html#repetition-fra-sidst",
+    "href": "noter/del2.html#repetition-fra-sidst",
+    "title": "Untitled",
+    "section": "repetition fra sidst",
+    "text": "repetition fra sidst\nHvordan definerer vi spredning (sd)? Svar: Et mål for fordelingen af tallene i et datasæt. En stor spredning målt som en høj standard deviation ses ved tal i datasæt med stor variation omkring middelværdien (u) omvendt for datasæt med lille variation.\nHvordan fortolkes et referenceinterval? Svar: Referenceintervallet indeholder X% af fordelingen af datapunkter i baggrundspopulationen. Eks. inkluderer u +/- 1.96*sd 95% af fordelingen af datapunkter i baggrundspopulationen.\nHvordan definerer vi standard error of the mean (SEM)? Svar: SEM er spredningen på tilfældigt udtagne stikprøvegennemsnit udregnet ud fra stikprøvestørrelse (n) og spredningen i baggrundspopulationens værdier.\nHvordan fortolkes et konfidens interval? Svar: Konfidensintervallet indeholder middelværdien i baggrundspopulationen med X sandsynlighed.  Eks. inkluderer u +/- 1.96* SEM den egentlige u i baggrundspopulationen med 95% sandsynlighed."
+  },
+  {
+    "objectID": "noter/del2.html#test-af-hypoteser---hvad-lærte-vi",
+    "href": "noter/del2.html#test-af-hypoteser---hvad-lærte-vi",
+    "title": "Untitled",
+    "section": "Test af hypoteser - hvad lærte vi?",
+    "text": "Test af hypoteser - hvad lærte vi?\nHvordan ville du teste om det er sandsynligt at en stikprøve er trukket fra en population med et bestemt gennemsnit u? Svar: One sample t-test. Denne udføres ved formlen (u-x)/SEM.\nHvordan ville du teste om der er signifikant forskel mellem gennemsnit i 2 forskellige populationer ud fra 2 stikprøver? Svar: Two sample t-test. Denne udføres ved at teste 0-hypotesen at differensen kommer fra en fordeling med forskel 0. Denne testes ved formlen (u1-u1-0)/SEM. Hvor SEM udregnes som:\nEkstra: Man kan jo også beregne konfidens intervaller for de to gennemsnit, eller konfidensinterval for forskellen!"
+  },
+  {
+    "objectID": "noter/del2.html#eksamens-opgave",
+    "href": "noter/del2.html#eksamens-opgave",
+    "title": "Untitled",
+    "section": "Eksamens opgave",
+    "text": "Eksamens opgave"
+  },
+  {
+    "objectID": "noter/del2.html#eksamens-opgave-2",
+    "href": "noter/del2.html#eksamens-opgave-2",
+    "title": "Untitled",
+    "section": "Eksamens opgave 2",
+    "text": "Eksamens opgave 2"
+  },
+  {
+    "objectID": "noter/del2.html#nyt-den-parrede-t-test",
+    "href": "noter/del2.html#nyt-den-parrede-t-test",
+    "title": "Untitled",
+    "section": "Nyt Den parrede t-test",
+    "text": "Nyt Den parrede t-test\nDen parrede T-test bruges i situationer, hvor man ønsker at teste om der er signifikant forskel mellem 2 gennemsnit opnået fra samme stikprøvegennemsnit. Scenariet ses ofte ved test af en behandling, hvor man ønsker at vide om en behandling X har givet signifikant forskellige målinger hos en stikprøve af patienter. Eksempelvis: 35 personer får målt blodtryk før og efter behandling med betablokker i 6 måneder. Dvs vi får eks. følgende målinger:\nHvis vi måler gnmsnit for værdier før og efter og lader som det er en two sample t-test bliver dette for upræcist. Dette skyldes at variationen i blodtryk før og efter er mindre end hvis man havde taget fra 2 forskellige grupper og målt  Det er jo den samme person, der har to målinger!\nDerfor udregner vi i stedet differensen for hver måling og tilhørende SD. Vi har antallet af personer som indgår i prøven  dermed kan vi udregne en SEM for gnssnitsdifferensen i vores stikprøve.\nSå laver vi bare en T-test med 0-hypotesen at stikprøven er trukket fra en baggrundspopulationen med en forskel på 0!  SMART\nDVS (mean(diff)-0)/SEM(diff) = T-test"
+  },
+  {
+    "objectID": "noter/del2.html#eksamensopgave",
+    "href": "noter/del2.html#eksamensopgave",
+    "title": "Untitled",
+    "section": "Eksamensopgave",
+    "text": "Eksamensopgave\nPatienter med diverticulitis kan have gavn af fiberrig kost. I denne opgave skal vi se på et studie vedrørende transsittiden gennem fordøjelseskanalen under to mulige behandlinger (diæter). En stikprøve af 60 patienter med diverticulitis i alderen 20-44 år blev tilfældig udvalgt og patienterne afprøvede begge behandlinger, A og B, over to perioder med en behandling i en given periode. For hver patient under hver behandling måltes transittiden gennem fordøjelseskanalen. Disse tider er angivet nedenfor for de første 6 patienter for hver af de to behandlinger. Søjlen Diff indeholder differenserne. Endvidere er der angivet nogle summariske regnestørrelser. \u000b\nUndersøg om der er signifikant forskel på behandling A og B hvad angår transittiden?"
+  },
+  {
+    "objectID": "noter/del2.html#den-lineære-model",
+    "href": "noter/del2.html#den-lineære-model",
+    "title": "Untitled",
+    "section": "Den lineære model",
+    "text": "Den lineære model\nI modul 1 beskrev vi reference-intervaller, konfidensintervaller og T-test. Konfidens-intervaller og T-test kunne give et bud på om eks. yngre og ældre havde signifikant forskellig lungefunktion dvs. vi undersøgte om en kategorisk variabels (eks. Yngre vs. Ældre) association med en kontinuert variabel (eks. lungefunktion).\nSagt på en anden måde var exposure kategorisk og outcome kontinuert.\nHvis man eks. ønsker at undersøge om en kontinuert variabel eks. vægt er associeret med blodtryk undersøger man altså om en kontinuert exposure (vægt) er associeret med et kontinuert outcome (eks. blodtryk).\nHertil bruger man regression  Hvis kun én exposure undersøges bruges lineær regression.\nHvis flere exposures ønskes undersøgt på én gang bruger man multipel lineær regression (modul 3). OBS man kan også medtage kategoriske variable i lineære modeller."
+  },
+  {
+    "objectID": "noter/del2.html#er-plasma-volumen-lineært-associeret-med-kropsvægt",
+    "href": "noter/del2.html#er-plasma-volumen-lineært-associeret-med-kropsvægt",
+    "title": "Untitled",
+    "section": "Er plasma volumen lineært associeret med kropsvægt?",
+    "text": "Er plasma volumen lineært associeret med kropsvægt?\nFor at undersøge om en association mellem to variable er lineært associeret kan man plotte data-punkterne på en graf som nedenfor. Dette kaldes et scatter-plot. Fordelingen ser tilnærmelsesvist lineær ud, hvorfor man kan udregne en ligning for den linje, som har den laveste antal ”squares”, dvs. den linje som er tættest associeret til alle datapunkterne.\nLigningen for den rette linje, der beskriver datapunkterne er:\n\\[y_i = \\alpha + \\beta x_j + \\epsilon_j\\] Y = responsvariabel X = forklarende variabel a= Interceptet (B0) dvs. y´s værdi når x er 0. B = regressionskoefficienten dvs. bedste hældning med lavest antal squares.\nE = residual variation som antages at være normalfordelt"
+  },
+  {
+    "objectID": "noter/del2.html#responsvariabel-og-forklarende-variabel-kontinuert-og-kategorisk",
+    "href": "noter/del2.html#responsvariabel-og-forklarende-variabel-kontinuert-og-kategorisk",
+    "title": "Untitled",
+    "section": "Responsvariabel og forklarende variabel (kontinuert og kategorisk)",
+    "text": "Responsvariabel og forklarende variabel (kontinuert og kategorisk)\nVi ser på et diagram over højde og vægt. Hvad forventer du er responsvariabel?\nHvad forventer du er forklarende variabel?\nEr forklarende variabel kontinuert eller kategorisk?\nSVAR: Responsvariabel er vægt.\nForklarende variabel er højde.\nHøjde er en kontinuert forklarende variabel."
+  },
+  {
+    "objectID": "noter/del2.html#i-r",
+    "href": "noter/del2.html#i-r",
+    "title": "Untitled",
+    "section": "I R",
+    "text": "I R\nForskellige regressionsanalyser i R har forskellige kommandoer. De vigtigste er:\nLineær regression (Modul 2)  lm(y ~ x)\nMultipel lineær regression (Modul 3)  lm(y ~ x + z), I multiple lineær regression kan man inkludere mange flere end blot to forklarende variable. Vi vender tilbage til denne!\nLogistisk regression (Modul 4)  glm(lbwt ~ factor(smoke) + age, family=binomial) Vi vender tilbage til denne!"
+  },
+  {
+    "objectID": "noter/del2.html#fortolkning-af-output-fra-lm-i-r",
+    "href": "noter/del2.html#fortolkning-af-output-fra-lm-i-r",
+    "title": "Untitled",
+    "section": "Fortolkning af output fra lm i R",
+    "text": "Fortolkning af output fra lm i R\n Mange informationer, men vi skal kun bruge nogle få: - Regressionstype: lm med kun 2 variable = simpel lineær - Responsvariabel: FEV Forklarende kontinuert variabel: Hgt Intercept er B0, dvs. når FEV når højde=0 Estimate angiver den estimerede hældning dvs. B1. Så modellen y = 0.139883x-5.86\nStd. error angiver SE dvs. den usikkerhed estimaterne er givet ved, kan bruges til konfidensinterval og t-værdi. t value. Angiver Estimate / std. Error, bruges til at slå op i t-fordelingen. Dette opslag giver selve p-værdien, som er sandsynligheden for at få en større t værdi end de observerede t’er. P-værdi er procent over og under t-værdien i en standard-normalfordeling. Dvs. kan fortælle om estimatet er signifikant."
+  },
+  {
+    "objectID": "noter/del2.html#eksamensopgave-1",
+    "href": "noter/del2.html#eksamensopgave-1",
+    "title": "Untitled",
+    "section": "eksamensopgave",
+    "text": "eksamensopgave"
+  },
+  {
+    "objectID": "noter/del2.html#std.-error-t--og-p-værdi-i-lineær-regression",
+    "href": "noter/del2.html#std.-error-t--og-p-værdi-i-lineær-regression",
+    "title": "Untitled",
+    "section": "Std. Error, t- og p-værdi i lineær regression",
+    "text": "Std. Error, t- og p-værdi i lineær regression\nEstimatet har altså en usikkerhed svarende til Std. Error. Dermed kan man lave en one sample t-test for hvor sandsynligt der er at finde denne stikprøve hvis hældningskoefficienten i baggrundsbefolkningen i virkeligheden er 0 \nT-test = (Estimate -0)/Std. Error\nOvenstående giver t-værdien, og p-værdien er regnet ud fra denne! Udregning: (0.139/0.00408) =\nDvs meget usandsynligt!"
+  },
+  {
+    "objectID": "noter/del2.html#eksamensopgave-2",
+    "href": "noter/del2.html#eksamensopgave-2",
+    "title": "Untitled",
+    "section": "Eksamensopgave",
+    "text": "Eksamensopgave"
+  },
+  {
+    "objectID": "noter/del2.html#prædiktion",
+    "href": "noter/del2.html#prædiktion",
+    "title": "Untitled",
+    "section": "Prædiktion",
+    "text": "Prædiktion\nFormålet med statistiske modeller er at kunne forudsige (prædiktere, predict). Husk at vi anser vores datasæt som en stikprøve ud af hele populationen. Hvis stikprøven er repræsentativ for populationen (den deskriptive statistik), vil vi kunne forudsige noget om resten af populationen på baggrund af modellen, hvis modellen er god. OBS: y = ax + b + ε, hvor epsilon angiver et fejlled (tænk standardafvigelsen). Så hvis vi skulle simulere, ville vi tage et ekstra normalfordelt led med, men det er lidt mere avanceret  DET GØR VI IKKE! Vi tager vores model igen: Ud fra denne har vi ligningen y=-5.86 + 0.139\nVi kan bruge denne til at prædiktere FEV ved en given højde eksempelvis højde 2 meter dvs 200cm \n-5.86 + 0.139*200 = 22.1 prædikteret"
+  },
+  {
+    "objectID": "noter/del2.html#eksamensopgave-3",
+    "href": "noter/del2.html#eksamensopgave-3",
+    "title": "Untitled",
+    "section": "Eksamensopgave",
+    "text": "Eksamensopgave\nDu får nedenstående model. Modellen er multipel lineær regression, derfor introduceres 2 nye regler til prædiktion: 1. Hvis variablen er factor() indikerer dette eks. om patienten har fået halothane eller ej, dvs. Den er kategorisk og indgår i prædiktion som enten 1 eller 0 gange estimatet. 2. I multipel lineær regression adderes hvert led og dens værdi på i regnestykket, dvs. intercept + leg0.79 + factor(drug) 7.41 = prædikteret værdi"
   },
   {
     "objectID": "noter/intro.html#typer-af-data",
@@ -196,206 +399,24 @@
     "text": "Den store tabel 1 - 2\nTil de kvantative variable kan man angive typetal, middelværdi eller median for at vise “en typisk måling”, mens hhv. variationsbredden, spredningen eller interfraktilen kan bruges til at synliggøre bredden i data. Typetal og variationsbredde: mest observerede tal og forskellen på maksimum og minimum (range). Middelværdi og spredning: gennemsnittet og den typiske afvigelse fra middelværdien. Median og interfraktil: 50% fraktil (“midterste tal”) og forskellen mellem 75% og 25% fraktil. Kan udvides. Til de kvalitative variable angives typisk antallet af observationer (evt. med relative frekvenser)."
   },
   {
-    "objectID": "noter/del2.html#repetition-fra-sidst",
-    "href": "noter/del2.html#repetition-fra-sidst",
-    "title": "Untitled",
-    "section": "repetition fra sidst",
-    "text": "repetition fra sidst\nHvordan definerer vi spredning (sd)? Svar: Et mål for fordelingen af tallene i et datasæt. En stor spredning målt som en høj standard deviation ses ved tal i datasæt med stor variation omkring middelværdien (u) omvendt for datasæt med lille variation.\nHvordan fortolkes et referenceinterval? Svar: Referenceintervallet indeholder X% af fordelingen af datapunkter i baggrundspopulationen. Eks. inkluderer u +/- 1.96*sd 95% af fordelingen af datapunkter i baggrundspopulationen.\nHvordan definerer vi standard error of the mean (SEM)? Svar: SEM er spredningen på tilfældigt udtagne stikprøvegennemsnit udregnet ud fra stikprøvestørrelse (n) og spredningen i baggrundspopulationens værdier.\nHvordan fortolkes et konfidens interval? Svar: Konfidensintervallet indeholder middelværdien i baggrundspopulationen med X sandsynlighed.  Eks. inkluderer u +/- 1.96* SEM den egentlige u i baggrundspopulationen med 95% sandsynlighed."
+    "objectID": "slides/demo.html#webr-i-browseren",
+    "href": "slides/demo.html#webr-i-browseren",
+    "title": "webR demo",
+    "section": "webR i browseren",
+    "text": "webR i browseren\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page."
   },
   {
-    "objectID": "noter/del2.html#test-af-hypoteser---hvad-lærte-vi",
-    "href": "noter/del2.html#test-af-hypoteser---hvad-lærte-vi",
-    "title": "Untitled",
-    "section": "Test af hypoteser - hvad lærte vi?",
-    "text": "Test af hypoteser - hvad lærte vi?\nHvordan ville du teste om det er sandsynligt at en stikprøve er trukket fra en population med et bestemt gennemsnit u? Svar: One sample t-test. Denne udføres ved formlen (u-x)/SEM.\nHvordan ville du teste om der er signifikant forskel mellem gennemsnit i 2 forskellige populationer ud fra 2 stikprøver? Svar: Two sample t-test. Denne udføres ved at teste 0-hypotesen at differensen kommer fra en fordeling med forskel 0. Denne testes ved formlen (u1-u1-0)/SEM. Hvor SEM udregnes som:\nEkstra: Man kan jo også beregne konfidens intervaller for de to gennemsnit, eller konfidensinterval for forskellen!"
+    "objectID": "slides/demo.html#read-only-eksempel",
+    "href": "slides/demo.html#read-only-eksempel",
+    "title": "webR demo",
+    "section": "Read-only eksempel",
+    "text": "Read-only eksempel\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page."
   },
   {
-    "objectID": "noter/del2.html#eksamens-opgave",
-    "href": "noter/del2.html#eksamens-opgave",
+    "objectID": "index.html",
+    "href": "index.html",
     "title": "Untitled",
-    "section": "Eksamens opgave",
-    "text": "Eksamens opgave"
-  },
-  {
-    "objectID": "noter/del2.html#eksamens-opgave-2",
-    "href": "noter/del2.html#eksamens-opgave-2",
-    "title": "Untitled",
-    "section": "Eksamens opgave 2",
-    "text": "Eksamens opgave 2"
-  },
-  {
-    "objectID": "noter/del2.html#nyt-den-parrede-t-test",
-    "href": "noter/del2.html#nyt-den-parrede-t-test",
-    "title": "Untitled",
-    "section": "Nyt Den parrede t-test",
-    "text": "Nyt Den parrede t-test\nDen parrede T-test bruges i situationer, hvor man ønsker at teste om der er signifikant forskel mellem 2 gennemsnit opnået fra samme stikprøvegennemsnit. Scenariet ses ofte ved test af en behandling, hvor man ønsker at vide om en behandling X har givet signifikant forskellige målinger hos en stikprøve af patienter. Eksempelvis: 35 personer får målt blodtryk før og efter behandling med betablokker i 6 måneder. Dvs vi får eks. følgende målinger:\nHvis vi måler gnmsnit for værdier før og efter og lader som det er en two sample t-test bliver dette for upræcist. Dette skyldes at variationen i blodtryk før og efter er mindre end hvis man havde taget fra 2 forskellige grupper og målt  Det er jo den samme person, der har to målinger!\nDerfor udregner vi i stedet differensen for hver måling og tilhørende SD. Vi har antallet af personer som indgår i prøven  dermed kan vi udregne en SEM for gnssnitsdifferensen i vores stikprøve.\nSå laver vi bare en T-test med 0-hypotesen at stikprøven er trukket fra en baggrundspopulationen med en forskel på 0!  SMART\nDVS (mean(diff)-0)/SEM(diff) = T-test"
-  },
-  {
-    "objectID": "noter/del2.html#eksamensopgave",
-    "href": "noter/del2.html#eksamensopgave",
-    "title": "Untitled",
-    "section": "Eksamensopgave",
-    "text": "Eksamensopgave\nPatienter med diverticulitis kan have gavn af fiberrig kost. I denne opgave skal vi se på et studie vedrørende transsittiden gennem fordøjelseskanalen under to mulige behandlinger (diæter). En stikprøve af 60 patienter med diverticulitis i alderen 20-44 år blev tilfældig udvalgt og patienterne afprøvede begge behandlinger, A og B, over to perioder med en behandling i en given periode. For hver patient under hver behandling måltes transittiden gennem fordøjelseskanalen. Disse tider er angivet nedenfor for de første 6 patienter for hver af de to behandlinger. Søjlen Diff indeholder differenserne. Endvidere er der angivet nogle summariske regnestørrelser. \u000b\nUndersøg om der er signifikant forskel på behandling A og B hvad angår transittiden?"
-  },
-  {
-    "objectID": "noter/del2.html#den-lineære-model",
-    "href": "noter/del2.html#den-lineære-model",
-    "title": "Untitled",
-    "section": "Den lineære model",
-    "text": "Den lineære model\nI modul 1 beskrev vi reference-intervaller, konfidensintervaller og T-test. Konfidens-intervaller og T-test kunne give et bud på om eks. yngre og ældre havde signifikant forskellig lungefunktion dvs. vi undersøgte om en kategorisk variabels (eks. Yngre vs. Ældre) association med en kontinuert variabel (eks. lungefunktion).\nSagt på en anden måde var exposure kategorisk og outcome kontinuert.\nHvis man eks. ønsker at undersøge om en kontinuert variabel eks. vægt er associeret med blodtryk undersøger man altså om en kontinuert exposure (vægt) er associeret med et kontinuert outcome (eks. blodtryk).\nHertil bruger man regression  Hvis kun én exposure undersøges bruges lineær regression.\nHvis flere exposures ønskes undersøgt på én gang bruger man multipel lineær regression (modul 3). OBS man kan også medtage kategoriske variable i lineære modeller."
-  },
-  {
-    "objectID": "noter/del2.html#er-plasma-volumen-lineært-associeret-med-kropsvægt",
-    "href": "noter/del2.html#er-plasma-volumen-lineært-associeret-med-kropsvægt",
-    "title": "Untitled",
-    "section": "Er plasma volumen lineært associeret med kropsvægt?",
-    "text": "Er plasma volumen lineært associeret med kropsvægt?\nFor at undersøge om en association mellem to variable er lineært associeret kan man plotte data-punkterne på en graf som nedenfor. Dette kaldes et scatter-plot. Fordelingen ser tilnærmelsesvist lineær ud, hvorfor man kan udregne en ligning for den linje, som har den laveste antal ”squares”, dvs. den linje som er tættest associeret til alle datapunkterne.\nLigningen for den rette linje, der beskriver datapunkterne er:\n\\[y_i = \\alpha + \\beta x_j + \\epsilon_j\\] Y = responsvariabel X = forklarende variabel a= Interceptet (B0) dvs. y´s værdi når x er 0. B = regressionskoefficienten dvs. bedste hældning med lavest antal squares.\nE = residual variation som antages at være normalfordelt"
-  },
-  {
-    "objectID": "noter/del2.html#responsvariabel-og-forklarende-variabel-kontinuert-og-kategorisk",
-    "href": "noter/del2.html#responsvariabel-og-forklarende-variabel-kontinuert-og-kategorisk",
-    "title": "Untitled",
-    "section": "Responsvariabel og forklarende variabel (kontinuert og kategorisk)",
-    "text": "Responsvariabel og forklarende variabel (kontinuert og kategorisk)\nVi ser på et diagram over højde og vægt. Hvad forventer du er responsvariabel?\nHvad forventer du er forklarende variabel?\nEr forklarende variabel kontinuert eller kategorisk?\nSVAR: Responsvariabel er vægt.\nForklarende variabel er højde.\nHøjde er en kontinuert forklarende variabel."
-  },
-  {
-    "objectID": "noter/del2.html#i-r",
-    "href": "noter/del2.html#i-r",
-    "title": "Untitled",
-    "section": "I R",
-    "text": "I R\nForskellige regressionsanalyser i R har forskellige kommandoer. De vigtigste er:\nLineær regression (Modul 2)  lm(y ~ x)\nMultipel lineær regression (Modul 3)  lm(y ~ x + z), I multiple lineær regression kan man inkludere mange flere end blot to forklarende variable. Vi vender tilbage til denne!\nLogistisk regression (Modul 4)  glm(lbwt ~ factor(smoke) + age, family=binomial) Vi vender tilbage til denne!"
-  },
-  {
-    "objectID": "noter/del2.html#fortolkning-af-output-fra-lm-i-r",
-    "href": "noter/del2.html#fortolkning-af-output-fra-lm-i-r",
-    "title": "Untitled",
-    "section": "Fortolkning af output fra lm i R",
-    "text": "Fortolkning af output fra lm i R\n Mange informationer, men vi skal kun bruge nogle få: - Regressionstype: lm med kun 2 variable = simpel lineær - Responsvariabel: FEV Forklarende kontinuert variabel: Hgt Intercept er B0, dvs. når FEV når højde=0 Estimate angiver den estimerede hældning dvs. B1. Så modellen y = 0.139883x-5.86\nStd. error angiver SE dvs. den usikkerhed estimaterne er givet ved, kan bruges til konfidensinterval og t-værdi. t value. Angiver Estimate / std. Error, bruges til at slå op i t-fordelingen. Dette opslag giver selve p-værdien, som er sandsynligheden for at få en større t værdi end de observerede t’er. P-værdi er procent over og under t-værdien i en standard-normalfordeling. Dvs. kan fortælle om estimatet er signifikant."
-  },
-  {
-    "objectID": "noter/del2.html#eksamensopgave-1",
-    "href": "noter/del2.html#eksamensopgave-1",
-    "title": "Untitled",
-    "section": "eksamensopgave",
-    "text": "eksamensopgave"
-  },
-  {
-    "objectID": "noter/del2.html#std.-error-t--og-p-værdi-i-lineær-regression",
-    "href": "noter/del2.html#std.-error-t--og-p-værdi-i-lineær-regression",
-    "title": "Untitled",
-    "section": "Std. Error, t- og p-værdi i lineær regression",
-    "text": "Std. Error, t- og p-værdi i lineær regression\nEstimatet har altså en usikkerhed svarende til Std. Error. Dermed kan man lave en one sample t-test for hvor sandsynligt der er at finde denne stikprøve hvis hældningskoefficienten i baggrundsbefolkningen i virkeligheden er 0 \nT-test = (Estimate -0)/Std. Error\nOvenstående giver t-værdien, og p-værdien er regnet ud fra denne! Udregning: (0.139/0.00408) =\nDvs meget usandsynligt!"
-  },
-  {
-    "objectID": "noter/del2.html#eksamensopgave-2",
-    "href": "noter/del2.html#eksamensopgave-2",
-    "title": "Untitled",
-    "section": "Eksamensopgave",
-    "text": "Eksamensopgave"
-  },
-  {
-    "objectID": "noter/del2.html#prædiktion",
-    "href": "noter/del2.html#prædiktion",
-    "title": "Untitled",
-    "section": "Prædiktion",
-    "text": "Prædiktion\nFormålet med statistiske modeller er at kunne forudsige (prædiktere, predict). Husk at vi anser vores datasæt som en stikprøve ud af hele populationen. Hvis stikprøven er repræsentativ for populationen (den deskriptive statistik), vil vi kunne forudsige noget om resten af populationen på baggrund af modellen, hvis modellen er god. OBS: y = ax + b + ε, hvor epsilon angiver et fejlled (tænk standardafvigelsen). Så hvis vi skulle simulere, ville vi tage et ekstra normalfordelt led med, men det er lidt mere avanceret  DET GØR VI IKKE! Vi tager vores model igen: Ud fra denne har vi ligningen y=-5.86 + 0.139\nVi kan bruge denne til at prædiktere FEV ved en given højde eksempelvis højde 2 meter dvs 200cm \n-5.86 + 0.139*200 = 22.1 prædikteret"
-  },
-  {
-    "objectID": "noter/del2.html#eksamensopgave-3",
-    "href": "noter/del2.html#eksamensopgave-3",
-    "title": "Untitled",
-    "section": "Eksamensopgave",
-    "text": "Eksamensopgave\nDu får nedenstående model. Modellen er multipel lineær regression, derfor introduceres 2 nye regler til prædiktion: 1. Hvis variablen er factor() indikerer dette eks. om patienten har fået halothane eller ej, dvs. Den er kategorisk og indgår i prædiktion som enten 1 eller 0 gange estimatet. 2. I multipel lineær regression adderes hvert led og dens værdi på i regnestykket, dvs. intercept + leg0.79 + factor(drug) 7.41 = prædikteret værdi"
-  },
-  {
-    "objectID": "noter/del3.html#repetition-fra-sidst-igen",
-    "href": "noter/del3.html#repetition-fra-sidst-igen",
-    "title": "Untitled",
-    "section": "Repetition fra sidst (Igen)",
-    "text": "Repetition fra sidst (Igen)\nHvordan definerer vi spredning (sd)? Svar: Et mål for fordelingen af tallene i et datasæt. En stor spredning målt som en høj standard deviation ses ved tal i datasæt med stor variation omkring middelværdien (u) omvendt for datasæt med lille variation.\nHvordan fortolkes et referenceinterval? Svar: Referenceintervallet indeholder X% af fordelingen af datapunkter i baggrundspopulationen. Eks. inkluderer u +/- 1.96*sd 95% af fordelingen af datapunkter i baggrundspopulationen.\nHvordan definerer vi standard error of the mean (SEM)? Svar: SEM er spredningen på tilfældigt udtagne stikprøvegennemsnit udregnet ud fra stikprøvestørrelse (n) og spredningen i baggrundspopulationens værdier.\nHvordan fortolkes et konfidens interval? Svar: Konfidensintervallet indeholder middelværdien i baggrundspopulationen med X sandsynlighed.  Eks. inkluderer u +/- 1.96* SEM den egentlige u i baggrundspopulationen med 95% sandsynlighed."
-  },
-  {
-    "objectID": "noter/del3.html#kommandoer-i-r",
-    "href": "noter/del3.html#kommandoer-i-r",
-    "title": "Untitled",
-    "section": "Kommandoer i R",
-    "text": "Kommandoer i R\nForskellige regressionsanalyser i R har forskellige kommandoer. De vigtigste er:\nLineær regression (Modul 2)  lm(y ~ x)\nMultipel lineær regression (Modul 3)  lm(y ~ x + z), I multiple lineær regression kan man inkludere mange flere end blot to forklarende variable. Idag!\nLogistisk regression (Modul 4)  glm(lbwt ~ factor(smoke) + age, family=binomial) Vi vender tilbage til denne!"
-  },
-  {
-    "objectID": "noter/del3.html#std.-error-t--og-p-værdi-i-lineær-regression",
-    "href": "noter/del3.html#std.-error-t--og-p-værdi-i-lineær-regression",
-    "title": "Untitled",
-    "section": "Std. Error, t- og p-værdi i lineær regression",
-    "text": "Std. Error, t- og p-værdi i lineær regression\nEstimatet har altså en usikkerhed svarende til Std. Error. Dermed kan man lave en one sample t-test for hvor sandsynligt der er at finde denne stikprøve hvis hældningskoefficienten i baggrundsbefolkningen i virkeligheden er 0 \nT-test = (Estimate -0)/Std. Error\nOvenstående giver t-værdien, og p-værdien er regnet ud fra denne! Udregning: (0.139/0.00408) =\nDvs meget usandsynligt!"
-  },
-  {
-    "objectID": "noter/del3.html#eksamensopgave",
-    "href": "noter/del3.html#eksamensopgave",
-    "title": "Untitled",
-    "section": "Eksamensopgave",
-    "text": "Eksamensopgave\nHer ser vi på multipel lineær regression, da vi har flere variable. OBS factor() betyder at variablen er kategorisk dvs. enten 0 eller 1  ikke vigtig for vores udregninger i denne opgave!\nHvordan udregner vi de manglende tal, så vi kan konkludere?"
-  },
-  {
-    "objectID": "noter/del3.html#multipel-lineær-regression",
-    "href": "noter/del3.html#multipel-lineær-regression",
-    "title": "Untitled",
-    "section": "Multipel lineær regression",
-    "text": "Multipel lineær regression\nBrugbart når man ønsker at undersøge flere variables (forklarende) betydning for en responsvariabel. Giver ofte en større akkuratesse ved prædiktion. Kan se på den individuelle effekt af variable dvs. korrigeret for andre variable. Nedenfor ses multipel lineær regression med responsvariabel FEV1 og kontinuert forklarende variable Age og Height.\n\n\nTolkning: y= responsvariabel (FEV1) B0 = interceptet, dvs. FEV1 når alder og højde er 0. B1 = koefficienten for variabel 1 B2 = koefficienten for variabel 2\nStd.error = angiver SE dvs. den usikkerhed estimaterne er givet ved, kan bruges til konfidensinterval og t-værdi.\nT = Teststørrelse for 0-hypotesen at koefficienten\nP= p-værdi for teststørrelsen"
-  },
-  {
-    "objectID": "noter/del3.html#multipel-lineær-regression-opgave",
-    "href": "noter/del3.html#multipel-lineær-regression-opgave",
-    "title": "Untitled",
-    "section": "Multipel lineær regression opgave",
-    "text": "Multipel lineær regression opgave\nEn vigtig pointe er at multipel lineær regression viser variablernes effekt med de øvrige variable fastholdt. Dvs vi kan se på de individuelle effekter af hver variabel  muliggør afsløring af confounding! Man kan eks tolke Age´s effekt som: FEV1 stiger gennemsnitligt med 0,0946 når højde øges med 1 med køn og alder fastholdt.\nOpgave 1: Fortolk nedenstående estimater (coefficients)? Er de signifikante? Opgave 2: Hvilken type variabel er variablen ”Male” og hvad siger den om piger og drenges lungefunktion? Opgave 3: Giv et 95% - konfidensinterval for højdes regressionkoefficient?\n1=JA! (P-værdi er &lt; 0.05)\n2=Kategorisk, mænd har estimeret 0.12 bedre lungefunktion end en kvinde med samme alder og højde dvs fastholdt for disse\n3= estimat +/- 1.96* std error"
-  },
-  {
-    "objectID": "noter/del3.html#eksamensopgave-fortsat",
-    "href": "noter/del3.html#eksamensopgave-fortsat",
-    "title": "Untitled",
-    "section": "Eksamensopgave fortsat",
-    "text": "Eksamensopgave fortsat\n\n\n\n\n\n\n\n\n\nDvs. en 2- sample T-test!"
-  },
-  {
-    "objectID": "noter/del3.html#eksamensopgave-fortsat-1",
-    "href": "noter/del3.html#eksamensopgave-fortsat-1",
-    "title": "Untitled",
-    "section": "Eksamensopgave fortsat",
-    "text": "Eksamensopgave fortsat"
-  },
-  {
-    "objectID": "noter/del3.html#prædiktion-ud-fra-modeller",
-    "href": "noter/del3.html#prædiktion-ud-fra-modeller",
-    "title": "Untitled",
-    "section": "Prædiktion ud fra modeller",
-    "text": "Prædiktion ud fra modeller\nFormålet med statistiske modeller er at kunne forudsige (prædiktere, predict). Husk at vi anser vores datasæt som en stikprøve ud af hele populationen. Hvis stikprøven er repræsentativ for populationen (den deskriptive statistik), vil vi kunne forudsige noget om resten af populationen på baggrund af modellen, hvis modellen er god.\nVi tager vores model igen: Ud fra denne har vi ligningen y=-5.86 + 0.139x\nVi kan bruge denne til at prædiktere FEV ved en given højde eksempelvis højde 2 meter dvs 200cm \n-5.86 + 0.139*200 = 22.1 prædikteret\nOBS resultat giver ikke mening fordi modellen er i tommer, men udregningen er korrekt"
-  },
-  {
-    "objectID": "noter/del3.html#eksamensopgave-pædiktion",
-    "href": "noter/del3.html#eksamensopgave-pædiktion",
-    "title": "Untitled",
-    "section": "Eksamensopgave pædiktion",
-    "text": "Eksamensopgave pædiktion\nDu får nedenstående model. Modellen er multipel lineær regression, derfor introduceres 2 nye regler til prædiktion: 1. Hvis variablen er factor() indikerer dette eks. om patienten har fået halothane eller ej, dvs. Den er kategorisk og indgår i prædiktion som enten 1 eller 0 gange estimatet. 2. I multipel lineær regression adderes hvert led og dens værdi på i regnestykket, dvs. intercept + leg0.79 + factor(drug) 7.41 = prædikteret værdi"
-  },
-  {
-    "objectID": "noter/del3.html#kategoriske-variable",
-    "href": "noter/del3.html#kategoriske-variable",
-    "title": "Untitled",
-    "section": "Kategoriske variable",
-    "text": "Kategoriske variable\nVi har primært kigget på kontinuerte variable indtil videre, men i mange situationer har vi kun kategoriske variable til rådighed! Eksempelvis når vi kigger på sandsynligheder for sygdom i 2 grupper:\nAntag at du har to grupper som nedenfor, hvordan afgør vi om der er større sandsynlighed for KOL som ryger vs. Ikke-ryger?\nHeldigvis er det meget nemt! Vi udregner sandsynligheden i hver gruppe:\nRygere = syge/totale = 35/135 = 0.259 = 25,9% Ikke-rygere = syge/ totale = 38/188 = 0.202 = 20,2%\nEstimaterne er jo stikprøver, så hvordan udregner vi SE for sandsynlighederne?\nS.E. \nDvs. vi har nu sandsynligheder med en usikkerhed SE  Vi kan lave alle de T-test og konfidensinterval vi kender! Eks \nEks. Sammenligne konfidensintervaller: SE rygere: √((0.259∗(1−0.259))/)135= 0.0377 SE ikke-rygere: √((0.202∗(1−0.202))/) 188= 0.029\nEks kan vi lave konfidensinterval og se om de overlapper:\nRygere = 0.259 +/- 1.960.0377 = (0.185,0.332) Ikke-rygere = 0.202 +/- 1.960.029 = (0.145, 0.256)\nOverlapper  Vi kan ikke forkaste nul-hypotesen! Vi kan også udregne SE for differensen og lave 2-sample t-test!"
-  },
-  {
-    "objectID": "noter/del3.html#relativ-risiko-rr",
-    "href": "noter/del3.html#relativ-risiko-rr",
-    "title": "Untitled",
-    "section": "Relativ risiko (RR)",
-    "text": "Relativ risiko (RR)\nRelativ risiko er en anden måde at udtrykke 2 gruppers sandsynligheder i forhold til hinanden dvs om de er signifikant forskellige. Beregningen er lidt mere kompliceret, men fortolkningen er heldigvis nem!\nVi tager KOL værdierne igen:\nRygere = syge/totale = 35/135 = 0.259 = 25,9% Ikke-rygere = syge/ totale = 38/188 = 0.202 = 20,2%\nRR= 0.259/0.202= 1.2821\nLog(SE) udregnes ved formlen\nDVS  log(SE)√((1/35)−(1/135)+(1/38)−(1/188))= 0.2\nVi udregner nu log(1.2821) så vi kan exp hele udtrykket!\nlog(1.28)=0.248\nNu udregner vi konfidensintervallet og konkluderer:\nExp(0.248 +/- 1.96*0.2) = (0.866,1.896) Bemærk  da 1 er indeholdt kan vi ikke på et 95% signifikansniveau afvise at den sande relative risiko er 1 og dermed ens mellem rygere og ikke-rygere!  Ingen signifikant forskel!"
-  },
-  {
-    "objectID": "noter/del3.html#eksamensopgave-1",
-    "href": "noter/del3.html#eksamensopgave-1",
-    "title": "Untitled",
-    "section": "Eksamensopgave",
-    "text": "Eksamensopgave"
+    "section": "",
+    "text": "Præsentationer\n\nDemo\nDemo 2"
   }
 ]

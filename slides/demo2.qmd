@@ -1,0 +1,26 @@
+---
+title: "webR demo"
+format: revealjs
+engine: knitr
+filters:
+  - webr
+webr:
+  packages: ["dplyr"]
+---
+{{< include ../_extensions/r-wasm/live/_knitr.qmd >}}
+
+## webR i browseren
+
+demo 2
+```{webr}
+#| autorun: true
+#| min-lines: 8
+summary(cars)
+plot(cars)
+```
+
+## Read-only eksempel
+```{webr}
+#| edit: false
+mean(rnorm(100))
+```
