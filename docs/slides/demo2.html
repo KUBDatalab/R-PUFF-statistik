@@ -9,7 +9,7 @@
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.7.32">
 
-  <title>Slides + webR – webR demo</title>
+  <title>Slides + webR – Lineære modeller</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -420,7 +420,7 @@
   };
 
   // Store cell data
-  globalThis.qwebrCellDetails = [{"code":"summary(cars)\nplot(cars)","id":1,"options":{"autorun":"true","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"0.5","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-1","message":"true","min-lines":"8","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"mean(rnorm(100))","id":2,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"edit":"false","editor-font-scale":"0.5","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-2","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}}];
+  globalThis.qwebrCellDetails = [{"code":"10 * 12.75 + 37","id":1,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"0.5","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-1","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"summary(cars)\nplot(cars)","id":2,"options":{"autorun":"true","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"0.5","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-2","message":"true","min-lines":"8","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"mean(rnorm(100))","id":3,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"edit":"false","editor-font-scale":"0.5","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-3","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}}];
 
   </script>
   <script type="module">
@@ -1963,24 +1963,57 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">webR demo</h1>
+  <h1 class="title">Lineære modeller</h1>
 
 <div class="quarto-title-authors">
 </div>
 
 </section>
+<section id="hvad-er-en-lineær-model" class="slide level2">
+<h2>Hvad er en lineær model?</h2>
+<p>Kært barn har mange navne.</p>
+<p>Lineær regression er det vi foretager for at bygge en lineær model.</p>
+<p>Og en lineær model er noget vi kan bruge til at forklare sammenhænge mellem variable - og til at forudsige ting.</p>
+<p>Alle der har prøvet at tage en taxa kender konceptet. Det koster 37 kroner at sætte sig ind i taxaen. Og så koster den 12.75 kr pr kilometer.</p>
+<p>Så hvis man skal køre 10 kilometer, så koster det:</p>
+<div class="cell">
+<div id="qwebr-insertion-location-1"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+</div>
+<p>Hvad koster det hvis man skal køre 15 kilometer i stedet?</p>
+<p>Det er en lineær model (lidt forsimplet, vi skal også betalte for tiden, men det kommer senere).</p>
+<p>Det kan vi beskrive som en formel:</p>
+<p><span class="math display">\[y = ax + b\]</span></p>
+<p>Hvor a er 12.75 kr, b er 37 kr, x er antallet af kilometre. Og y er prisen.</p>
+<p>Her kender vi priserne, og de står også på siden af taxaerne.</p>
+<p>Så rar er verden sjælden. Så det vi ofte har er prisen og antallet af km på 1000 taxature. Og nu skal vi så finde ud af hvad startprisen er, og hvad vi betaler pr km.</p>
+</section>
+<section id="hvad-er-en-lineær-model-1" class="slide level2">
+<h2>Hvad er en lineær model</h2>
+<p>Kært barn har mange navne.</p>
+<p>I R skriver vi det som regel som y ~x der betyder at vi forsøger at forklare y som en funktion af x.</p>
+<p>y kan vi også kalde for udfaldet. Eller responsvariablen. Eller den afhængige variabel (fordi den afhænger af x).</p>
+<p>x kalder vi også for den uafhængige variabel - fordi vi i princippet kan justere helt frit på den og se hvad der så sker med y. Den kaldes også den forklarende variabel. Eller prædiktoren (fordi den kan bruges til at forudsige y). Er vi virkelig avancerede kan vi kalde den kovariaten.</p>
+<p>Pointen er sådan set bare at vi gerne vil finde den lineære sammenhæng mellem de to variable. Vi prøver at forudsige/prædiktere.</p>
+<p>Og der er ikke nødvendigvis en kausal retning. Vi kunne også bruge prisen til at forklare antallet af kilometre kørt.</p>
+<p>Datasættet fev</p>
+<p>lm af den.</p>
+<p>Graf med punkter, ret linie og “pinde” op til linien.</p>
+<p>Det computeren, algoritmen, gør for os, er at justere på a og b, så fejlen bliver minimeret.</p>
+<p>Den del af fejlen der ikke kan minimeres kalder vi residualerne.</p>
+</section>
 <section id="webr-i-browseren" class="slide level2">
 <h2>webR i browseren</h2>
 <p>demo 2</p>
 <div class="cell" data-autorun="true" data-min-lines="8">
-<div id="qwebr-insertion-location-1"></div>
+<div id="qwebr-insertion-location-2"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 </div>
 </section>
 <section id="read-only-eksempel" class="slide level2">
 <h2>Read-only eksempel</h2>
 <div class="cell" data-edit="false">
-<div id="qwebr-insertion-location-2"></div>
+<div id="qwebr-insertion-location-3"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 </div>
 

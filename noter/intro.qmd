@@ -3,30 +3,30 @@ title: "Statistik intro"
 format: revealjs
 ---
 
-# statistik intro
+# ~~statistik intro~~
 
-for puff
+~~for puff~~
 
-# Formålet med statistik
+# ~~Formålet med statistik~~
 
-”Statistics is the science of collecting, summarizing, presenting and interpreting data, and of using them to estimate the magnitude of associations and test hypotheses. It has a central role in medical investigations” Indledende afsnit i lærebogen ”Medical statistics””
+~~”Statistics is the science of collecting, summarizing, presenting and interpreting data, and of using them to estimate the magnitude of associations and test hypotheses. It has a central role in medical investigations” Indledende afsnit i lærebogen ”Medical statistics””~~
 
-Dvs  Statistik bruges til at forstå, estimere og udlede information baseret på data
+~~Dvs  Statistik bruges til at forstå, estimere og udlede information baseret på data~~
 
-Deskriptiv statistik for at forstå data Histogrammer Gennemsnit, spredning (sd), percentiler, range Estimater og usikkerhed på estimaterne
+~~Deskriptiv statistik for at forstå data Histogrammer Gennemsnit, spredning (sd), percentiler, range Estimater og usikkerhed på estimaterne~~
 
-Statistiske inferens for at estimere data Når man ønsker at udlede generel information fra en stikprøve
+~~Statistiske inferens for at estimere data Når man ønsker at udlede generel information fra en stikprøve~~
 
-Prædiktion for at udlede en uafhængig variabels indflydelse på en afhængig variabel eks. højde og lungefunktion Man kan prædiktere værdier baseret på sammenhænge mellem data eks. Ved lineær, multipel og logaritimisk regression.
+~~Prædiktion for at udlede en uafhængig variabels indflydelse på en afhængig variabel eks. højde og lungefunktion Man kan prædiktere værdier baseret på sammenhænge mellem data eks. Ved lineær, multipel og logaritimisk regression.~~
 
-## Typer af data
+## ~~Typer af data~~
 
--   Kvantitative (kontinuerte, diskret, numerisk) data
--   højde, alder, vægt, blodtryk
--   Groft sagt: data der udtrykkes som sekvenser af tal
--   Kvalitative (kategoriske) data
-    -   Ja/nej variable (gift/ugift, mand/kvinde, ryger/ikke-ryger)
-    -   Terningekast, socialklasse, hårfarve
+-   ~~Kvantitative (kontinuerte, diskret, numerisk) data~~
+-   ~~højde, alder, vægt, blodtryk~~
+-   ~~Groft sagt: data der udtrykkes som sekvenser af tal~~
+-   ~~Kvalitative (kategoriske) data~~
+    -   ~~Ja/nej variable (gift/ugift, mand/kvinde, ryger/ikke-ryger)~~
+    -   ~~Terningekast, socialklasse, hårfarve~~
 
 ## Deskriptiv statistik tila t forstå data
 
@@ -60,15 +60,15 @@ Referenceinterval: de 95% midterste observationer. (μ-1,96σ; μ+1,96σ) hvis n
 
 formlerne
 
-## Gennemsnit (mean) og spredning (sd)
+## ~~Gennemsnit (mean) og spredning (sd)~~
 
-hæmoglobintabellen igen Intuitivt ville man tage summen af forskellen mlm hver værdi og gnmsnittet, men hvad er problemet her? Summen af forskellen ville altid give 0 ! Eks. tallene 5, 8, 10, 17. Gnsmt er 10. (10-5)+(10-8)+(10-10)+(10-17) = 0 !
+~~hæmoglobintabellen igen Intuitivt ville man tage summen af forskellen mlm hver værdi og gnmsnittet, men hvad er problemet her? Summen af forskellen ville altid give 0 ! Eks. tallene 5, 8, 10, 17. Gnsmt er 10. (10-5)+(10-8)+(10-10)+(10-17) = 0 !~~
 
-Gennemsnit (mean) er simpelt, den kender vi  summen af alle værdier divideret med antallet. = 778.2/70 =11.12
+~~Gennemsnit (mean) er simpelt, den kender vi  summen af alle værdier divideret med antallet. = 778.2/70 =11.12~~
 
-Spredning kan udregnes som varians eller standard deviation og er mindre simpelt. Intuitivt tager man den gns. forskel mlm. hver værdi og gnmsnittet således 
+~~Spredning kan udregnes som varians eller standard deviation og er mindre simpelt. Intuitivt tager man den gns. forskel mlm. hver værdi og gnmsnittet således ~~
 
-Så hvordan løser vi det?! Vi opløfter hver forskel i anden! Smart  så får vi ingen negative værdier og gnmsnittet bliver ikke 0. DET ER VARIANSEN!
+~~Så hvordan løser vi det?! Vi opløfter hver forskel i anden! Smart  så får vi ingen negative værdier og gnmsnittet bliver ikke 0. DET ER VARIANSEN!~~
 
 ## Spredning (sd) fortsat
 
