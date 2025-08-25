@@ -401,14 +401,14 @@
   {
     "objectID": "slides/demo.html#webr-i-browseren",
     "href": "slides/demo.html#webr-i-browseren",
-    "title": "webR demo",
+    "title": "Statistik",
     "section": "webR i browseren",
     "text": "webR i browseren\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page."
   },
   {
     "objectID": "slides/demo.html#read-only-eksempel",
     "href": "slides/demo.html#read-only-eksempel",
-    "title": "webR demo",
+    "title": "Statistik",
     "section": "Read-only eksempel",
     "text": "Read-only eksempel\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page."
   },
@@ -418,5 +418,40 @@
     "title": "Untitled",
     "section": "",
     "text": "Præsentationer\n\nDemo\nDemo 2"
+  },
+  {
+    "objectID": "slides/demo.html#formålet-med-statistik",
+    "href": "slides/demo.html#formålet-med-statistik",
+    "title": "Statistik",
+    "section": "Formålet med statistik",
+    "text": "Formålet med statistik\n”Statistics is the science of collecting, summarizing, presenting and interpreting data, and of using them to estimate the magnitude of associations and test hypotheses. It has a central role in medical investigations” Indledende afsnit i lærebogen ”Medical statistics””\n\nDet vil sige at vi bruger statistik til at forstå, estimere og udlede information, baseret på data."
+  },
+  {
+    "objectID": "slides/demo.html#målet-med-statistik",
+    "href": "slides/demo.html#målet-med-statistik",
+    "title": "Statistik",
+    "section": "Målet med statistik",
+    "text": "Målet med statistik\n\nDeskriptiv statistik\n\nHistogrammer\nGennemsnit, median\nSpredning, percentiler, range\n\nInferens\n\nGenerel information fra en stikprøve\nHypotesetest og konfidensintervaller\n\nPrædiktion\n\nForudsige udfald baseret på data\n\n\n\nDeskriptiv til at forstå data. Inferens - til at drage konklusioner om en hel population ud fra en stikprøve Det er sådan noget som hypotesetest og konfidensintervaller. Forudisge fremtidige eller ukendte observation baseret på de data vi har."
+  },
+  {
+    "objectID": "slides/demo.html#typer-af-data",
+    "href": "slides/demo.html#typer-af-data",
+    "title": "Statistik",
+    "section": "Typer af data",
+    "text": "Typer af data\n\nKvantitative data\n\nKontinuærte eller diskrete, men numeriske\nHøjde, alder, vægt, blodtryk\nTal!\n\nKvalitative (kategoriske) data\n\nJa/nej variable (gift/ugift, mand/kvinde, ryger/ikke-ryger)\nTerningekast, socialklasse, hårfarve\n\n\n\nKvantitative data er typisk noget vi måler. Og i princippet kan vi måle med arbitrær præcision. Kvalitative data er data der kun kan være i en kasse. Enten er man gravid. Eller også er man ikke. Man er ikke en lille smule gravid. Der er to typer. Nominale hvor der ikke er nogen orden. Kvinder er ikke bedre end mænd. Ordinale data - og der er en orden. Det er (ofte) bedre at slå en sekser end en treer når man kaster med terninger."
+  },
+  {
+    "objectID": "slides/demo.html#deskriptiv-statistik-til-beskrivelse-af-data",
+    "href": "slides/demo.html#deskriptiv-statistik-til-beskrivelse-af-data",
+    "title": "Statistik",
+    "section": "Deskriptiv statistik til beskrivelse af data",
+    "text": "Deskriptiv statistik til beskrivelse af data\n\n\nHvordan kan vi beskrive datasættet til højre?\n\nMinimum\nMaximum\nGennemsnit\nSpredning\nHistogram\n\n\n\n\n\n\n\n\n\n\n10.2\n13.7\n10.4\n14.9\n11.5\n12.0\n11.0\n\n\n13.3\n12.9\n12.1\n9.4\n13.2\n10.8\n11.7\n\n\n10.6\n10.5\n13.7\n11.8\n14.1\n10.3\n13.6\n\n\n12.1\n12.9\n11.0\n12.7\n10.6\n11.4\n11.9\n\n\n9.3\n13.5\n14.6\n11.2\n11.7\n10.9\n10.4\n\n\n12.0\n12.9\n11.1\n8.8\n10.2\n11.6\n12.5\n\n\n13.4\n12.1\n10.9\n11.3\n14.7\n10.8\n13.3\n\n\n11.9\n11.4\n12.5\n13.0\n1.6\n13.1\n9.7\n\n\n11.2\n15.1\n10.7\n12.9\n13.4\n12.3\n11.0\n\n\n14.6\n11.1\n13.5\n10.9\n13.1\n11.8\n12.2\n\n\n\nHaemoglobin levels in g/100 ml for 70 women"
+  },
+  {
+    "objectID": "slides/demo.html#deskriptiv-statistik-til-beskrivelse-af-data-1",
+    "href": "slides/demo.html#deskriptiv-statistik-til-beskrivelse-af-data-1",
+    "title": "Statistik",
+    "section": "Deskriptiv statistik til beskrivelse af data",
+    "text": "Deskriptiv statistik til beskrivelse af data"
   }
 ]

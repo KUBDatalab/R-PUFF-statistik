@@ -9,7 +9,7 @@
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.7.32">
 
-  <title>Slides + webR – webR demo</title>
+  <title>Slides + webR – Statistik</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -398,7 +398,7 @@
   // Document level settings ----
 
   // Determine if we need to install R packages
-  globalThis.qwebrInstallRPackagesList = ['dplyr'];
+  globalThis.qwebrInstallRPackagesList = ['gt', 'tidyverse'];
 
   // Specify possible locations to search for the repository
   globalThis.qwebrPackageRepoURLS = ['https://repo.r-wasm.org/'];
@@ -1963,11 +1963,664 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">webR demo</h1>
+  <h1 class="title">Statistik</h1>
+  <p class="subtitle">Intro</p>
 
 <div class="quarto-title-authors">
 </div>
 
+</section>
+<section id="formålet-med-statistik" class="slide level2">
+<h2>Formålet med statistik</h2>
+<p>”Statistics is the science of collecting, summarizing, presenting and interpreting data, and of using them to estimate the magnitude of associations and test hypotheses. It has a central role in medical investigations” Indledende afsnit i lærebogen ”Medical statistics””</p>
+<aside class="notes">
+<p>Det vil sige at vi bruger statistik til at forstå, estimere og udlede information, baseret på data.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="målet-med-statistik" class="slide level2">
+<h2>Målet med statistik</h2>
+<ul>
+<li class="fragment">Deskriptiv statistik
+<ul>
+<li class="fragment">Histogrammer</li>
+<li class="fragment">Gennemsnit, median</li>
+<li class="fragment">Spredning, percentiler, range</li>
+</ul></li>
+<li class="fragment">Inferens
+<ul>
+<li class="fragment">Generel information fra en stikprøve</li>
+<li class="fragment">Hypotesetest og konfidensintervaller</li>
+</ul></li>
+<li class="fragment">Prædiktion
+<ul>
+<li class="fragment">Forudsige udfald baseret på data</li>
+</ul></li>
+</ul>
+<aside class="notes">
+<p>Deskriptiv til at forstå data. Inferens - til at drage konklusioner om en hel population ud fra en stikprøve Det er sådan noget som hypotesetest og konfidensintervaller. Forudisge fremtidige eller ukendte observation baseret på de data vi har.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="typer-af-data" class="slide level2">
+<h2>Typer af data</h2>
+<ul>
+<li class="fragment">Kvantitative data
+<ul>
+<li class="fragment">Kontinuærte eller diskrete, men numeriske</li>
+<li class="fragment">Højde, alder, vægt, blodtryk</li>
+<li class="fragment">Tal!</li>
+</ul></li>
+<li class="fragment">Kvalitative (kategoriske) data
+<ul>
+<li class="fragment">Ja/nej variable (gift/ugift, mand/kvinde, ryger/ikke-ryger)</li>
+<li class="fragment">Terningekast, socialklasse, hårfarve</li>
+</ul></li>
+</ul>
+<aside class="notes">
+<p>Kvantitative data er typisk noget vi måler. Og i princippet kan vi måle med arbitrær præcision. Kvalitative data er data der kun kan være i en kasse. Enten er man gravid. Eller også er man ikke. Man er ikke en lille smule gravid. Der er to typer. Nominale hvor der ikke er nogen orden. Kvinder er ikke bedre end mænd. Ordinale data - og der er en orden. Det er (ofte) bedre at slå en sekser end en treer når man kaster med terninger.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="deskriptiv-statistik-til-beskrivelse-af-data" class="slide level2">
+<h2>Deskriptiv statistik til beskrivelse af data</h2>
+<div class="columns">
+<div class="column" style="width:60%;">
+<p>Hvordan kan vi beskrive datasættet til højre?</p>
+<ul>
+<li class="fragment">Minimum</li>
+<li class="fragment">Maximum</li>
+<li class="fragment">Gennemsnit</li>
+<li class="fragment">Spredning</li>
+<li class="fragment">Histogram</li>
+</ul>
+</div><div class="column" style="width:40%;">
+<div class="cell">
+<div class="cell-output-display">
+<div id="tmeppzbptu" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#tmeppzbptu table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#tmeppzbptu thead, #tmeppzbptu tbody, #tmeppzbptu tfoot, #tmeppzbptu tr, #tmeppzbptu td, #tmeppzbptu th {
+  border-style: none;
+}
+
+#tmeppzbptu p {
+  margin: 0;
+  padding: 0;
+}
+
+#tmeppzbptu .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#tmeppzbptu .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#tmeppzbptu .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#tmeppzbptu .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#tmeppzbptu .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#tmeppzbptu .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#tmeppzbptu .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#tmeppzbptu .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#tmeppzbptu .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#tmeppzbptu .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#tmeppzbptu .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#tmeppzbptu .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#tmeppzbptu .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#tmeppzbptu .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#tmeppzbptu .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#tmeppzbptu .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#tmeppzbptu .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#tmeppzbptu .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#tmeppzbptu .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#tmeppzbptu .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#tmeppzbptu .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#tmeppzbptu .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#tmeppzbptu .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#tmeppzbptu .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#tmeppzbptu .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#tmeppzbptu .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#tmeppzbptu .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#tmeppzbptu .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#tmeppzbptu .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#tmeppzbptu .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#tmeppzbptu .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#tmeppzbptu .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#tmeppzbptu .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#tmeppzbptu .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#tmeppzbptu .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#tmeppzbptu .gt_left {
+  text-align: left;
+}
+
+#tmeppzbptu .gt_center {
+  text-align: center;
+}
+
+#tmeppzbptu .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#tmeppzbptu .gt_font_normal {
+  font-weight: normal;
+}
+
+#tmeppzbptu .gt_font_bold {
+  font-weight: bold;
+}
+
+#tmeppzbptu .gt_font_italic {
+  font-style: italic;
+}
+
+#tmeppzbptu .gt_super {
+  font-size: 65%;
+}
+
+#tmeppzbptu .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#tmeppzbptu .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#tmeppzbptu .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#tmeppzbptu .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#tmeppzbptu .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#tmeppzbptu .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#tmeppzbptu .gt_indent_5 {
+  text-indent: 25px;
+}
+
+#tmeppzbptu .katex-display {
+  display: inline-flex !important;
+  margin-bottom: 0.75em !important;
+}
+
+#tmeppzbptu div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+  height: 0px !important;
+}
+</style>
+
+<table class="gt_table caption-top" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<tbody class="gt_table_body">
+<tr class="odd">
+<td class="gt_row gt_right" headers="X1">10.2</td>
+<td class="gt_row gt_right" headers="X2">13.7</td>
+<td class="gt_row gt_right" headers="X3">10.4</td>
+<td class="gt_row gt_right" headers="X4">14.9</td>
+<td class="gt_row gt_right" headers="X5">11.5</td>
+<td class="gt_row gt_right" headers="X6">12.0</td>
+<td class="gt_row gt_right" headers="X7">11.0</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_right" headers="X1">13.3</td>
+<td class="gt_row gt_right" headers="X2">12.9</td>
+<td class="gt_row gt_right" headers="X3">12.1</td>
+<td class="gt_row gt_right" headers="X4">9.4</td>
+<td class="gt_row gt_right" headers="X5">13.2</td>
+<td class="gt_row gt_right" headers="X6">10.8</td>
+<td class="gt_row gt_right" headers="X7">11.7</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_right" headers="X1">10.6</td>
+<td class="gt_row gt_right" headers="X2">10.5</td>
+<td class="gt_row gt_right" headers="X3">13.7</td>
+<td class="gt_row gt_right" headers="X4">11.8</td>
+<td class="gt_row gt_right" headers="X5">14.1</td>
+<td class="gt_row gt_right" headers="X6">10.3</td>
+<td class="gt_row gt_right" headers="X7">13.6</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_right" headers="X1">12.1</td>
+<td class="gt_row gt_right" headers="X2">12.9</td>
+<td class="gt_row gt_right" headers="X3">11.0</td>
+<td class="gt_row gt_right" headers="X4">12.7</td>
+<td class="gt_row gt_right" headers="X5">10.6</td>
+<td class="gt_row gt_right" headers="X6">11.4</td>
+<td class="gt_row gt_right" headers="X7">11.9</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_right" headers="X1">9.3</td>
+<td class="gt_row gt_right" headers="X2">13.5</td>
+<td class="gt_row gt_right" headers="X3">14.6</td>
+<td class="gt_row gt_right" headers="X4">11.2</td>
+<td class="gt_row gt_right" headers="X5">11.7</td>
+<td class="gt_row gt_right" headers="X6">10.9</td>
+<td class="gt_row gt_right" headers="X7">10.4</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_right" headers="X1">12.0</td>
+<td class="gt_row gt_right" headers="X2">12.9</td>
+<td class="gt_row gt_right" headers="X3">11.1</td>
+<td class="gt_row gt_right" headers="X4">8.8</td>
+<td class="gt_row gt_right" headers="X5">10.2</td>
+<td class="gt_row gt_right" headers="X6">11.6</td>
+<td class="gt_row gt_right" headers="X7">12.5</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_right" headers="X1">13.4</td>
+<td class="gt_row gt_right" headers="X2">12.1</td>
+<td class="gt_row gt_right" headers="X3">10.9</td>
+<td class="gt_row gt_right" headers="X4">11.3</td>
+<td class="gt_row gt_right" headers="X5">14.7</td>
+<td class="gt_row gt_right" headers="X6">10.8</td>
+<td class="gt_row gt_right" headers="X7">13.3</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_right" headers="X1">11.9</td>
+<td class="gt_row gt_right" headers="X2">11.4</td>
+<td class="gt_row gt_right" headers="X3">12.5</td>
+<td class="gt_row gt_right" headers="X4">13.0</td>
+<td class="gt_row gt_right" headers="X5">1.6</td>
+<td class="gt_row gt_right" headers="X6">13.1</td>
+<td class="gt_row gt_right" headers="X7">9.7</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_right" headers="X1">11.2</td>
+<td class="gt_row gt_right" headers="X2">15.1</td>
+<td class="gt_row gt_right" headers="X3">10.7</td>
+<td class="gt_row gt_right" headers="X4">12.9</td>
+<td class="gt_row gt_right" headers="X5">13.4</td>
+<td class="gt_row gt_right" headers="X6">12.3</td>
+<td class="gt_row gt_right" headers="X7">11.0</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_right" headers="X1">14.6</td>
+<td class="gt_row gt_right" headers="X2">11.1</td>
+<td class="gt_row gt_right" headers="X3">13.5</td>
+<td class="gt_row gt_right" headers="X4">10.9</td>
+<td class="gt_row gt_right" headers="X5">13.1</td>
+<td class="gt_row gt_right" headers="X6">11.8</td>
+<td class="gt_row gt_right" headers="X7">12.2</td>
+</tr>
+</tbody><tfoot class="gt_footnotes">
+<tr class="odd">
+<td colspan="7" class="gt_footnote">Haemoglobin levels in g/100 ml for 70 women</td>
+</tr>
+</tfoot>
+
+</table>
+
+</div>
+</div>
+</div>
+</div></div>
+</section>
+<section id="deskriptiv-statistik-til-beskrivelse-af-data-1" class="slide level2">
+<h2>Deskriptiv statistik til beskrivelse af data</h2>
 </section>
 <section id="webr-i-browseren" class="slide level2">
 <h2>webR i browseren</h2>
