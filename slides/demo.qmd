@@ -43,15 +43,71 @@ Det er sådan noget som hypotesetest og konfidensintervaller.
 Forudisge fremtidige eller ukendte observation baseret på de data vi har.
 :::
 
-## Typer af data
+## Stikprøve vs population
+
+* Populationen er det komplette sæt af entiteter† vi ønsker at lære noget om
+* Stikprøven er den del mængde af det komplette, som vi har data for
+* Populationen indeholder stikprøven. Men stikprøven dækker sjældent hele populationen‡
+
+Vi ønsker ofte at kunne sige noget om populationen, baseret på stikprøven. Det kalder vi inferens.
+
+†) Alle børn i Danmark. Alle heste i Danmark. Koncentrationen af Magnesium i drikkevandet
+‡) Danske registerdata kan være undtagelsen
+
+## Parametre vs statistik
+
+En parameter er et tal der beskriver en population.
+
+Dette er et teoretisk tal - vi kan ikke måle det. Det eksisterer, men vi kender det ikke.
+
+Den sande værdi af den gennemsnitlige højde af mænd i Danmark findes. Men vi ved ikke hvad
+den er, for vi kan ikke måle højden af alle mænd. Det sande gennemsnit kalder vi $\mu$.
+
+Der er en sand variation (vi kommer til det) af højden af alle mænd i Danmark. Den findes,
+og vi kalder den $\sigma^2$. Men vi ved ikke hvad den er, og vi kan ikke finde ud af hvad den er.
+
+Statistikken derimod er det vi ved hvad er. Det er gennemsnitshøjden af alle mænd i vore stikprøve.
+Den kalder vi $\hbar{X}$. Variansen kan vi også beregne. Den kalder vi $s^2$
+
+Bemærk forskellen i notationen.
+
+Vi kan bruge $\hbar{X}$ og $s^2$ til at estimere de ukendte parametre: $\mu$ og $\sigma^2$
+
+Hvis man vil kunne huske hvad non-parametriske tests er - så skal man kunne huske det her.
+
+## Typer af data - kategoriske
+
+Data falder i en kategori. Eller i en anden. Ikke i begge.
+
 :::{.incremental}
-* Kvantitative data
-  - Kontinuærte eller diskrete, men numeriske
-  - Højde, alder, vægt, blodtryk
-  - Tal!
-* Kvalitative (kategoriske) data
-  - Ja/nej variable (gift/ugift, mand/kvinde, ryger/ikke-ryger)
-  - Terningekast, socialklasse, hårfarve
+* Nominale data
+  - Der er ingen rækkefølge - ingen er "bedre" end andre
+    - Yndlingsfarve
+    - mand/kvinde
+    - Ja/nej
+* Ordinale data
+  - Stadig kategoriske
+  - Der er en naturlig rækkefølge
+    - Højde: Lav, medium, høj
+    - Terningekast
+    - Socialklasse
+:::
+
+## Typer af data - kvantitative
+
+Numeriske data - målinger eller optællinger
+
+:::{.incremental}
+* Diskrete
+  - Kun specifikke værdier er mulige
+    - Antal børn
+    - Antal senge på et hospital
+* Kontinuærte
+  - Målbare enheder, med mulige værdier der ligger i et interval
+    - BMI
+    - Blodtryk
+    - Højde
+
 :::
 
 :::{.notes}
@@ -64,6 +120,11 @@ bedre end mænd.
 Ordinale data - og der er en orden. Det er (ofte) bedre at slå en sekser
 end en treer når man kaster med terninger. 
 :::
+
+## Her kunne vi have noget om visning af data
+
+Men det tror jeg hellere jeg vil have senere
+
 
 ## Deskriptiv statistik til beskrivelse af data
 

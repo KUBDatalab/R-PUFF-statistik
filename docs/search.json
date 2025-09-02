@@ -544,5 +544,12 @@
     "title": "Lineære modeller",
     "section": "Hvad er en lineær model",
     "text": "Hvad er en lineær model\nKært barn har mange navne.\nI R skriver vi det som regel som y ~x der betyder at vi forsøger at forklare y som en funktion af x.\ny kan vi også kalde for udfaldet. Eller responsvariablen. Eller den afhængige variabel (fordi den afhænger af x).\nx kalder vi også for den uafhængige variabel - fordi vi i princippet kan justere helt frit på den og se hvad der så sker med y. Den kaldes også den forklarende variabel. Eller prædiktoren (fordi den kan bruges til at forudsige y). Er vi virkelig avancerede kan vi kalde den kovariaten.\nPointen er sådan set bare at vi gerne vil finde den lineære sammenhæng mellem de to variable. Vi prøver at forudsige/prædiktere.\nOg der er ikke nødvendigvis en kausal retning. Vi kunne også bruge prisen til at forklare antallet af kilometre kørt.\nDatasættet fev\nlm af den.\nGraf med punkter, ret linie og “pinde” op til linien.\nDet computeren, algoritmen, gør for os, er at justere på a og b, så fejlen bliver minimeret.\nDen del af fejlen der ikke kan minimeres kalder vi residualerne."
+  },
+  {
+    "objectID": "slides/demo3.html#når-x-ændrer-sig-emd-1-så-ændrer-y-sig-med",
+    "href": "slides/demo3.html#når-x-ændrer-sig-emd-1-så-ændrer-y-sig-med",
+    "title": "Statistik",
+    "section": "Når X ændrer sig emd 1 så ændrer y sig med",
+    "text": "Når X ændrer sig emd 1 så ændrer y sig med\nI den simple linieære model, kunne vi let fortolke hvad \\(\\beta\\) betød, nemlig ændringen i pris for hver ekstra km vi kørte.\nMan er fristet til at tro at det nu bliver meget mere kompliceret. Men det er næsten lige så simpelt. Men vi skal holde tunge lige i munden alligevel. Hvis vi kører en kilometer mere, stiger prisen med \\(\\beta_1\\) hvis vi ikke ændrer på hvor mange minutter vi kørte. Og hvis turen tager et minut længere, så stiger prisen med \\(\\beta_2\\) hvis vi ikke ændrer på turens længde."
   }
 ]
