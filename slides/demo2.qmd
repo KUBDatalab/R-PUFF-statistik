@@ -1,0 +1,120 @@
+---
+title: "Lineære modeller"
+format: revealjs
+engine: knitr
+filters:
+  - webr
+webr:
+  packages: ["dplyr"]
+---
+{{< include ../_extensions/r-wasm/live/_knitr.qmd >}}
+
+
+## Hvad er en lineær model?
+
+Kært barn har mange navne.
+
+Lineær regression er det vi foretager for at bygge en lineær model.
+
+Og en lineær model er noget vi kan bruge til at forklare sammenhænge 
+mellem variable - og til at forudsige ting.
+
+Alle der har prøvet at tage en taxa kender konceptet. Det koster 
+37 kroner at sætte sig ind i taxaen. Og så koster den 12.75 kr pr kilometer.
+
+Så hvis man skal køre 10 kilometer, så koster det:
+
+```{webr}
+10 * 12.75 + 37
+```
+
+Hvad koster det hvis man skal køre 15 kilometer i stedet?
+
+Det er en lineær model (lidt forsimplet, vi skal også betalte for tiden, men
+det kommer senere).
+
+Det kan vi beskrive som en formel:
+
+$$y = ax + b$$
+
+Hvor a er 12.75 kr, b er 37 kr, x er antallet af kilometre. Og y er prisen.
+
+Her kender vi priserne, og de står også på siden af taxaerne. 
+
+Så rar er verden sjælden. Så det vi ofte har er prisen og antallet af km
+på 1000 taxature. Og nu skal vi så finde ud af hvad startprisen er, og hvad
+vi betaler pr km.
+
+## Hvad er en lineær model
+
+Kært barn har mange navne.
+
+I R skriver vi det som regel som y ~x
+der betyder at vi forsøger at forklare y som en funktion af x.
+
+y kan vi også kalde for udfaldet. Eller responsvariablen. Eller den
+afhængige variabel (fordi den afhænger af x).
+
+x kalder vi også for den uafhængige variabel - fordi vi i princippet kan
+justere helt frit på den og se hvad der så sker med y. Den kaldes også 
+den forklarende variabel. Eller prædiktoren (fordi den kan bruges til 
+at forudsige y). Er vi virkelig avancerede kan vi kalde den kovariaten.
+
+Pointen er sådan set bare at vi gerne vil finde den lineære sammenhæng mellem
+de to variable. Vi prøver at forudsige/prædiktere.
+
+Og der er ikke nødvendigvis en kausal retning. Vi kunne også bruge 
+prisen til at forklare antallet af kilometre kørt.
+
+Datasættet fev
+
+lm af den.
+
+Graf med punkter, ret linie og "pinde" op til linien.
+
+Det computeren, algoritmen, gør for os, er at justere på a og b, så
+fejlen bliver minimeret.
+
+Den del af fejlen der ikke kan minimeres kalder vi residualerne. 
+
+```{r}
+# Eksempeldata
+set.seed(123)
+df <- data.frame(
+  x = 1:10,
+  y = 2 + 0.5*(1:10) + rnorm(10, sd=1)
+)
+
+# Byg lineær model
+mod <- lm(y ~ x, data = df)
+
+# Tilføj forudsagte værdier (fits) til datasættet
+df$fit <- fitted(mod)
+
+# Plot
+ggplot(df, aes(x, y)) +
+  geom_point(size = 2) +                         # punkterne
+  geom_abline(intercept = coef(mod)[1], 
+              slope = coef(mod)[2], color="blue") + # regressionslinjen
+  geom_segment(aes(xend = x, yend = fit), 
+               linetype = "dashed", color="red") + # residualerne
+  theme_minimal()
+
+```
+
+
+## webR i browseren
+
+demo 2
+```{webr}
+#| autorun: true
+#| min-lines: 8
+summary(cars)
+plot(cars)
+```
+
+## Read-only eksempel
+```{webr}
+#| edit: false
+mean(rnorm(100))
+```

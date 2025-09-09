@@ -8,6 +8,8 @@ website:
     left:
       - text: "Demo"
         href: slides/demo.qmd
+      - href: slides/demo2.qmd
+        text: Demo 2
 
 format:
   # fælles HTML-indstillinger for live-sider

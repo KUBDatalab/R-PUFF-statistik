@@ -1,0 +1,43 @@
+---
+title: "Statistik"
+subtitle: "3" 
+format: revealjs
+engine: knitr
+filters:
+  - webr
+webr:
+  packages: ["gt", "tidyverse"]
+---
+{{< include ../_extensions/r-wasm/live/_knitr.qmd >}}
+
+Kategoriske data
+
+Vi har indtil videre arbejdet med modeller hvor den afhængige 
+variabel, den vi forsøger at forudsige, er numerisk - vi kalder den
+også kvantitativ.
+
+Men der var også kategoriske variabel. og dem vil vi også gerne kunne
+forudsige. Sandsynligheden for at en patient bliver rask. Et fodboldhold
+vinder. etc.
+
+Vi har haft kategoriske variable med i vores lineære modeller som 
+prædiktorer, typisk ved skalering. Men vi kan ikke vende modellerne om
+og forudsige en kategorisk værdi ud fra eksempelvis alder.
+
+Antals tabeller.
+
+Med binære variable kan vi beregne sandsynligheden for henholdsvis
+det ene og det andet resultat. 
+
+Det kalder vi ofte for $\pi$ som altså ikke har noget med tallet 3.141... 
+at gøre, men er det græske tegn for p, som vi bruger fordi sandsynlighed
+hedder probability på engelsk.
+
+Rissikodifferens
+
+Relativ risiko
+
+1. 
+
+2. second
+3. third

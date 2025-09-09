@@ -1,0 +1,548 @@
+[
+  {
+    "objectID": "slides/demo2.html#webr-i-browseren",
+    "href": "slides/demo2.html#webr-i-browseren",
+    "title": "Lineære modeller",
+    "section": "webR i browseren",
+    "text": "webR i browseren\ndemo 2\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page."
+  },
+  {
+    "objectID": "slides/demo2.html#read-only-eksempel",
+    "href": "slides/demo2.html#read-only-eksempel",
+    "title": "Lineære modeller",
+    "section": "Read-only eksempel",
+    "text": "Read-only eksempel\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page."
+  },
+  {
+    "objectID": "noter/del3.html#repetition-fra-sidst-igen",
+    "href": "noter/del3.html#repetition-fra-sidst-igen",
+    "title": "Untitled",
+    "section": "Repetition fra sidst (Igen)",
+    "text": "Repetition fra sidst (Igen)\nHvordan definerer vi spredning (sd)? Svar: Et mål for fordelingen af tallene i et datasæt. En stor spredning målt som en høj standard deviation ses ved tal i datasæt med stor variation omkring middelværdien (u) omvendt for datasæt med lille variation.\nHvordan fortolkes et referenceinterval? Svar: Referenceintervallet indeholder X% af fordelingen af datapunkter i baggrundspopulationen. Eks. inkluderer u +/- 1.96*sd 95% af fordelingen af datapunkter i baggrundspopulationen.\nHvordan definerer vi standard error of the mean (SEM)? Svar: SEM er spredningen på tilfældigt udtagne stikprøvegennemsnit udregnet ud fra stikprøvestørrelse (n) og spredningen i baggrundspopulationens værdier.\nHvordan fortolkes et konfidens interval? Svar: Konfidensintervallet indeholder middelværdien i baggrundspopulationen med X sandsynlighed.  Eks. inkluderer u +/- 1.96* SEM den egentlige u i baggrundspopulationen med 95% sandsynlighed."
+  },
+  {
+    "objectID": "noter/del3.html#kommandoer-i-r",
+    "href": "noter/del3.html#kommandoer-i-r",
+    "title": "Untitled",
+    "section": "Kommandoer i R",
+    "text": "Kommandoer i R\nForskellige regressionsanalyser i R har forskellige kommandoer. De vigtigste er:\nLineær regression (Modul 2)  lm(y ~ x)\nMultipel lineær regression (Modul 3)  lm(y ~ x + z), I multiple lineær regression kan man inkludere mange flere end blot to forklarende variable. Idag!\nLogistisk regression (Modul 4)  glm(lbwt ~ factor(smoke) + age, family=binomial) Vi vender tilbage til denne!"
+  },
+  {
+    "objectID": "noter/del3.html#std.-error-t--og-p-værdi-i-lineær-regression",
+    "href": "noter/del3.html#std.-error-t--og-p-værdi-i-lineær-regression",
+    "title": "Untitled",
+    "section": "Std. Error, t- og p-værdi i lineær regression",
+    "text": "Std. Error, t- og p-værdi i lineær regression\nEstimatet har altså en usikkerhed svarende til Std. Error. Dermed kan man lave en one sample t-test for hvor sandsynligt der er at finde denne stikprøve hvis hældningskoefficienten i baggrundsbefolkningen i virkeligheden er 0 \nT-test = (Estimate -0)/Std. Error\nOvenstående giver t-værdien, og p-værdien er regnet ud fra denne! Udregning: (0.139/0.00408) =\nDvs meget usandsynligt!"
+  },
+  {
+    "objectID": "noter/del3.html#eksamensopgave",
+    "href": "noter/del3.html#eksamensopgave",
+    "title": "Untitled",
+    "section": "Eksamensopgave",
+    "text": "Eksamensopgave\nHer ser vi på multipel lineær regression, da vi har flere variable. OBS factor() betyder at variablen er kategorisk dvs. enten 0 eller 1  ikke vigtig for vores udregninger i denne opgave!\nHvordan udregner vi de manglende tal, så vi kan konkludere?"
+  },
+  {
+    "objectID": "noter/del3.html#multipel-lineær-regression",
+    "href": "noter/del3.html#multipel-lineær-regression",
+    "title": "Untitled",
+    "section": "Multipel lineær regression",
+    "text": "Multipel lineær regression\nBrugbart når man ønsker at undersøge flere variables (forklarende) betydning for en responsvariabel. Giver ofte en større akkuratesse ved prædiktion. Kan se på den individuelle effekt af variable dvs. korrigeret for andre variable. Nedenfor ses multipel lineær regression med responsvariabel FEV1 og kontinuert forklarende variable Age og Height.\n\n\nTolkning: y= responsvariabel (FEV1) B0 = interceptet, dvs. FEV1 når alder og højde er 0. B1 = koefficienten for variabel 1 B2 = koefficienten for variabel 2\nStd.error = angiver SE dvs. den usikkerhed estimaterne er givet ved, kan bruges til konfidensinterval og t-værdi.\nT = Teststørrelse for 0-hypotesen at koefficienten\nP= p-værdi for teststørrelsen"
+  },
+  {
+    "objectID": "noter/del3.html#multipel-lineær-regression-opgave",
+    "href": "noter/del3.html#multipel-lineær-regression-opgave",
+    "title": "Untitled",
+    "section": "Multipel lineær regression opgave",
+    "text": "Multipel lineær regression opgave\nEn vigtig pointe er at multipel lineær regression viser variablernes effekt med de øvrige variable fastholdt. Dvs vi kan se på de individuelle effekter af hver variabel  muliggør afsløring af confounding! Man kan eks tolke Age´s effekt som: FEV1 stiger gennemsnitligt med 0,0946 når højde øges med 1 med køn og alder fastholdt.\nOpgave 1: Fortolk nedenstående estimater (coefficients)? Er de signifikante? Opgave 2: Hvilken type variabel er variablen ”Male” og hvad siger den om piger og drenges lungefunktion? Opgave 3: Giv et 95% - konfidensinterval for højdes regressionkoefficient?\n1=JA! (P-værdi er &lt; 0.05)\n2=Kategorisk, mænd har estimeret 0.12 bedre lungefunktion end en kvinde med samme alder og højde dvs fastholdt for disse\n3= estimat +/- 1.96* std error"
+  },
+  {
+    "objectID": "noter/del3.html#eksamensopgave-fortsat",
+    "href": "noter/del3.html#eksamensopgave-fortsat",
+    "title": "Untitled",
+    "section": "Eksamensopgave fortsat",
+    "text": "Eksamensopgave fortsat\n\n\n\n\n\n\n\n\n\nDvs. en 2- sample T-test!"
+  },
+  {
+    "objectID": "noter/del3.html#eksamensopgave-fortsat-1",
+    "href": "noter/del3.html#eksamensopgave-fortsat-1",
+    "title": "Untitled",
+    "section": "Eksamensopgave fortsat",
+    "text": "Eksamensopgave fortsat"
+  },
+  {
+    "objectID": "noter/del3.html#prædiktion-ud-fra-modeller",
+    "href": "noter/del3.html#prædiktion-ud-fra-modeller",
+    "title": "Untitled",
+    "section": "Prædiktion ud fra modeller",
+    "text": "Prædiktion ud fra modeller\nFormålet med statistiske modeller er at kunne forudsige (prædiktere, predict). Husk at vi anser vores datasæt som en stikprøve ud af hele populationen. Hvis stikprøven er repræsentativ for populationen (den deskriptive statistik), vil vi kunne forudsige noget om resten af populationen på baggrund af modellen, hvis modellen er god.\nVi tager vores model igen: Ud fra denne har vi ligningen y=-5.86 + 0.139x\nVi kan bruge denne til at prædiktere FEV ved en given højde eksempelvis højde 2 meter dvs 200cm \n-5.86 + 0.139*200 = 22.1 prædikteret\nOBS resultat giver ikke mening fordi modellen er i tommer, men udregningen er korrekt"
+  },
+  {
+    "objectID": "noter/del3.html#eksamensopgave-pædiktion",
+    "href": "noter/del3.html#eksamensopgave-pædiktion",
+    "title": "Untitled",
+    "section": "Eksamensopgave pædiktion",
+    "text": "Eksamensopgave pædiktion\nDu får nedenstående model. Modellen er multipel lineær regression, derfor introduceres 2 nye regler til prædiktion: 1. Hvis variablen er factor() indikerer dette eks. om patienten har fået halothane eller ej, dvs. Den er kategorisk og indgår i prædiktion som enten 1 eller 0 gange estimatet. 2. I multipel lineær regression adderes hvert led og dens værdi på i regnestykket, dvs. intercept + leg0.79 + factor(drug) 7.41 = prædikteret værdi"
+  },
+  {
+    "objectID": "noter/del3.html#kategoriske-variable",
+    "href": "noter/del3.html#kategoriske-variable",
+    "title": "Untitled",
+    "section": "Kategoriske variable",
+    "text": "Kategoriske variable\nVi har primært kigget på kontinuerte variable indtil videre, men i mange situationer har vi kun kategoriske variable til rådighed! Eksempelvis når vi kigger på sandsynligheder for sygdom i 2 grupper:\nAntag at du har to grupper som nedenfor, hvordan afgør vi om der er større sandsynlighed for KOL som ryger vs. Ikke-ryger?\nHeldigvis er det meget nemt! Vi udregner sandsynligheden i hver gruppe:\nRygere = syge/totale = 35/135 = 0.259 = 25,9% Ikke-rygere = syge/ totale = 38/188 = 0.202 = 20,2%\nEstimaterne er jo stikprøver, så hvordan udregner vi SE for sandsynlighederne?\nS.E. \nDvs. vi har nu sandsynligheder med en usikkerhed SE  Vi kan lave alle de T-test og konfidensinterval vi kender! Eks \nEks. Sammenligne konfidensintervaller: SE rygere: √((0.259∗(1−0.259))/)135= 0.0377 SE ikke-rygere: √((0.202∗(1−0.202))/) 188= 0.029\nEks kan vi lave konfidensinterval og se om de overlapper:\nRygere = 0.259 +/- 1.960.0377 = (0.185,0.332) Ikke-rygere = 0.202 +/- 1.960.029 = (0.145, 0.256)\nOverlapper  Vi kan ikke forkaste nul-hypotesen! Vi kan også udregne SE for differensen og lave 2-sample t-test!"
+  },
+  {
+    "objectID": "noter/del3.html#relativ-risiko-rr",
+    "href": "noter/del3.html#relativ-risiko-rr",
+    "title": "Untitled",
+    "section": "Relativ risiko (RR)",
+    "text": "Relativ risiko (RR)\nRelativ risiko er en anden måde at udtrykke 2 gruppers sandsynligheder i forhold til hinanden dvs om de er signifikant forskellige. Beregningen er lidt mere kompliceret, men fortolkningen er heldigvis nem!\nVi tager KOL værdierne igen:\nRygere = syge/totale = 35/135 = 0.259 = 25,9% Ikke-rygere = syge/ totale = 38/188 = 0.202 = 20,2%\nRR= 0.259/0.202= 1.2821\nLog(SE) udregnes ved formlen\nDVS  log(SE)√((1/35)−(1/135)+(1/38)−(1/188))= 0.2\nVi udregner nu log(1.2821) så vi kan exp hele udtrykket!\nlog(1.28)=0.248\nNu udregner vi konfidensintervallet og konkluderer:\nExp(0.248 +/- 1.96*0.2) = (0.866,1.896) Bemærk  da 1 er indeholdt kan vi ikke på et 95% signifikansniveau afvise at den sande relative risiko er 1 og dermed ens mellem rygere og ikke-rygere!  Ingen signifikant forskel!"
+  },
+  {
+    "objectID": "noter/del3.html#eksamensopgave-1",
+    "href": "noter/del3.html#eksamensopgave-1",
+    "title": "Untitled",
+    "section": "Eksamensopgave",
+    "text": "Eksamensopgave"
+  },
+  {
+    "objectID": "noter/del2.html#repetition-fra-sidst",
+    "href": "noter/del2.html#repetition-fra-sidst",
+    "title": "Untitled",
+    "section": "repetition fra sidst",
+    "text": "repetition fra sidst\nHvordan definerer vi spredning (sd)? Svar: Et mål for fordelingen af tallene i et datasæt. En stor spredning målt som en høj standard deviation ses ved tal i datasæt med stor variation omkring middelværdien (u) omvendt for datasæt med lille variation.\nHvordan fortolkes et referenceinterval? Svar: Referenceintervallet indeholder X% af fordelingen af datapunkter i baggrundspopulationen. Eks. inkluderer u +/- 1.96*sd 95% af fordelingen af datapunkter i baggrundspopulationen.\nHvordan definerer vi standard error of the mean (SEM)? Svar: SEM er spredningen på tilfældigt udtagne stikprøvegennemsnit udregnet ud fra stikprøvestørrelse (n) og spredningen i baggrundspopulationens værdier.\nHvordan fortolkes et konfidens interval? Svar: Konfidensintervallet indeholder middelværdien i baggrundspopulationen med X sandsynlighed.  Eks. inkluderer u +/- 1.96* SEM den egentlige u i baggrundspopulationen med 95% sandsynlighed."
+  },
+  {
+    "objectID": "noter/del2.html#test-af-hypoteser---hvad-lærte-vi",
+    "href": "noter/del2.html#test-af-hypoteser---hvad-lærte-vi",
+    "title": "Untitled",
+    "section": "Test af hypoteser - hvad lærte vi?",
+    "text": "Test af hypoteser - hvad lærte vi?\nHvordan ville du teste om det er sandsynligt at en stikprøve er trukket fra en population med et bestemt gennemsnit u? Svar: One sample t-test. Denne udføres ved formlen (u-x)/SEM.\nHvordan ville du teste om der er signifikant forskel mellem gennemsnit i 2 forskellige populationer ud fra 2 stikprøver? Svar: Two sample t-test. Denne udføres ved at teste 0-hypotesen at differensen kommer fra en fordeling med forskel 0. Denne testes ved formlen (u1-u1-0)/SEM. Hvor SEM udregnes som:\nEkstra: Man kan jo også beregne konfidens intervaller for de to gennemsnit, eller konfidensinterval for forskellen!"
+  },
+  {
+    "objectID": "noter/del2.html#eksamens-opgave",
+    "href": "noter/del2.html#eksamens-opgave",
+    "title": "Untitled",
+    "section": "Eksamens opgave",
+    "text": "Eksamens opgave"
+  },
+  {
+    "objectID": "noter/del2.html#eksamens-opgave-2",
+    "href": "noter/del2.html#eksamens-opgave-2",
+    "title": "Untitled",
+    "section": "Eksamens opgave 2",
+    "text": "Eksamens opgave 2"
+  },
+  {
+    "objectID": "noter/del2.html#nyt-den-parrede-t-test",
+    "href": "noter/del2.html#nyt-den-parrede-t-test",
+    "title": "Untitled",
+    "section": "Nyt Den parrede t-test",
+    "text": "Nyt Den parrede t-test\nDen parrede T-test bruges i situationer, hvor man ønsker at teste om der er signifikant forskel mellem 2 gennemsnit opnået fra samme stikprøvegennemsnit. Scenariet ses ofte ved test af en behandling, hvor man ønsker at vide om en behandling X har givet signifikant forskellige målinger hos en stikprøve af patienter. Eksempelvis: 35 personer får målt blodtryk før og efter behandling med betablokker i 6 måneder. Dvs vi får eks. følgende målinger:\nHvis vi måler gnmsnit for værdier før og efter og lader som det er en two sample t-test bliver dette for upræcist. Dette skyldes at variationen i blodtryk før og efter er mindre end hvis man havde taget fra 2 forskellige grupper og målt  Det er jo den samme person, der har to målinger!\nDerfor udregner vi i stedet differensen for hver måling og tilhørende SD. Vi har antallet af personer som indgår i prøven  dermed kan vi udregne en SEM for gnssnitsdifferensen i vores stikprøve.\nSå laver vi bare en T-test med 0-hypotesen at stikprøven er trukket fra en baggrundspopulationen med en forskel på 0!  SMART\nDVS (mean(diff)-0)/SEM(diff) = T-test"
+  },
+  {
+    "objectID": "noter/del2.html#eksamensopgave",
+    "href": "noter/del2.html#eksamensopgave",
+    "title": "Untitled",
+    "section": "Eksamensopgave",
+    "text": "Eksamensopgave\nPatienter med diverticulitis kan have gavn af fiberrig kost. I denne opgave skal vi se på et studie vedrørende transsittiden gennem fordøjelseskanalen under to mulige behandlinger (diæter). En stikprøve af 60 patienter med diverticulitis i alderen 20-44 år blev tilfældig udvalgt og patienterne afprøvede begge behandlinger, A og B, over to perioder med en behandling i en given periode. For hver patient under hver behandling måltes transittiden gennem fordøjelseskanalen. Disse tider er angivet nedenfor for de første 6 patienter for hver af de to behandlinger. Søjlen Diff indeholder differenserne. Endvidere er der angivet nogle summariske regnestørrelser. \u000b\nUndersøg om der er signifikant forskel på behandling A og B hvad angår transittiden?"
+  },
+  {
+    "objectID": "noter/del2.html#den-lineære-model",
+    "href": "noter/del2.html#den-lineære-model",
+    "title": "Untitled",
+    "section": "Den lineære model",
+    "text": "Den lineære model\nI modul 1 beskrev vi reference-intervaller, konfidensintervaller og T-test. Konfidens-intervaller og T-test kunne give et bud på om eks. yngre og ældre havde signifikant forskellig lungefunktion dvs. vi undersøgte om en kategorisk variabels (eks. Yngre vs. Ældre) association med en kontinuert variabel (eks. lungefunktion).\nSagt på en anden måde var exposure kategorisk og outcome kontinuert.\nHvis man eks. ønsker at undersøge om en kontinuert variabel eks. vægt er associeret med blodtryk undersøger man altså om en kontinuert exposure (vægt) er associeret med et kontinuert outcome (eks. blodtryk).\nHertil bruger man regression  Hvis kun én exposure undersøges bruges lineær regression.\nHvis flere exposures ønskes undersøgt på én gang bruger man multipel lineær regression (modul 3). OBS man kan også medtage kategoriske variable i lineære modeller."
+  },
+  {
+    "objectID": "noter/del2.html#er-plasma-volumen-lineært-associeret-med-kropsvægt",
+    "href": "noter/del2.html#er-plasma-volumen-lineært-associeret-med-kropsvægt",
+    "title": "Untitled",
+    "section": "Er plasma volumen lineært associeret med kropsvægt?",
+    "text": "Er plasma volumen lineært associeret med kropsvægt?\nFor at undersøge om en association mellem to variable er lineært associeret kan man plotte data-punkterne på en graf som nedenfor. Dette kaldes et scatter-plot. Fordelingen ser tilnærmelsesvist lineær ud, hvorfor man kan udregne en ligning for den linje, som har den laveste antal ”squares”, dvs. den linje som er tættest associeret til alle datapunkterne.\nLigningen for den rette linje, der beskriver datapunkterne er:\n\\[y_i = \\alpha + \\beta x_j + \\epsilon_j\\] Y = responsvariabel X = forklarende variabel a= Interceptet (B0) dvs. y´s værdi når x er 0. B = regressionskoefficienten dvs. bedste hældning med lavest antal squares.\nE = residual variation som antages at være normalfordelt"
+  },
+  {
+    "objectID": "noter/del2.html#responsvariabel-og-forklarende-variabel-kontinuert-og-kategorisk",
+    "href": "noter/del2.html#responsvariabel-og-forklarende-variabel-kontinuert-og-kategorisk",
+    "title": "Untitled",
+    "section": "Responsvariabel og forklarende variabel (kontinuert og kategorisk)",
+    "text": "Responsvariabel og forklarende variabel (kontinuert og kategorisk)\nVi ser på et diagram over højde og vægt. Hvad forventer du er responsvariabel?\nHvad forventer du er forklarende variabel?\nEr forklarende variabel kontinuert eller kategorisk?\nSVAR: Responsvariabel er vægt.\nForklarende variabel er højde.\nHøjde er en kontinuert forklarende variabel."
+  },
+  {
+    "objectID": "noter/del2.html#i-r",
+    "href": "noter/del2.html#i-r",
+    "title": "Untitled",
+    "section": "I R",
+    "text": "I R\nForskellige regressionsanalyser i R har forskellige kommandoer. De vigtigste er:\nLineær regression (Modul 2)  lm(y ~ x)\nMultipel lineær regression (Modul 3)  lm(y ~ x + z), I multiple lineær regression kan man inkludere mange flere end blot to forklarende variable. Vi vender tilbage til denne!\nLogistisk regression (Modul 4)  glm(lbwt ~ factor(smoke) + age, family=binomial) Vi vender tilbage til denne!"
+  },
+  {
+    "objectID": "noter/del2.html#fortolkning-af-output-fra-lm-i-r",
+    "href": "noter/del2.html#fortolkning-af-output-fra-lm-i-r",
+    "title": "Untitled",
+    "section": "Fortolkning af output fra lm i R",
+    "text": "Fortolkning af output fra lm i R\n Mange informationer, men vi skal kun bruge nogle få: - Regressionstype: lm med kun 2 variable = simpel lineær - Responsvariabel: FEV Forklarende kontinuert variabel: Hgt Intercept er B0, dvs. når FEV når højde=0 Estimate angiver den estimerede hældning dvs. B1. Så modellen y = 0.139883x-5.86\nStd. error angiver SE dvs. den usikkerhed estimaterne er givet ved, kan bruges til konfidensinterval og t-værdi. t value. Angiver Estimate / std. Error, bruges til at slå op i t-fordelingen. Dette opslag giver selve p-værdien, som er sandsynligheden for at få en større t værdi end de observerede t’er. P-værdi er procent over og under t-værdien i en standard-normalfordeling. Dvs. kan fortælle om estimatet er signifikant."
+  },
+  {
+    "objectID": "noter/del2.html#eksamensopgave-1",
+    "href": "noter/del2.html#eksamensopgave-1",
+    "title": "Untitled",
+    "section": "eksamensopgave",
+    "text": "eksamensopgave"
+  },
+  {
+    "objectID": "noter/del2.html#std.-error-t--og-p-værdi-i-lineær-regression",
+    "href": "noter/del2.html#std.-error-t--og-p-værdi-i-lineær-regression",
+    "title": "Untitled",
+    "section": "Std. Error, t- og p-værdi i lineær regression",
+    "text": "Std. Error, t- og p-værdi i lineær regression\nEstimatet har altså en usikkerhed svarende til Std. Error. Dermed kan man lave en one sample t-test for hvor sandsynligt der er at finde denne stikprøve hvis hældningskoefficienten i baggrundsbefolkningen i virkeligheden er 0 \nT-test = (Estimate -0)/Std. Error\nOvenstående giver t-værdien, og p-værdien er regnet ud fra denne! Udregning: (0.139/0.00408) =\nDvs meget usandsynligt!"
+  },
+  {
+    "objectID": "noter/del2.html#eksamensopgave-2",
+    "href": "noter/del2.html#eksamensopgave-2",
+    "title": "Untitled",
+    "section": "Eksamensopgave",
+    "text": "Eksamensopgave"
+  },
+  {
+    "objectID": "noter/del2.html#prædiktion",
+    "href": "noter/del2.html#prædiktion",
+    "title": "Untitled",
+    "section": "Prædiktion",
+    "text": "Prædiktion\nFormålet med statistiske modeller er at kunne forudsige (prædiktere, predict). Husk at vi anser vores datasæt som en stikprøve ud af hele populationen. Hvis stikprøven er repræsentativ for populationen (den deskriptive statistik), vil vi kunne forudsige noget om resten af populationen på baggrund af modellen, hvis modellen er god. OBS: y = ax + b + ε, hvor epsilon angiver et fejlled (tænk standardafvigelsen). Så hvis vi skulle simulere, ville vi tage et ekstra normalfordelt led med, men det er lidt mere avanceret  DET GØR VI IKKE! Vi tager vores model igen: Ud fra denne har vi ligningen y=-5.86 + 0.139\nVi kan bruge denne til at prædiktere FEV ved en given højde eksempelvis højde 2 meter dvs 200cm \n-5.86 + 0.139*200 = 22.1 prædikteret"
+  },
+  {
+    "objectID": "noter/del2.html#eksamensopgave-3",
+    "href": "noter/del2.html#eksamensopgave-3",
+    "title": "Untitled",
+    "section": "Eksamensopgave",
+    "text": "Eksamensopgave\nDu får nedenstående model. Modellen er multipel lineær regression, derfor introduceres 2 nye regler til prædiktion: 1. Hvis variablen er factor() indikerer dette eks. om patienten har fået halothane eller ej, dvs. Den er kategorisk og indgår i prædiktion som enten 1 eller 0 gange estimatet. 2. I multipel lineær regression adderes hvert led og dens værdi på i regnestykket, dvs. intercept + leg0.79 + factor(drug) 7.41 = prædikteret værdi"
+  },
+  {
+    "objectID": "noter/intro.html#typer-af-data",
+    "href": "noter/intro.html#typer-af-data",
+    "title": "Statistik intro",
+    "section": "Typer af data",
+    "text": "Typer af data\n\nKvantitative (kontinuerte, diskret, numerisk) data\nhøjde, alder, vægt, blodtryk\nGroft sagt: data der udtrykkes som sekvenser af tal\nKvalitative (kategoriske) data\n\nJa/nej variable (gift/ugift, mand/kvinde, ryger/ikke-ryger)\nTerningekast, socialklasse, hårfarve"
+  },
+  {
+    "objectID": "noter/intro.html#deskriptiv-statistik-tila-t-forstå-data",
+    "href": "noter/intro.html#deskriptiv-statistik-tila-t-forstå-data",
+    "title": "Statistik intro",
+    "section": "Deskriptiv statistik tila t forstå data",
+    "text": "Deskriptiv statistik tila t forstå data\nNedenstående er hæmoglobin-niveauer fra 70 kvinder. Hvordan kan vi forstå data bedre? Kom med bud!\ntabel med hæmoglobin\nHistogram - frekvenstbel hvor der opgives frekvenser for af værdier indenfor ens intervaller og så et histogram\nHerfra kan man aflæse range forstå om data er normalfodelte\ntre små grafer med normalt og skævt fordelte data"
+  },
+  {
+    "objectID": "noter/intro.html#deskriptiv-statistik-til-at-forstå-data",
+    "href": "noter/intro.html#deskriptiv-statistik-til-at-forstå-data",
+    "title": "Statistik intro",
+    "section": "Deskriptiv statistik til at forstå data",
+    "text": "Deskriptiv statistik til at forstå data\n\nAndre kumulerede frekvensfordelinger eks. baseret på procent i ordnet datasæt. (Der er 70 observationer der hver udgør 100/70= 1.4%) \n\nHerfra aflæses: 1. Range 2. Median = midterste værdi= ((n+1)/2) = 35.5 værdi =11.85 3.Kvartiler = Nedre kvartil = (n+1)/4 = 17.75 værdi = 10.9 3 kvartil = (n+1)/4 *3 værdi\nillustration af kumuleret frekvensfordeling"
+  },
+  {
+    "objectID": "noter/intro.html#kvantitative-variable-normalområde",
+    "href": "noter/intro.html#kvantitative-variable-normalområde",
+    "title": "Statistik intro",
+    "section": "Kvantitative variable, normalområde",
+    "text": "Kvantitative variable, normalområde\nMiddelværdi (gennemsnit): μ =\nSpredning/standardafvigelsen: sd =\nVarians:\nReferenceinterval: de 95% midterste observationer. (μ-1,96σ; μ+1,96σ) hvis normalfordelt.\nformlerne"
+  },
+  {
+    "objectID": "noter/intro.html#gennemsnit-mean-og-spredning-sd",
+    "href": "noter/intro.html#gennemsnit-mean-og-spredning-sd",
+    "title": "Statistik intro",
+    "section": "Gennemsnit (mean) og spredning (sd)",
+    "text": "Gennemsnit (mean) og spredning (sd)\nhæmoglobintabellen igen Intuitivt ville man tage summen af forskellen mlm hver værdi og gnmsnittet, men hvad er problemet her? Summen af forskellen ville altid give 0 ! Eks. tallene 5, 8, 10, 17. Gnsmt er 10. (10-5)+(10-8)+(10-10)+(10-17) = 0 !\nGennemsnit (mean) er simpelt, den kender vi  summen af alle værdier divideret med antallet. = 778.2/70 =11.12\nSpredning kan udregnes som varians eller standard deviation og er mindre simpelt. Intuitivt tager man den gns. forskel mlm. hver værdi og gnmsnittet således \nSå hvordan løser vi det?! Vi opløfter hver forskel i anden! Smart  så får vi ingen negative værdier og gnmsnittet bliver ikke 0. DET ER VARIANSEN!"
+  },
+  {
+    "objectID": "noter/intro.html#spredning-sd-fortsat",
+    "href": "noter/intro.html#spredning-sd-fortsat",
+    "title": "Statistik intro",
+    "section": "Spredning (sd) fortsat",
+    "text": "Spredning (sd) fortsat\nMen der opstår også et problem med varians som mål for spredning! Hvad er problemet?\nEnheden er kvadreret! Dvs. X^2 dvs. hvis vi bruger variansen til hæmoglobin-niveauer så får vi spredningen ^2 ?! Hvordan løser vi det?\nVi tager bare kvadratroden af variansen!  NEMT! Dette kaldes standard deviationen!\nVi kan godt bruge disse udtryk til at udregne i hånden, men det tager tid og tester ikke forståelse, derfor er dette aldrig gået til eksamen. I stedet tester eksamen i SEMS om man forstår idéen med standard deviation som mål for spredning!"
+  },
+  {
+    "objectID": "noter/intro.html#hvad-kan-man-så-bruge-spredning-sd-til",
+    "href": "noter/intro.html#hvad-kan-man-så-bruge-spredning-sd-til",
+    "title": "Statistik intro",
+    "section": "Hvad kan man så bruge spredning (sd) til?",
+    "text": "Hvad kan man så bruge spredning (sd) til?\nDet smarte ved standard deviation er at hvis data er normalfordelt så indeholder 1 standard deviation ca. 70% af værdierne og 1.96 sd 95% af værdierne: Dvs. at hvis vi kender SD kan vi regne os frem til intervaller relateret til de procentuelle fordelinger. Kompliceret,  Helt simpelt sagt kan vi eks beregne i hvilket interval 95% af værdierne ligger (nemlig indenfor 2 sd) GENIALT!\nog en graf af normalfordelingen med angivelse af standardafvigelser"
+  },
+  {
+    "objectID": "noter/intro.html#normalfordelingen",
+    "href": "noter/intro.html#normalfordelingen",
+    "title": "Statistik intro",
+    "section": "Normalfordelingen",
+    "text": "Normalfordelingen\nNu har vi set en normal-fordeling, men hvorfor er denne så vigtig?! Der er mange årsager i stigende sværhedsgrad: 1. Rigtig mange datasæt i naturen er normalfordelt, eks. blodtryk, hæmoglobin-niveauer, kropstemperaturer osv. men nogle er ikke eks. indkomst. 2. Hvis vi har at gøre med normalfordelte data, kan vi hurtigt beregne intervaller. 3. OG NU DEN KOMPLICEREDE MEN UHYRE VIGTIGE ÅRSAG!!! \nFORDELINGEN AF TILFÆLDIGT UDTAGNE STIKPRØVERS GENNEMSNIT ER ALTID NORMALFORDELT!!!!  Vi kan beregne konfidensintervaller!"
+  },
+  {
+    "objectID": "noter/intro.html#normalfordelingen-ii",
+    "href": "noter/intro.html#normalfordelingen-ii",
+    "title": "Statistik intro",
+    "section": "normalfordelingen II",
+    "text": "normalfordelingen II\nRigtig mange datasæt i naturen er normalfordelte, eks blodtryk, hæmoglobin niveauer, kropstemperatur osv men nogle er ikke eks indkomst\nplot af histogram af hæmoglobin med normalfordelingskurven overlagt og densitetsplots af indkomster der ikke er."
+  },
+  {
+    "objectID": "noter/intro.html#normalfordelingen-iii",
+    "href": "noter/intro.html#normalfordelingen-iii",
+    "title": "Statistik intro",
+    "section": "Normalfordelingen III",
+    "text": "Normalfordelingen III\nHvis vi har at gøre med normalfordelte data, kan vi hurtigt beregne intervaller\nDu får nedenstående værdier I et R-udskrift. Vi skal regne på datasæt B som er malt hastighed på en landevej. Vi antager at værdierne i datasættet B er normalfordelte. Beregn et interval som indeholder 95% af B´s værdier? output fra R med mean(A), mean(B) og mean(Diff): 68,59 81,18 -12,59 sd(A), sd(B), sd(Diff) 13,81 15,39 14,16\nmean (gennemsnit) = 81.18. sd = 15,39\nNu er det nemt  Vi ved at i en normalfordeling så er 95% af værdierne indeholdt intervallet +/- 1.96 sd. Dvs = mellem 81.18 -1.9615.39 og 81.18 + 1.9615.39 = (56.6 , 111.3)\nFortolkning: 95% af hastighederne målt på landvejen ligger mellem 56.66 og 111.3 km/t. og VIGTIGT  vi kan antage at denne fordeling også gælder I baggrundspopulationen dvs. Hvis vi havde alle hastighederne for alle biler på landevejen."
+  },
+  {
+    "objectID": "noter/intro.html#normalfordelingen-iv",
+    "href": "noter/intro.html#normalfordelingen-iv",
+    "title": "Statistik intro",
+    "section": "Normalfordelingen IV",
+    "text": "Normalfordelingen IV\nFordelingen af tilfældigt udtagne stikprøvers gennemsnit er altid normalfordelt!!!!\nHvad betyder det?\nTilbage til hæmoglobin-niveauerne.\nDette var en tilfældig stikprøve ud fra en hel population af kvinder med forskellige hæmoglobin-værdier.\nDvs. stikprøven estimerer gennemsnittet af populationen, men ikke præcist  hvis vi tog en ny stikprøve af samme størrelse ville vi få et nyt gennemsnit!\nAlle disse gennemsnit ligger normalfordelt omkring gennemsnittet af populationen.\nog hæmoglobintabellen igen"
+  },
+  {
+    "objectID": "noter/intro.html#endnu-en-slide",
+    "href": "noter/intro.html#endnu-en-slide",
+    "title": "Statistik intro",
+    "section": "Endnu en slide",
+    "text": "Endnu en slide"
+  },
+  {
+    "objectID": "noter/intro.html#sem-standard-error-of-the-meanse",
+    "href": "noter/intro.html#sem-standard-error-of-the-meanse",
+    "title": "Statistik intro",
+    "section": "SEM (Standard error of the mean/“SE”)",
+    "text": "SEM (Standard error of the mean/“SE”)\nPga. central limit theorem kan vi altså baseret på få informationer beregne spredningen af gennemsnit og dermed med hvilken sikkerhed og tilhørende interval vores stikprøve gennemsnit afspejler gennemsnittet i baggrundspopulationen. Eksempelvis med hæmoglobin-niveauerne:\nEn stikprøve fra populationen med n=70, gnmsnit=11.128 og spredning\nSEM= 3.7/sqrt(70) = ca. 0.44 Hvad betyder det? Hvad ville der ske hvis stikprøvestørrelsen steg? Hvor konvergerer den mod? SVAR = At hvis man tog uendeligt mange forskellige stikprøver-gnmsnit ville disse fordele sig om u med spredning (sd) 0,44. Hvis stikprøve størrelsen stiger stiger nævneren i brøken  SD falder = mere præcist estimat af gnmsnit i populationen. Konvergerer mod 0 (men rammer selvfølgelig aldrig)."
+  },
+  {
+    "objectID": "noter/intro.html#sem-fortsat",
+    "href": "noter/intro.html#sem-fortsat",
+    "title": "Statistik intro",
+    "section": "SEM fortsat",
+    "text": "SEM fortsat\nSEM´s normalfordeling har STORE IMPLIKATIONER  man kan eks. udregne konfidens (sikkerhedsintervaller).\nDa gennemsnittene jo var normalfordelt kan vi udregne SE og dermed sige med hvor stor spredning 95% af de tilfældigt målte gennemsnit lægger sig  De lægger sig hhv. -1.96(SE) og + 1.96(SE) omkring det egentlige gennemsnit i baggrundspopulationen. Dette kaldes sikkerhedsintervallet.\nUdregn nu sikkerhedsintervallet (konfidensintervallet) for hæmoglobin-niveauerne hos kvinder ud fra stikprøven. Du har værdierne: stikprøvestørrelse (n) = 70, gnmsnit (u) = 11.128, spredning (δ) = 3.7 og SEM=0.44\nLøsning: Værdierne lægger sig mlm. u +/- 1.96* 0.44 dvs. mlm. 11.128-1.960.44 og 11.128+1.960.44.\nFortolkning: Intervallet indeholder med 95% sandsynlighed gennemsnittet (u) i baggrundspopulationen! Sagt på en anden måde (og lettere upræcis) måde der er 95% sandsynlighed for at baggrundspopulationens gennemsnit er indeholdt i intervallet."
+  },
+  {
+    "objectID": "noter/intro.html#sem-og-konfidensintervaller",
+    "href": "noter/intro.html#sem-og-konfidensintervaller",
+    "title": "Statistik intro",
+    "section": "SEM og konfidensintervaller",
+    "text": "SEM og konfidensintervaller\nUdregn nu 95% sikkerhedsintervallet (konfidensintervallet) for hæmoglobin-niveauerne hos kvinder ud fra stikprøven. Du har værdierne: stikprøvestørrelse (n) = 70, gnmsnit (u) = 11.128, spredning (δ) = 3.7 og SEM=0.44\nLøsning: Værdierne lægger sig mlm. u +/- 1.96* 0.44 dvs. mlm. 11.128-1.960.44 og 11.128+1.960.44.\nFortolkning: Intervallet indeholder med 95% sandsynlighed gennemsnittet (u) i baggrundspopulationen! Sagt på en anden måde (og lettere upræcis) måde der er 95% sandsynlighed for at baggrundspopulationens gennemsnit er indeholdt i intervallet."
+  },
+  {
+    "objectID": "noter/intro.html#sem-og-test-af-hypoteser",
+    "href": "noter/intro.html#sem-og-test-af-hypoteser",
+    "title": "Statistik intro",
+    "section": "SEM og test af hypoteser",
+    "text": "SEM og test af hypoteser\nVi bruger hæmoglobin-datasættet igen. Du har værdierne: stikprøvestørrelse (n) = 70, gnmsnit (u) = 11.128, spredning (δ) = 3.7 og SEM=0.44\nVi kan spørge: Kan vi med rimelighed antage at baggrundspopulationen (dvs. alle kvinder) har et gennemsnit på 12? Eller sagt på en anden made  HVAD ER SANDSYNLIGHEDEN FOR AT ET GENNEMSNIT PÅ 11.128 ER TRUKKET FRA EN POPULATION MED ET GNS PÅ 12 OG MED EN STIKPRØVE SPREDNING PÅ (SEM) =0.44?\nTil dette bruger vi en 1-stikprøve T-test: t= (x̄-u)/SEM\nForklaring: Vi forestiller os at vi trækker fra en fordeling med gnmsnit u=12 og hvor spredningen af stikprøvegennemsnittene x̄ er SEM. Så udregner vi simpelthen bare hvor mange SEM man skal gå ud af X-aksen for tilfældigt at få vores stikprøve gennemsnit. Hvis man skal gå langt ud er Z stor  usandsynligt.\n## sem og test af hypoteseer\nIdéen med SEM er central indenfor statistik  Forklarer hvor meget et stikprøvegennemsnit varierer ALENE pga. tilfældig variation.\nForklaring:\nHæmoglobindataene blev trukket fra baggrundspopulation, men hvad hvis vi trak igen?\nStikprøve gennemsnittet ville variere mellem det egentlige gennemsnit i baggrundspopulationen med en standard error of the mean (altså sd for stikprøvegennemsnittene)  dvs eks ville vi 95% af gangene få gennemsnit mellem 1.96* SEM + /- u (gennemsnittet i baggrundspopulationen).\nDet er altså hvad konfidensintervallet betyder  Det interval hvor gennemsnittet af stikprøver taget på en population vil variere 95% af gangene. Men hvad så hvis vores stikprøve gennemsnit er uden for 1.96* SEM + /- u(gennemsnittet i baggrundspopulationen)?\nSå vil det sige at vi har fået en stikprøve som forekommer sjældnere end 5% af gangene vi trækker tilfældigt Det kan altså være et rent tilfældigt stadig, men det kan også være fordi noget har forstyrret data  EN SIGNIFIKANT ÆNDRING!"
+  },
+  {
+    "objectID": "noter/intro.html#testning-af-hypoteser",
+    "href": "noter/intro.html#testning-af-hypoteser",
+    "title": "Statistik intro",
+    "section": "Testning af hypoteser",
+    "text": "Testning af hypoteser\nVi kan med vores viden om stikprøvegennemsnits tilfældige variation teste hypoteser eksempelvis:\nHypotesen at vi har trukket fra en population med et bestemt gennemsnit?  1 sample T-test Hypotesen at to populationers gennemsnit er ens?  2 sample T-test Meget mere!"
+  },
+  {
+    "objectID": "noter/intro.html#stikprøve-test-one-sample-t-test",
+    "href": "noter/intro.html#stikprøve-test-one-sample-t-test",
+    "title": "Statistik intro",
+    "section": "1 stikprøve test (One sample T-test)",
+    "text": "1 stikprøve test (One sample T-test)\nVi kan spørge: Kan vi med rimelighed antage at baggrundspopulationen (dvs. alle kvinder) har et gennemsnit på 12? Eller sagt på en anden made  HVAD ER SANDSYNLIGHEDEN FOR AT ET GENNEMSNIT PÅ 11.128 ER TRUKKET FRA EN POPULATION MED ET GNS PÅ 12 OG MED EN STIKPRØVE SPREDNING PÅ (SEM) =0.44?\nVi bruger hæmoglobin-datasættet igen. Vi har værdierne: stikprøvestørrelse (n) = 70, gnmsnit (u) = 11.128, spredning (δ) = 3.7 og SEM=0.44\nTil dette bruger vi en 1-stikprøve T-test: t= (x̄-u)/SEM\nForklaring: Vi forestiller os at vi trækker fra en fordeling med gnmsnit u=12 og hvor spredningen af stikprøvegennemsnittene x̄ er SEM. Så udregner vi simpelthen bare hvor mange SEM man skal gå ud af X-aksen for tilfældigt at få vores stikprøve gennemsnit. Hvis man skal gå langt ud er Z stor  usandsynligt."
+  },
+  {
+    "objectID": "noter/intro.html#stikprøve-test-one-sample-t-test-fortsat",
+    "href": "noter/intro.html#stikprøve-test-one-sample-t-test-fortsat",
+    "title": "Statistik intro",
+    "section": "1 stikprøve test (One sample T-test) fortsat:",
+    "text": "1 stikprøve test (One sample T-test) fortsat:"
+  },
+  {
+    "objectID": "noter/intro.html#sample-t-test-hypotesen-at-to-populationers-gennemsnit-er-ens",
+    "href": "noter/intro.html#sample-t-test-hypotesen-at-to-populationers-gennemsnit-er-ens",
+    "title": "Statistik intro",
+    "section": "2 sample T-test (hypotesen at to populationers gennemsnit er ens)",
+    "text": "2 sample T-test (hypotesen at to populationers gennemsnit er ens)\nVi kan spørge: Er der forskel på ældre og yngres (&lt;25år) lungefunktion? Vi tager en stikprøve af ældre og yngre og får værdierne:\nYngre: Stikprøvestørrelse: N=200, middelværdi 1.72, SD=0.32 Ældre: Stikprøvestørrelse: N=255, middelværdi 1.48, SD=0.28.\nHmm det ser jo ud som om yngre har bedre lungefunktion ud fra gennemsnittene: 1.72-1.48 = 0.24L?\nMen vi ved også at stikprøve-gennemsnit varierer! De varierer jo altid (central limit theorem) som en normalfordeling med spredningen SEM= sd/sqrt(n).\nDet kunne altså bare være rent tilfældigt at vi har fået en ”dårlig” stikprøve af ældre og en ”god” stikprøve af yngre?!\nAltså kunne baggrundspopulationerne af ældre være den samme som for yngre!?\nVi må teste det!!!"
+  },
+  {
+    "objectID": "noter/intro.html#sample-t-test-hypotesen-at-to-populationers-gennemsnit-er-ens-1",
+    "href": "noter/intro.html#sample-t-test-hypotesen-at-to-populationers-gennemsnit-er-ens-1",
+    "title": "Statistik intro",
+    "section": "2 sample T-test (hypotesen at to populationers gennemsnit er ens)",
+    "text": "2 sample T-test (hypotesen at to populationers gennemsnit er ens)\nYngre: Stikprøvestørrelse: N=200, middelværdi 1.72, SD=0.32 Ældre: Stikprøvestørrelse: N=255, middelværdi 1.48, SD=0.28.\nMen hvordan tester vi? Hver gruppe varierer jo forskelligt i SEM omkring deres baggrundspopulationers gennemsnit  fordi N og SD er forskelligt i de to grupper!\nLøsning:\nANALYSE AF KONFIDENSINTERVALLER: Vi kan se på hver gruppes konfidensintervaller (sikkerhedsintervaller) og se på om de overlapper!\nANALYSE AF DIFFERENSEN: Vi ser på SEM af forskellen mellem de to grupper! Dvs. vi ser på hvor meget vi kan stole på forskellen 0.24L, da vi jo ved at begge grupper tilfældigt findes omkring gennemsnittet med hver deres SEM! Dermed kan vi eksempelvis regne ud hvad 95% intervallet er for 0.24L og dermed hvor gennemsnittet med 95% sandsynlighed ligger!\n2- sample T-test: Se slide."
+  },
+  {
+    "objectID": "noter/intro.html#stikprøve-test-konfidensintervaller",
+    "href": "noter/intro.html#stikprøve-test-konfidensintervaller",
+    "title": "Statistik intro",
+    "section": "2 stikprøve test: konfidensintervaller",
+    "text": "2 stikprøve test: konfidensintervaller\nYngre: Stikprøvestørrelse: N=200, middelværdi 1.72, SD=0.32 Ældre: Stikprøvestørrelse: N=255, middelværdi 1.48, SD=0.28. ANALYSE AF KONFIDENSINTERVALLER: Vi kan se på hver gruppes konfidensintervaller (sikkerhedsintervaller) og se på om de overlapper!\nHvordan udregner vi 95% konfidensintervallet for hver gruppe?\nSimpelt \nYngre = 1.72 +/- 1.96 SEM.  SEM= 0.32/sqrt(200) = 0.022  (1.72 - 1.960.022) og (1.72 + 1.96*0.022) = (1.68, 1.72)\nÆldre = 1.48 +/- 1.96 SEM.  SEM= 0.28/sqrt(255) = 0.018  (1.48 - 1.960.018) og (1.72 + 1.96*0.018) = (1.45, 1.514)\nKonfidensintervallerne overlapper IKKE dvs. at med 95% sandsynlighed er de to baggrundspopulationers gennemsnit ikke ens, da vi jo ved at der er 95% sandsynlighed for at hvert interval indeholder den sande middelværdi i populationerne!"
+  },
+  {
+    "objectID": "noter/intro.html#stikprøve-test-differens",
+    "href": "noter/intro.html#stikprøve-test-differens",
+    "title": "Statistik intro",
+    "section": "2 stikprøve test: Differens",
+    "text": "2 stikprøve test: Differens\nYngre: Stikprøvestørrelse: N=200, middelværdi 1.72, SD=0.32, SEM = 0.022 Ældre: Stikprøvestørrelse: N=255, middelværdi 1.48, SD=0.28, SEM =0.018\nANALYSE AF DIFFERENSEN: Vi ser på SEM af forskellen mellem de to grupper! Dvs. vi ser på hvor meget vi kan stole på forskellen 0.24L, da vi jo ved at begge grupper tilfældigt findes omkring gennemsnittet med hver deres SEM! Dermed kan vi eksempelvis regne ud hvad 95% intervallet er for 0.24L og dermed hvor gennemsnittet med 95% sandsynlighed ligger!\nFormlen for SEM for forskellen mellem de to er:\nDvs 95% konfidensintervallet for differensen af de to stikprøvegennemsnit er:\n0.24 +/- 1.96* sqrt((0.022)2+(0.018)2) = 0.24 +/- 1.96*0.03  (0.18,0.3)\nFortolkning: Vi er nu 95% sikrer på at den egentligt forskel mellem de to grupper ligger mellem 0.18 og 0.3. Da konfidensintervallet ikke inkluderer 0 forkaster vi hypotesen at de er ens på et 95% signifikansniveau!"
+  },
+  {
+    "objectID": "noter/intro.html#stikprøve-test-two-sample-t-test",
+    "href": "noter/intro.html#stikprøve-test-two-sample-t-test",
+    "title": "Statistik intro",
+    "section": "2 stikprøve test: two sample T-test",
+    "text": "2 stikprøve test: two sample T-test\nEn tredje mulighed vi har er at teste hypotesen at vi har trukket differensen fra en fordeling der havde u=0.\nFormlen er:\nForklaring: Vi tager forskellen mellem yngre og ældres lungefunktion og ser hvor sandsynligt det er at baggrundspopulationernes forskel var 0, ved at se hvor usandsynligt det ville være at få vores differens, som vi har ud fra de 2 stikprøver dvs. 0.24L, hvis forskellen i baggrundspopulationen var 0.\nTesten er simpel for vi har allerede udregnet nævneren i forrige opgave:\n0.24/ sqrt((0.022)2+(0.018)2)  0.24/0.03  8\nHvor usandsynligt er en Z-værdi på 8 på en normalfordeling ifølge R:"
+  },
+  {
+    "objectID": "noter/intro.html#den-store-tabel-1",
+    "href": "noter/intro.html#den-store-tabel-1",
+    "title": "Statistik intro",
+    "section": "Den store tabel 1",
+    "text": "Den store tabel 1\n“Den store tabel 1” er primært en mediciner ting. Anvendes ofte i videnskabelige artikler til at forsøge at overbevise læseren om, at artiklens indhold og konklusioner baseres på en grundig statistisk analyse. Ud fra tabellen skal man kunne følge forfatterens argumentation frem til konklusionen. Bruger man det også til andet? Der er ingen faste krav til tabellen, så angiv de værdier, som giver mening for jeres studie og for læseren. Det er en god idé, at lave tabellen relativt kompakt, da der ellers hurtigt kan være “information overload”."
+  },
+  {
+    "objectID": "noter/intro.html#den-store-tabel-1---2",
+    "href": "noter/intro.html#den-store-tabel-1---2",
+    "title": "Statistik intro",
+    "section": "Den store tabel 1 - 2",
+    "text": "Den store tabel 1 - 2\nTil de kvantative variable kan man angive typetal, middelværdi eller median for at vise “en typisk måling”, mens hhv. variationsbredden, spredningen eller interfraktilen kan bruges til at synliggøre bredden i data. Typetal og variationsbredde: mest observerede tal og forskellen på maksimum og minimum (range). Middelværdi og spredning: gennemsnittet og den typiske afvigelse fra middelværdien. Median og interfraktil: 50% fraktil (“midterste tal”) og forskellen mellem 75% og 25% fraktil. Kan udvides. Til de kvalitative variable angives typisk antallet af observationer (evt. med relative frekvenser)."
+  },
+  {
+    "objectID": "slides/demo.html#webr-i-browseren",
+    "href": "slides/demo.html#webr-i-browseren",
+    "title": "Statistik",
+    "section": "webR i browseren",
+    "text": "webR i browseren\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page."
+  },
+  {
+    "objectID": "slides/demo.html#read-only-eksempel",
+    "href": "slides/demo.html#read-only-eksempel",
+    "title": "Statistik",
+    "section": "Read-only eksempel",
+    "text": "Read-only eksempel\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Untitled",
+    "section": "",
+    "text": "Præsentationer\n\nDemo\nDemo 2"
+  },
+  {
+    "objectID": "slides/demo.html#formålet-med-statistik",
+    "href": "slides/demo.html#formålet-med-statistik",
+    "title": "Statistik",
+    "section": "Formålet med statistik",
+    "text": "Formålet med statistik\n”Statistics is the science of collecting, summarizing, presenting and interpreting data, and of using them to estimate the magnitude of associations and test hypotheses. It has a central role in medical investigations” Indledende afsnit i lærebogen ”Medical statistics””\n\nDet vil sige at vi bruger statistik til at forstå, estimere og udlede information, baseret på data."
+  },
+  {
+    "objectID": "slides/demo.html#målet-med-statistik",
+    "href": "slides/demo.html#målet-med-statistik",
+    "title": "Statistik",
+    "section": "Målet med statistik",
+    "text": "Målet med statistik\n\nDeskriptiv statistik\n\nHistogrammer\nGennemsnit, median\nSpredning, percentiler, range\n\nInferens\n\nGenerel information fra en stikprøve\nHypotesetest og konfidensintervaller\n\nPrædiktion\n\nForudsige udfald baseret på data\n\n\n\nDeskriptiv til at forstå data. Inferens - til at drage konklusioner om en hel population ud fra en stikprøve Det er sådan noget som hypotesetest og konfidensintervaller. Forudisge fremtidige eller ukendte observation baseret på de data vi har."
+  },
+  {
+    "objectID": "slides/demo.html#typer-af-data",
+    "href": "slides/demo.html#typer-af-data",
+    "title": "Statistik",
+    "section": "Typer af data",
+    "text": "Typer af data\n\nKvantitative data\n\nKontinuærte eller diskrete, men numeriske\nHøjde, alder, vægt, blodtryk\nTal!\n\nKvalitative (kategoriske) data\n\nJa/nej variable (gift/ugift, mand/kvinde, ryger/ikke-ryger)\nTerningekast, socialklasse, hårfarve\n\n\n\nKvantitative data er typisk noget vi måler. Og i princippet kan vi måle med arbitrær præcision. Kvalitative data er data der kun kan være i en kasse. Enten er man gravid. Eller også er man ikke. Man er ikke en lille smule gravid. Der er to typer. Nominale hvor der ikke er nogen orden. Kvinder er ikke bedre end mænd. Ordinale data - og der er en orden. Det er (ofte) bedre at slå en sekser end en treer når man kaster med terninger."
+  },
+  {
+    "objectID": "slides/demo.html#deskriptiv-statistik-til-beskrivelse-af-data",
+    "href": "slides/demo.html#deskriptiv-statistik-til-beskrivelse-af-data",
+    "title": "Statistik",
+    "section": "Deskriptiv statistik til beskrivelse af data",
+    "text": "Deskriptiv statistik til beskrivelse af data\n\n\nHvordan kan vi beskrive datasættet til højre?\n\nMinimum\nMaximum\nGennemsnit\nSpredning\nNormalområde\nHistogram\n\n\n\n\n\n\n\n\n\n\n10.2\n13.7\n10.4\n14.9\n11.5\n12.0\n11.0\n\n\n13.3\n12.9\n12.1\n9.4\n13.2\n10.8\n11.7\n\n\n10.6\n10.5\n13.7\n11.8\n14.1\n10.3\n13.6\n\n\n12.1\n12.9\n11.4\n12.7\n10.6\n11.4\n11.9\n\n\n9.3\n13.5\n14.6\n11.2\n11.7\n10.9\n10.4\n\n\n12.0\n12.9\n11.1\n8.8\n10.2\n11.6\n12.5\n\n\n13.4\n12.1\n10.9\n11.3\n14.7\n10.8\n13.3\n\n\n11.9\n11.4\n12.5\n13.0\n11.6\n13.1\n9.7\n\n\n11.2\n15.1\n10.7\n12.9\n13.4\n12.3\n11.0\n\n\n14.6\n11.1\n13.5\n10.9\n13.1\n11.8\n12.2\n\n\n\nHaemoglobin levels in g/100 ml for 70 women"
+  },
+  {
+    "objectID": "slides/demo.html#deskriptiv-statistik-til-beskrivelse-af-data-1",
+    "href": "slides/demo.html#deskriptiv-statistik-til-beskrivelse-af-data-1",
+    "title": "Statistik",
+    "section": "Deskriptiv statistik til beskrivelse af data",
+    "text": "Deskriptiv statistik til beskrivelse af data\nPlacering. Hvor ca. ligger data?\n\nMiddelværdi: \\(\\bar{x} = \\frac{1}{n}\\big(\\sum_{i=1}^{n}x_i\\big) = \\frac{x_1 + x_2 + ... + x_n}{n}\\)\nMedian: Den midterste værdi - når alle værdier er stillet op fra mindste til største\n\nDet beregner vi “let” i R:\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page."
+  },
+  {
+    "objectID": "slides/demo.html#deskriptiv-statistik-til-beskrivelse-af-data-2",
+    "href": "slides/demo.html#deskriptiv-statistik-til-beskrivelse-af-data-2",
+    "title": "Statistik",
+    "section": "Deskriptiv statistik til beskrivelse af data",
+    "text": "Deskriptiv statistik til beskrivelse af data\nVariationen - hvordan er data spredt?\nHvordan kan vi beskrive det?\nHvor meget afviger de enkelte observation fra gennemsnittet\nIntuitivt kan vi se at ikke alle værdierne ligger lige tæt på gennemsnittet. Så. Vi kan beregne hvor langt hver værdi ligger fra gennemsnittet. Hvis vi bare lægger de tal sammen, så bliver størrelsen afhængig af hvor mange data punkter vi har. s Vi kan have 10000 punkter der alle sammen ligger utroligt tæt på gennemsnittet. Eller vi kan have 10 punkter der alle ligger meget langt fra gennemsnittet. Vi har brug for et gennemsnit. Problemet er, at gennemsnittet af forskellen for de enkelte punkter fra gennemsnittet, vil give 0. I stedet tager vi kvadratet på alle forskellene - og beregner gennemsnittet af dem. Det betyder også at punkter der ligger langt fra gennemsnittet “fylder” mere end punkter der ligger tæt på gennemsnittet.\nDet kalder vi for variansen.\nDer er et problem med den. Enheden. Enheden af vores hæmoglobin målinger bliver\n\\(g^2/ml^2\\) Den giver ingen mening. I stedet ser vi på standardafvigelsen, hvor vi tager kvadratroden på variansen."
+  },
+  {
+    "objectID": "slides/demo.html#deskriptiv-statistik-til-beskrivelse-af-data-3",
+    "href": "slides/demo.html#deskriptiv-statistik-til-beskrivelse-af-data-3",
+    "title": "Statistik",
+    "section": "Deskriptiv statistik til beskrivelse af data",
+    "text": "Deskriptiv statistik til beskrivelse af data\nHvordan fordeler data sig?\nHistogrammet er en frekvenstabel hvor vi opgiver frekvenser (antallet) af værdier indenfor (ens) intervaller:\n\n\n\n\n\n\n\n\n\nMeget afhængig af hvilke intervaller man vælger!"
+  },
+  {
+    "objectID": "slides/demo.html#formlerne",
+    "href": "slides/demo.html#formlerne",
+    "title": "Statistik",
+    "section": "formlerne",
+    "text": "formlerne\n\nVarians: \\(\\sigma^2 = \\frac{1}{N}\\sum_{i = 1}^{N}(x_i - \\mu)^2\\)\nSpredning: sd = \\(\\sigma = \\sqrt{\\frac{1}{N}\\sum_{i = 1}^{N}(x_i - \\mu)^2}\\)"
+  },
+  {
+    "objectID": "slides/demo.html#cfd",
+    "href": "slides/demo.html#cfd",
+    "title": "Statistik",
+    "section": "cfd",
+    "text": "cfd\nUd fra histogrammet får vi en ok ide om hvordan data fordeler sig.\nVi kan også vælge en mere finkornet visualisering, Den Empiriske Kumulative Tæthed af data. Vi har 70 observationer. Hver af dem svarer derfor til 1.4285714%\n\nDet her er vigtigt at forstå.\nHvor ligger kvartilerne?\nHvor ligger 2½ procent percentilen?"
+  },
+  {
+    "objectID": "slides/demo.html#dataslide",
+    "href": "slides/demo.html#dataslide",
+    "title": "Statistik",
+    "section": "Dataslide",
+    "text": "Dataslide\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page."
+  },
+  {
+    "objectID": "slides/demo.html#hvis-data-er-normal-fordelte",
+    "href": "slides/demo.html#hvis-data-er-normal-fordelte",
+    "title": "Statistik",
+    "section": "hvis data er normal fordelte",
+    "text": "hvis data er normal fordelte\nSå følger de en bestemt cdf. Og så ved vi at x% ligger under et bestemt sted."
+  },
+  {
+    "objectID": "slides/demo.html#men-det-er-jo-stikprøver",
+    "href": "slides/demo.html#men-det-er-jo-stikprøver",
+    "title": "Statistik",
+    "section": "Men det er jo stikprøver!",
+    "text": "Men det er jo stikprøver!\nOg det er forskelligt fra populationen. Og er vores data overhovede normalfordelte?\nHer er et tricky punkt, hvor vi skal holde tungen lige i munden.\nVi har en population af kvinder. Det kunne være alle kvinder i Danmark. Nu måler hæmoglobin på 70 af dem (den tabel har vi set før). Det er en stikprøve. Vi beregner middelværdi og standardafvigelsen.\nVi tager en anden stikprøve. Og beregner middelværdi og standardafvigelse\n(og kalder i øvrigt middelværdien for xbar, i stedet for mu. Og sd for sd i stedet for sigma). Og det gør vi mange gange.\nDet der nu viser sig er, at alle de her middelværdier. De er normalfordelte. En enkelt stikprøve behøver ikke at være det. Men middelværdierne fra alle vores mange stikprøver. De er normalfordelte.\nDet følger af “Den Centrale Grænseværdisætning”. Det er for matematisk bøvlet at gå i detaljer med. Det vigtige er, at middelværdie for en stikprøve kan vi antage kommer fra en normalfordeling."
+  },
+  {
+    "objectID": "slides/demo.html#hvad-med-den-der-normalfordeling",
+    "href": "slides/demo.html#hvad-med-den-der-normalfordeling",
+    "title": "Statistik",
+    "section": "Hvad med den der normalfordeling?",
+    "text": "Hvad med den der normalfordeling?\nVi har set hvordan vores data fordeler sig. De følger sådan nogenlunde normalfordelingen. Men hvad er den?\nHvordan ser normalfordelingen ud?\ngrafisk\ncdf\nNormalfordelingen har en helt præcis definition, hvor vi ved at 95% af observationerne ligger inden for +/- 1.96 standardafvigelser.\nSå hvis vi kan antage at vores data er normal fordelt. Så kan vi bruge middelværdi og standardafvigelse til at beregne indenfor hvilket interval en observation vil ligge."
+  },
+  {
+    "objectID": "slides/demo.html#heromkring-pnorm-etc.",
+    "href": "slides/demo.html#heromkring-pnorm-etc.",
+    "title": "Statistik",
+    "section": "Heromkring pnorm etc.",
+    "text": "Heromkring pnorm etc.\nI gamle dage var den slags noget man slog op i tabeller. Det er der ingen der gider.\n\n\n[1] -1.959964"
+  },
+  {
+    "objectID": "slides/demo.html#øvelse",
+    "href": "slides/demo.html#øvelse",
+    "title": "Statistik",
+    "section": "Øvelse",
+    "text": "Øvelse\nDette er værdier fra R. Datasæt B er den målte hastighed af biler på en landevej. Vi antager at værdierne i dataæsttet B er normalfordelte. Beregn et interval som indeholder 95% af B’s værdier\nPå en eller anden måde skal jeg have kontstrueret et datasæt der giver:\nc(mean(A), mean(B), mean(Diff)) = 68.59, 81.18, -12.59 c(sd(A), sd(B), sd(Diff)) 13.81 15.39 14.16\nDa vi kan antage normalfordeling (det kan vi ikke, men opgaven siger vi kan, så det kan vi) er 95% af værdierne indeholdt i intervallet\n\n\n[1]  51.01615 111.34385\n\n\nSå - 95% af hastighederne vi har målt på landevejen ligger mellem disse to værdier. Og! vi kan antage at den fordeling også gælder i baggrundspopulationen (der altså er alle biler, også dem vi ikke målte på)"
+  },
+  {
+    "objectID": "slides/demo.html#en-gang-til.",
+    "href": "slides/demo.html#en-gang-til.",
+    "title": "Statistik",
+    "section": "En gang til.",
+    "text": "En gang til.\nFordelingen af tilfældigt udtagne stikprøvers gennemsnit er altid normalfordelt.\nTilbage til haem tallene. Det er en tilfældig stikprøve. Det vil sige at den estimerer gennemsnittet for populationen. Men ikke præcist. Hvis vi tager en ny stikprøve, får vi et nyt gennemsnit.\nMen. De forskellige gennemsnit er normalfordelte omkring gennemsnittet af populationen.\nOGSÅ SELVOM POPULATIONEN IKKE SELV ER NORMALFORDELT!\nSE, SEM og forskellen mellem dem og sd."
+  },
+  {
+    "objectID": "slides/demo2.html#hvad-er-en-lineær-model",
+    "href": "slides/demo2.html#hvad-er-en-lineær-model",
+    "title": "Lineære modeller",
+    "section": "Hvad er en lineær model?",
+    "text": "Hvad er en lineær model?\nKært barn har mange navne.\nLineær regression er det vi foretager for at bygge en lineær model.\nOg en lineær model er noget vi kan bruge til at forklare sammenhænge mellem variable - og til at forudsige ting.\nAlle der har prøvet at tage en taxa kender konceptet. Det koster 37 kroner at sætte sig ind i taxaen. Og så koster den 12.75 kr pr kilometer.\nSå hvis man skal køre 10 kilometer, så koster det:\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\nHvad koster det hvis man skal køre 15 kilometer i stedet?\nDet er en lineær model (lidt forsimplet, vi skal også betalte for tiden, men det kommer senere).\nDet kan vi beskrive som en formel:\n\\[y = ax + b\\]\nHvor a er 12.75 kr, b er 37 kr, x er antallet af kilometre. Og y er prisen.\nHer kender vi priserne, og de står også på siden af taxaerne.\nSå rar er verden sjælden. Så det vi ofte har er prisen og antallet af km på 1000 taxature. Og nu skal vi så finde ud af hvad startprisen er, og hvad vi betaler pr km."
+  },
+  {
+    "objectID": "slides/demo2.html#hvad-er-en-lineær-model-1",
+    "href": "slides/demo2.html#hvad-er-en-lineær-model-1",
+    "title": "Lineære modeller",
+    "section": "Hvad er en lineær model",
+    "text": "Hvad er en lineær model\nKært barn har mange navne.\nI R skriver vi det som regel som y ~x der betyder at vi forsøger at forklare y som en funktion af x.\ny kan vi også kalde for udfaldet. Eller responsvariablen. Eller den afhængige variabel (fordi den afhænger af x).\nx kalder vi også for den uafhængige variabel - fordi vi i princippet kan justere helt frit på den og se hvad der så sker med y. Den kaldes også den forklarende variabel. Eller prædiktoren (fordi den kan bruges til at forudsige y). Er vi virkelig avancerede kan vi kalde den kovariaten.\nPointen er sådan set bare at vi gerne vil finde den lineære sammenhæng mellem de to variable. Vi prøver at forudsige/prædiktere.\nOg der er ikke nødvendigvis en kausal retning. Vi kunne også bruge prisen til at forklare antallet af kilometre kørt.\nDatasættet fev\nlm af den.\nGraf med punkter, ret linie og “pinde” op til linien.\nDet computeren, algoritmen, gør for os, er at justere på a og b, så fejlen bliver minimeret.\nDen del af fejlen der ikke kan minimeres kalder vi residualerne."
+  }
+]

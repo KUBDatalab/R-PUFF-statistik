@@ -1,10 +1,299 @@
 ---
-title: "webR demo"
-format: live-revealjs
+title: "Statistik"
+subtitle: "Intro" 
+format: revealjs
 engine: knitr
+filters:
+  - webr
+webr:
+  packages: ["gt", "tidyverse"]
 ---
+{{< include ../_extensions/r-wasm/live/_knitr.qmd >}}
 
-{{< include ../_extensions/r-wasm/quarto-live/_knitr.qmd >}}
+
+
+
+## Formålet med statistik
+
+”Statistics is the science of collecting, summarizing, presenting and interpreting data, and of using them to estimate the magnitude of associations and test hypotheses. It has a central role in medical investigations” Indledende afsnit i lærebogen ”Medical statistics””
+
+:::{.notes}
+Det vil sige at vi bruger statistik til at forstå, estimere og udlede 
+information, baseret på data.
+:::
+
+## Målet med statistik
+
+:::{.incremental}
+* Deskriptiv statistik
+  - Histogrammer
+  - Gennemsnit, median
+  - Spredning, percentiler, range
+* Inferens
+  - Generel information fra en stikprøve
+  - Hypotesetest og konfidensintervaller
+* Prædiktion
+  - Forudsige udfald baseret på data
+:::
+
+:::{.notes}
+Deskriptiv til at forstå data. 
+Inferens - til at drage konklusioner om en hel population ud fra en stikprøve
+Det er sådan noget som hypotesetest og konfidensintervaller.
+Forudisge fremtidige eller ukendte observation baseret på de data vi har.
+:::
+
+## Typer af data
+:::{.incremental}
+* Kvantitative data
+  - Kontinuærte eller diskrete, men numeriske
+  - Højde, alder, vægt, blodtryk
+  - Tal!
+* Kvalitative (kategoriske) data
+  - Ja/nej variable (gift/ugift, mand/kvinde, ryger/ikke-ryger)
+  - Terningekast, socialklasse, hårfarve
+:::
+
+:::{.notes}
+Kvantitative data er typisk noget vi måler. Og i princippet kan vi måle
+med arbitrær præcision.
+Kvalitative data er data der kun kan være i en kasse. Enten er man 
+gravid. Eller også er man ikke. Man er ikke en lille smule gravid. 
+Der er to typer. Nominale hvor der ikke er nogen orden. Kvinder er ikke 
+bedre end mænd.
+Ordinale data - og der er en orden. Det er (ofte) bedre at slå en sekser
+end en treer når man kaster med terninger. 
+:::
+
+## Deskriptiv statistik til beskrivelse af data
+
+:::: {.columns}
+
+::: {.column width="60%"}
+Hvordan kan vi beskrive datasættet til højre?
+
+:::{.incremental}
+* Minimum
+* Maximum
+* Gennemsnit
+* Spredning
+* Normalområde
+* Histogram
+:::
+
+:::
+
+::: {.column width="40%"}
+```{r echo = FALSE}
+library(gt)
+library(tidyverse)
+haem_data <- c(10.2, 13.3, 10.6, 12.1,
+9.3,12.0,13.4,11.9,11.2,14.6, 13.7,
+12.9,10.5,12.9,13.5,12.9,12.1,11.4,15.1,11.1, 10.4,12.1,13.7,11.4 ,14.6,11.1,10.9,12.5,10.7,13.5, 14.9,9.4,11.8,12.7,11.2,8.8,11.3,13.0,12.9,10.9, 11.5,13.2,14.1,10.6,11.7,10.2,14.7, 11.6,13.4,13.1, 12.0,10.8,10.3,11.4,10.9,11.6,10.8,13.1,12.3,11.8, 11.0,11.7,13.6,11.9,10.4,12.5,13.3,9.7,11.0,12.2) 
+haem_data |> 
+  matrix(ncol = 7, byrow =FALSE) |>  data.frame() |> 
+  gt() |> 
+  tab_options(column_labels.hidden = TRUE) |> 
+  tab_footnote("Haemoglobin levels in g/100 ml for 70 women")
+```
+:::
+
+::::
+
+
+
+## Deskriptiv statistik til beskrivelse af data {visibility="true"}
+
+Placering. Hvor ca. ligger data?
+
+* Middelværdi:  $\bar{x} = \frac{1}{n}\big(\sum_{i=1}^{n}x_i\big) = \frac{x_1 + x_2 + ... + x_n}{n}$
+* Median: Den midterste værdi - når alle værdier er stillet op fra mindste til største
+
+Det beregner vi "let" i R:
+
+```{webr}
+#| context: setup
+#| autorun: true
+haem_data <- c(10.2, 13.3, 10.6, 12.1,
+9.3,12.0,13.4,11.9,11.2,14.6, 13.7,
+12.9,10.5,12.9,13.5,12.9,12.1,11.4,15.1,11.1, 10.4,12.1,13.7,11.4 ,14.6,11.1,10.9,12.5,10.7,13.5, 14.9,9.4,11.8,12.7,11.2,8.8,11.3,13.0,12.9,10.9, 11.5,13.2,14.1,10.6,11.7,10.2,14.7, 11.6,13.4,13.1, 12.0,10.8,10.3,11.4,10.9,11.6,10.8,13.1,12.3,11.8, 11.0,11.7,13.6,11.9,10.4,12.5,13.3,9.7,11.0,12.2) 
+```
+
+```{webr}
+mean(haem_data)
+median(haem_data)
+```
+
+
+## Deskriptiv statistik til beskrivelse af data
+
+Variationen - hvordan er data spredt?
+
+Hvordan kan vi beskrive det?
+
+
+Hvor meget afviger de enkelte observation fra gennemsnittet
+
+Intuitivt kan vi se at ikke alle værdierne ligger lige tæt på gennemsnittet. Så. Vi kan beregne hvor 
+langt hver værdi ligger fra gennemsnittet. Hvis vi bare lægger de tal sammen, så bliver størrelsen
+afhængig af hvor mange data punkter vi har. s Vi kan have 10000 punkter der alle sammen ligger utroligt tæt
+på gennemsnittet. Eller vi kan have 10 punkter der alle ligger meget langt fra gennemsnittet. Vi har brug for 
+et gennemsnit. Problemet er, at gennemsnittet af forskellen for de enkelte punkter fra gennemsnittet, vil give 0.
+I stedet tager vi kvadratet på alle forskellene - og beregner gennemsnittet af dem. Det betyder også at punkter der
+ligger langt fra gennemsnittet "fylder" mere end punkter der ligger tæt på gennemsnittet. 
+
+Det kalder vi for variansen.
+
+Der er et problem med den. Enheden. Enheden af vores hæmoglobin målinger bliver
+
+$g^2/ml^2$
+Den giver ingen mening. I stedet ser vi på standardafvigelsen, hvor vi tager kvadratroden på variansen.
+
+## formlerne
+
+* Varians: $\sigma^2 = \frac{1}{N}\sum_{i = 1}^{N}(x_i - \mu)^2$
+* Spredning: sd = $\sigma = \sqrt{\frac{1}{N}\sum_{i = 1}^{N}(x_i - \mu)^2}$
+
+
+## Deskriptiv statistik til beskrivelse af data
+
+Hvordan fordeler data sig?
+
+Histogrammet er en frekvenstabel hvor vi opgiver frekvenser (antallet) af 
+værdier indenfor (ens) intervaller:
+
+```{r}
+tibble(x = haem_data) |> 
+  ggplot(aes(x)) +
+  geom_histogram()
+```
+
+Meget afhængig af hvilke intervaller man vælger!
+
+```{r}
+tibble(x = haem_data) |> 
+  ggplot(aes(x)) +
+  geom_histogram(breaks= 8:16)
+
+```
+
+
+
+## cfd
+
+Ud fra histogrammet får vi en ok ide om hvordan data fordeler sig.
+
+Vi kan også vælge en mere finkornet visualisering, Den Empiriske Kumulative 
+Tæthed af data. Vi har 70 observationer. Hver af dem svarer derfor til
+`r 100/70`%
+
+```{r}
+tibble(x = haem_data) |> 
+  ggplot(aes(x)) + 
+  stat_ecdf(geom = "step")
+```
+
+Det her er vigtigt at forstå. 
+
+Hvor ligger kvartilerne?
+
+Hvor ligger 2½ procent percentilen?
+
+## Hvad med den der normalfordeling?
+
+Vi har set hvordan vores data fordeler sig. De følger sådan nogenlunde
+normalfordelingen. Men hvad er den?
+
+Hvordan ser normalfordelingen ud?
+
+grafisk
+
+cdf
+
+Normalfordelingen har en helt præcis definition, hvor vi ved at 
+95% af observationerne ligger inden for +/- 1.96 standardafvigelser.
+
+Så hvis vi kan antage at vores data er normal fordelt. Så kan vi bruge
+middelværdi og standardafvigelse til at beregne indenfor hvilket interval
+en observation vil ligge.
+
+
+
+## Men det er jo stikprøver!
+
+Og det er forskelligt fra populationen. Og er vores data overhovede
+normalfordelte?
+
+Her er et tricky punkt, hvor vi skal holde tungen lige i munden.
+
+Vi har en population af kvinder. Det kunne være alle kvinder i Danmark.
+Nu måler hæmoglobin på 70 af dem (den tabel har vi set før). 
+Det er en stikprøve. Vi beregner middelværdi og standardafvigelsen.
+
+Vi tager en anden stikprøve. Og beregner middelværdi og standardafvigelse
+
+(og kalder i øvrigt middelværdien for xbar, i stedet for mu. Og sd for sd
+i stedet for sigma).
+Og det gør vi _mange_ gange.
+
+Det der nu viser sig er, at alle de her middelværdier. De er normalfordelte.
+En enkelt stikprøve behøver ikke at være det. Men middelværdierne fra
+alle vores mange stikprøver. De er normalfordelte.
+
+Det følger af "Den Centrale Grænseværdisætning". Det er for matematisk
+bøvlet at gå i detaljer med. Det vigtige er, at middelværdie for en 
+stikprøve kan vi antage kommer fra en normalfordeling.
+
+
+## Heromkring pnorm etc.
+
+I gamle dage var den slags noget man slog op i tabeller. Det er der
+ingen der gider.
+
+```{r}
+qnorm(0.025)
+```
+
+## Øvelse
+
+Dette er værdier fra R. Datasæt B er den målte hastighed af biler på
+en landevej. Vi antager at værdierne i dataæsttet B er normalfordelte.
+Beregn et interval som indeholder 95% af B's værdier
+
+På en eller anden måde skal jeg have kontstrueret et datasæt der giver:
+
+c(mean(A), mean(B), mean(Diff)) = 68.59, 81.18, -12.59
+c(sd(A), sd(B), sd(Diff))
+13.81 15.39 14.16
+
+Da vi kan antage normalfordeling (det kan vi ikke, men opgaven siger vi
+kan, så det kan vi) er 95% af værdierne indeholdt i intervallet
+
+
+```{r}
+81.18 + c(-1,1)*qnorm(0.975)*15.39
+```
+
+Så - 95% af hastighederne vi har målt på landevejen ligger mellem disse
+to værdier. Og! vi kan antage at den fordeling også gælder i baggrundspopulationen
+(der altså er alle biler, også dem vi ikke målte på)
+
+## En gang til.
+
+Fordelingen af tilfældigt udtagne stikprøvers gennemsnit er altid 
+normalfordelt. 
+
+Tilbage til haem tallene. Det er en tilfældig stikprøve. Det vil sige at 
+den estimerer gennemsnittet for populationen. Men ikke præcist. Hvis vi
+tager en ny stikprøve, får vi et nyt gennemsnit. 
+
+Men. De forskellige gennemsnit er normalfordelte omkring gennemsnittet af
+populationen.
+
+OGSÅ SELVOM POPULATIONEN IKKE SELV ER NORMALFORDELT!
+
+
+SE, SEM og forskellen mellem dem og sd.
 
 ## webR i browseren
 ```{webr}

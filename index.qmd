@@ -1,0 +1,9 @@
+---
+title: "Untitled"
+format: html
+---
+
+# Præsentationer
+
+- [Demo](slides/demo.qmd)
+- [Demo 2](slides/demo2.qmd)

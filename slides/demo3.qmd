@@ -1,0 +1,53 @@
+---
+title: "Statistik"
+subtitle: "3" 
+format: revealjs
+engine: knitr
+filters:
+  - webr
+webr:
+  packages: ["gt", "tidyverse"]
+---
+{{< include ../_extensions/r-wasm/live/_knitr.qmd >}}
+
+
+Multipel lineær regression
+
+Tilbage til taxa eksemplet. Jeg postulerede at startprisen var
+og km prisen. I virkeligheden betaler vi også for minutter.
+
+Og formlen er derfor:
+
+$$pris = a*km + b*minutter + c$$
+
+Så nu må vi helelre blive lidt mere generelle.
+Er der kun en forklarende variabel kan vi skrive:
+$$y_i = \beta_0 + \beta_1x_i + \epsilon_i$$
+
+Det der i? Vi har en taxatur, det er nummer i. og vi kørte x_i kilometre.
+Når vi bruger beta 0 og 1 til at estimere hvad prisen skulle være, rammer vi
+ikke helt prisen for tur nr i (y_i), så vi lægger en epsilon_i til,
+der er fejlen. Altså det vi rammer ved siden af.
+
+Og er der flere forklarende variable:
+
+$$y_i = \beta_0 + \sum_{k=1}^{K} \beta_kx_{ki} + e_i$$
+
+Det er "bare" en fancy måde at sige at nu kan vi have op til K forskellige
+forklarende variable. 
+
+Det skriver vi lige ud for taxa eksemplet:
+
+$$Pris_{tur1} = \beta_0 + \beta_1*tur1_{km} + \beta_2*tur1_{minutter} + fejl_i$$
+
+## Når X ændrer sig emd 1 så ændrer y sig med
+
+I den simple linieære model, kunne vi let fortolke hvad $\beta$ betød,
+nemlig ændringen i pris for hver ekstra km vi kørte. 
+
+Man er fristet til at tro at det nu bliver meget mere kompliceret. Men 
+det er næsten lige så simpelt. 
+Men vi skal holde tunge lige i munden alligevel. Hvis vi kører en kilometer
+mere, stiger prisen med $\beta_1$ _hvis_ vi ikke ændrer på hvor mange 
+minutter vi kørte. Og hvis turen tager et minut længere, så stiger 
+prisen med $\beta_2$ _hvis_ vi ikke ændrer på turens længde.

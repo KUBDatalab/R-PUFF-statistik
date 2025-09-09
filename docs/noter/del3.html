@@ -1,20 +1,20 @@
 <!DOCTYPE html>
 <html lang="en"><head>
-<script src="intro_files/libs/clipboard/clipboard.min.js"></script>
-<script src="intro_files/libs/quarto-html/tabby.min.js"></script>
-<script src="intro_files/libs/quarto-html/popper.min.js"></script>
-<script src="intro_files/libs/quarto-html/tippy.umd.min.js"></script>
-<link href="intro_files/libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="intro_files/libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="intro_files/libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-html/tabby.min.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.7.32">
 
-  <title>Statistik intro</title>
+  <title>Slides + webR – Untitled</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
-  <link rel="stylesheet" href="intro_files/libs/revealjs/dist/reset.css">
-  <link rel="stylesheet" href="intro_files/libs/revealjs/dist/reveal.css">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/reveal.css">
   <style>
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
@@ -28,11 +28,11 @@
       vertical-align: middle;
     }
   </style>
-  <link rel="stylesheet" href="intro_files/libs/revealjs/dist/theme/quarto-f563837468303362081e247dddd440d0.css">
-  <link href="intro_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
-  <link href="intro_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
-  <link href="intro_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
-  <link href="intro_files/libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-f563837468303362081e247dddd440d0.css">
+  <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
   <style type="text/css">
     .reveal div.sourceCode {
       margin: 0;
@@ -126,46 +126,142 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Statistik intro</h1>
+  <h1 class="title">Untitled</h1>
 
 <div class="quarto-title-authors">
 </div>
 
 </section>
-<section id="statistik-intro" class="title-slide slide level1 center">
-<h1>statistik intro</h1>
-<p>for puff</p>
-</section>
-
 <section>
-<section id="formålet-med-statistik" class="title-slide slide level1 center">
-<h1>Formålet med statistik</h1>
-<p>”Statistics is the science of collecting, summarizing, presenting and interpreting data, and of using them to estimate the magnitude of associations and test hypotheses. It has a central role in medical investigations” Indledende afsnit i lærebogen ”Medical statistics””</p>
-<p>Dvs  Statistik bruges til at forstå, estimere og udlede information baseret på data</p>
-<p>Deskriptiv statistik for at forstå data Histogrammer Gennemsnit, spredning (sd), percentiler, range Estimater og usikkerhed på estimaterne</p>
-<p>Statistiske inferens for at estimere data Når man ønsker at udlede generel information fra en stikprøve</p>
-<p>Prædiktion for at udlede en uafhængig variabels indflydelse på en afhængig variabel eks. højde og lungefunktion Man kan prædiktere værdier baseret på sammenhænge mellem data eks. Ved lineær, multipel og logaritimisk regression.</p>
+<section id="modul-3-multipel-lineær-regression" class="title-slide slide level1 center">
+<h1>modul 3 Multipel lineær regression</h1>
+<p>Udvidelse af den simple lineære model</p>
 </section>
-<section id="typer-af-data" class="slide level2">
-<h2>Typer af data</h2>
-<ul>
-<li>Kvantitative (kontinuerte, diskret, numerisk) data</li>
-<li>højde, alder, vægt, blodtryk</li>
-<li>Groft sagt: data der udtrykkes som sekvenser af tal</li>
-<li>Kvalitative (kategoriske) data
-<ul>
-<li>Ja/nej variable (gift/ugift, mand/kvinde, ryger/ikke-ryger)</li>
-<li>Terningekast, socialklasse, hårfarve</li>
-</ul></li>
-</ul>
+<section id="repetition-fra-sidst-igen" class="slide level2">
+<h2>Repetition fra sidst (Igen)</h2>
+<p>Hvordan definerer vi spredning (sd)? Svar: Et mål for fordelingen af tallene i et datasæt. En stor spredning målt som en høj standard deviation ses ved tal i datasæt med stor variation omkring middelværdien (u) omvendt for datasæt med lille variation.</p>
+<p>Hvordan fortolkes et referenceinterval? Svar: Referenceintervallet indeholder X% af fordelingen af datapunkter i baggrundspopulationen. Eks. inkluderer u +/- 1.96*sd 95% af fordelingen af datapunkter i baggrundspopulationen.</p>
+<p>Hvordan definerer vi standard error of the mean (SEM)? Svar: SEM er spredningen på tilfældigt udtagne stikprøvegennemsnit udregnet ud fra stikprøvestørrelse (n) og spredningen i baggrundspopulationens værdier.</p>
+<p>Hvordan fortolkes et konfidens interval? Svar: Konfidensintervallet indeholder middelværdien i baggrundspopulationen med X sandsynlighed.&nbsp; Eks. inkluderer u +/- 1.96* SEM den egentlige u i baggrundspopulationen med 95% sandsynlighed.</p>
 </section>
-<section id="deskriptiv-statistik-tila-t-forstå-data" class="slide level2">
-<h2>Deskriptiv statistik tila t forstå data</h2>
-<p>Nedenstående er hæmoglobin-niveauer fra 70 kvinder. Hvordan kan vi forstå data bedre? Kom med bud!</p>
-<p>tabel med hæmoglobin</p>
-<p>Histogram - frekvenstbel hvor der opgives frekvenser for af værdier indenfor ens intervaller og så et histogram</p>
-<p>Herfra kan man aflæse range forstå om data er normalfodelte</p>
-<p>tre små grafer med normalt og skævt fordelte data</p>
+<section id="kommandoer-i-r" class="slide level2">
+<h2>Kommandoer i R</h2>
+<p>Forskellige regressionsanalyser i R har forskellige kommandoer. De vigtigste er:</p>
+<p>Lineær regression (Modul 2)  lm(y ~ x)</p>
+<p>Multipel lineær regression (Modul 3)  lm(y ~ x + z), I multiple lineær regression kan man inkludere mange flere end blot to forklarende variable. Idag!</p>
+<p>Logistisk regression (Modul 4)  glm(lbwt ~ factor(smoke) + age, family=binomial) Vi vender tilbage til denne!</p>
+</section>
+<section id="std.-error-t--og-p-værdi-i-lineær-regression" class="slide level2">
+<h2>Std. Error, t- og p-værdi i lineær regression</h2>
+<p>Estimatet har altså en usikkerhed svarende til Std. Error. Dermed kan man lave en one sample t-test for hvor sandsynligt der er at finde denne stikprøve hvis hældningskoefficienten i baggrundsbefolkningen i virkeligheden er 0 </p>
+<p>T-test = (Estimate -0)/Std. Error</p>
+<p>Ovenstående giver t-værdien, og p-værdien er regnet ud fra denne! Udregning: (0.139/0.00408) =</p>
+<p>Dvs meget usandsynligt!</p>
+<p><img data-src="images/paste-22.png"></p>
+<p><img data-src="images/paste-23.png"></p>
+</section>
+<section id="eksamensopgave" class="slide level2">
+<h2>Eksamensopgave</h2>
+<p>Her ser vi på multipel lineær regression, da vi har flere variable. OBS factor() betyder at variablen er kategorisk dvs. enten 0 eller 1  ikke vigtig for vores udregninger i denne opgave!</p>
+<p>Hvordan udregner vi de manglende tal, så vi kan konkludere?</p>
+<p><img data-src="images/paste-24.png"></p>
+<p><img data-src="images/paste-25.png"></p>
+</section>
+<section id="multipel-lineær-regression" class="slide level2">
+<h2>Multipel lineær regression</h2>
+<p>Brugbart når man ønsker at undersøge flere variables (forklarende) betydning for en responsvariabel. Giver ofte en større akkuratesse ved prædiktion. Kan se på den individuelle effekt af variable dvs. korrigeret for andre variable. Nedenfor ses multipel lineær regression med responsvariabel FEV1 og kontinuert forklarende variable Age og Height.</p>
+<p><img data-src="images/paste-26.png"></p>
+<p><img data-src="images/paste-27.png"></p>
+<p>Tolkning: y= responsvariabel (FEV1) B0 = interceptet, dvs. FEV1 når alder og højde er 0. B1 = koefficienten for variabel 1 B2 = koefficienten for variabel 2</p>
+<p>Std.error = angiver SE dvs. den usikkerhed estimaterne er givet ved, kan bruges til konfidensinterval og t-værdi.</p>
+<p>T = Teststørrelse for 0-hypotesen at koefficienten</p>
+<p>P= p-værdi for teststørrelsen</p>
+</section>
+<section id="multipel-lineær-regression-opgave" class="slide level2">
+<h2>Multipel lineær regression opgave</h2>
+<p>En vigtig pointe er at multipel lineær regression viser variablernes effekt med de øvrige variable fastholdt. Dvs vi kan se på de individuelle effekter af hver variabel  muliggør afsløring af confounding! Man kan eks tolke Age´s effekt som: FEV1 stiger gennemsnitligt med 0,0946 når højde øges med 1 med køn og alder fastholdt.</p>
+<p>Opgave 1: Fortolk nedenstående estimater (coefficients)? Er de signifikante? Opgave 2: Hvilken type variabel er variablen ”Male” og hvad siger den om piger og drenges lungefunktion? Opgave 3: Giv et 95% - konfidensinterval for højdes regressionkoefficient?</p>
+<p>1=JA! (P-værdi er &lt; 0.05)</p>
+<p>2=Kategorisk, mænd har estimeret 0.12 bedre lungefunktion end en kvinde med samme alder og højde dvs fastholdt for disse</p>
+<p>3= estimat +/- 1.96* std error</p>
+
+<img data-src="images/paste-28.png" class="r-stretch"></section>
+<section id="eksamensopgave-fortsat" class="slide level2">
+<h2>Eksamensopgave fortsat</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/paste-29.png"></p>
+<figcaption><img data-src="images/paste-30.png"></figcaption>
+</figure>
+</div>
+<p><img data-src="images/paste-31.png"></p>
+<p><img data-src="images/paste-32.png"></p>
+<p><img data-src="images/paste-33.png"></p>
+<p>Dvs. en 2- sample T-test!</p>
+</section>
+<section id="eksamensopgave-fortsat-1" class="slide level2">
+<h2>Eksamensopgave fortsat</h2>
+<p><img data-src="images/paste-34.png"></p>
+<p><img data-src="images/paste-35.png"></p>
+<p><img data-src="images/paste-36.png"></p>
+<p><img data-src="images/paste-37.png"></p>
+<p><img data-src="images/paste-38.png"></p>
+</section>
+<section id="prædiktion-ud-fra-modeller" class="slide level2">
+<h2>Prædiktion ud fra modeller</h2>
+<p>Formålet med statistiske modeller er at kunne forudsige (prædiktere, predict). Husk at vi anser vores datasæt som en stikprøve ud af hele populationen. Hvis stikprøven er repræsentativ for populationen (den deskriptive statistik), vil vi kunne forudsige noget om resten af populationen på baggrund af modellen, hvis modellen er god.</p>
+<p>Vi tager vores model igen: Ud fra denne har vi ligningen y=-5.86 + 0.139x</p>
+<p>Vi kan bruge denne til at prædiktere FEV ved en given højde eksempelvis højde 2 meter dvs 200cm </p>
+<p>-5.86 + 0.139*200 = 22.1 prædikteret</p>
+<p>OBS resultat giver ikke mening fordi modellen er i tommer, men udregningen er korrekt</p>
+
+<img data-src="images/paste-39.png" class="r-stretch"></section>
+<section id="eksamensopgave-pædiktion" class="slide level2">
+<h2>Eksamensopgave pædiktion</h2>
+<p>Du får nedenstående model. Modellen er multipel lineær regression, derfor introduceres 2 nye regler til prædiktion: 1. Hvis variablen er factor() indikerer dette eks. om patienten har fået halothane eller ej, dvs. Den er kategorisk og indgår i prædiktion som enten 1 eller 0 gange estimatet. 2. I multipel lineær regression adderes hvert led og dens værdi på i regnestykket, dvs. intercept + leg<em>0.79 + factor(drug)</em> 7.41 = prædikteret værdi</p>
+<p><img data-src="images/paste-40.png"></p>
+<p><img data-src="images/paste-41.png"></p>
+<p><img data-src="images/paste-42.png"></p>
+</section>
+<section id="kategoriske-variable" class="slide level2">
+<h2>Kategoriske variable</h2>
+<p>Vi har primært kigget på kontinuerte variable indtil videre, men i mange situationer har vi kun kategoriske variable til rådighed! Eksempelvis når vi kigger på sandsynligheder for sygdom i 2 grupper:</p>
+<p>Antag at du har to grupper som nedenfor, hvordan afgør vi om der er større sandsynlighed for KOL som ryger vs.&nbsp;Ikke-ryger?</p>
+<p>Heldigvis er det meget nemt! Vi udregner sandsynligheden i hver gruppe:</p>
+<p>Rygere = syge/totale = 35/135 = 0.259 = 25,9% Ikke-rygere = syge/ totale = 38/188 = 0.202 = 20,2%</p>
+<p>Estimaterne er jo stikprøver, så hvordan udregner vi SE for sandsynlighederne?</p>
+<p>S.E. </p>
+<p>Dvs. vi har nu sandsynligheder med en usikkerhed SE  Vi kan lave alle de T-test og konfidensinterval vi kender! Eks </p>
+<p>Eks. Sammenligne konfidensintervaller: SE rygere: √((0.259∗(1−0.259))/)135= 0.0377 SE ikke-rygere: √((0.202∗(1−0.202))/) 188= 0.029</p>
+<p>Eks kan vi lave konfidensinterval og se om de overlapper:</p>
+<p>Rygere = 0.259 +/- 1.96<em>0.0377 = (0.185,0.332) Ikke-rygere = 0.202 +/- 1.96</em>0.029 = (0.145, 0.256)</p>
+<p>Overlapper  Vi kan ikke forkaste nul-hypotesen! Vi kan også udregne SE for differensen og lave 2-sample t-test!</p>
+
+<img data-src="images/paste-43.png" class="r-stretch"></section>
+<section id="relativ-risiko-rr" class="slide level2">
+<h2>Relativ risiko (RR)</h2>
+<p>Relativ risiko er en anden måde at udtrykke 2 gruppers sandsynligheder i forhold til hinanden dvs om de er signifikant forskellige. Beregningen er lidt mere kompliceret, men fortolkningen er heldigvis nem!</p>
+<p>Vi tager KOL værdierne igen:</p>
+<p>Rygere = syge/totale = 35/135 = 0.259 = 25,9% Ikke-rygere = syge/ totale = 38/188 = 0.202 = 20,2%</p>
+<p>RR= 0.259/0.202= 1.2821</p>
+<p>Log(SE) udregnes ved formlen</p>
+<p>DVS  log(SE)√((1/35)−(1/135)+(1/38)−(1/188))= 0.2</p>
+<p>Vi udregner nu log(1.2821) så vi kan exp hele udtrykket!</p>
+<p>log(1.28)=0.248</p>
+<p>Nu udregner vi konfidensintervallet og konkluderer:</p>
+<p>Exp(0.248 +/- 1.96*0.2) = (0.866,1.896) Bemærk  da 1 er indeholdt kan vi ikke på et 95% signifikansniveau afvise at den sande relative risiko er 1 og dermed ens mellem rygere og ikke-rygere!  Ingen signifikant forskel!</p>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/paste-44.png"></p>
+<figcaption><img data-src="images/paste-45.png"></figcaption>
+</figure>
+</div>
+</section>
+<section id="eksamensopgave-1" class="slide level2">
+<h2>Eksamensopgave</h2>
+<p><img data-src="images/paste-46.png"></p>
+<p><img data-src="images/paste-47.png"></p>
+
 
 </section></section>
     </div>
@@ -176,19 +272,19 @@
 </div></div>
 
   <script>window.backupDefine = window.define; window.define = undefined;</script>
-  <script src="intro_files/libs/revealjs/dist/reveal.js"></script>
+  <script src="../site_libs/revealjs/dist/reveal.js"></script>
   <!-- reveal.js plugins -->
-  <script src="intro_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
-  <script src="intro_files/libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
-  <script src="intro_files/libs/revealjs/plugin/reveal-menu/menu.js"></script>
-  <script src="intro_files/libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
-  <script src="intro_files/libs/revealjs/plugin/quarto-support/support.js"></script>
+  <script src="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="../site_libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="../site_libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="../site_libs/revealjs/plugin/quarto-support/support.js"></script>
   
 
-  <script src="intro_files/libs/revealjs/plugin/notes/notes.js"></script>
-  <script src="intro_files/libs/revealjs/plugin/search/search.js"></script>
-  <script src="intro_files/libs/revealjs/plugin/zoom/zoom.js"></script>
-  <script src="intro_files/libs/revealjs/plugin/math/math.js"></script>
+  <script src="../site_libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="../site_libs/revealjs/plugin/search/search.js"></script>
+  <script src="../site_libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="../site_libs/revealjs/plugin/math/math.js"></script>
   <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
 
   <script>
