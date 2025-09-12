@@ -224,17 +224,28 @@ Vis gerne data i kodeblokken.
 Hvad hvis der er et lige antal observationer? Så tager vi gennemsnittet af de to midterste
 ::::
 
-## Typetal
+## Modus
 
-Ved kategoriske data giver det ikke mening at tale om gennemsnit.
+Hvad er gennemsnittet af hårfarve?
 
-Istedet: Typetallet (engelsk "mode").
+Kategoriske værdier kan vi ikke beregne middelværdier for. Eller medianer
+
+Istedet: Modus (engelsk "mode"). Ofte "typetal"
 
 Den hyppigst forekommende observation (der kan være mere end en, men så er de lige store)
 
 Ikke følsom overfor outliers. Særligt nyttig ved kvalitative data.
 
 Ikke en indbygget funktion i R!
+
+## Ingen modus i R? 
+No problem
+
+Modus for `Species` i datasættet `iris`:
+```{webr}
+head(penguins)
+table(penguins$species) |> sort(decreasing = TRUE) |>
+```
 
 ## Deskriptiv statistik til beskrivelse af data
 
