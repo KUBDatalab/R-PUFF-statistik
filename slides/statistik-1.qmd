@@ -108,8 +108,8 @@ Hvis man vil kunne huske hvad non-parametriske tests er - så skal man kunne hus
 
 ## Typer af data - kategoriske
 
-Data falder i en kategori. Eller i en anden. Ikke i begge.
-
+Data falder i _en_ kategori. Eller i _en_ anden. _Ikke_ i begge.
+Vi kalder dem ofte kvalitative.
 :::{.incremental}
 * Nominale data
   - Der er ingen rækkefølge - ingen er "bedre" end andre
