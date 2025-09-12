@@ -67,14 +67,27 @@ Forudisge fremtidige eller ukendte observation baseret på de data vi har.
 
 Vi ønsker ofte at kunne sige noget om populationen, baseret på stikprøven. Det kalder vi inferens.
 
-†) Alle børn i Danmark. Alle heste i Danmark. Koncentrationen af Magnesium i drikkevandet
+†) Alle børn i Danmark. Alle heste i Danmark. Koncentrationen af Magnesium i drikkevandet - over alt!
 ‡) Danske registerdata kan være undtagelsen
+
+
+## Fordelinger
+
+Der er i populationen aldrig en enkelt værdi. Der er altid flere.
+
+Når vitager en stikprøve får vi aldrig en enkelt værdi. Der er altid flere.
+
+Eller - der er en fordeling af værdier. 
+
+Så vi har en fordeling af værdier i populationen - det er den "sande" fordeling.
+
+Og vi har en fordeling af værdier i stikprøven - det er fordelingen i vores _stikprøve_
 
 ## Parametre vs statistik
 
-En parameter er et tal der beskriver en population.
+Parametre beskriver fordelingen i _populationen_.
 
-Dette er et teoretisk tal - vi kan ikke måle det. Det eksisterer, men vi kender det ikke.
+(delvist) Teoretiske tal - de eksisterer, men vi kan ikke måle dem.
 
 Den sande værdi af den gennemsnitlige højde af mænd i Danmark findes. Men vi ved ikke hvad
 den er, for vi kan ikke måle højden af alle mænd. Det sande gennemsnit kalder vi $\mu$.
@@ -86,6 +99,8 @@ Statistikken derimod er det vi ved hvad er. Det er gennemsnitshøjden af alle m�
 Den kalder vi $\hbar{X}$. Variansen kan vi også beregne. Den kalder vi $s^2$
 
 Bemærk forskellen i notationen.
+
+## Fra statistik til parametre
 
 Vi kan bruge $\hbar{X}$ og $s^2$ til at estimere de ukendte parametre: $\mu$ og $\sigma^2$
 
