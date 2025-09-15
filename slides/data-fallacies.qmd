@@ -1,0 +1,206 @@
+---
+title: "Statistik"
+subtitle: "data fallacies" 
+format: revealjs
+engine: knitr
+filters:
+  - webr
+webr:
+  packages: ["gt", "tidyverse"]
+---
+{{< include ../_extensions/r-wasm/live/_knitr.qmd >}}
+
+
+## Hyppige fejl
+
+
+Ja, det er fejl I kommer til at begå. For de bliver begået så
+ofte, at de har fået navne.
+
+## Pas på summary statistics.
+
+Summary statistics kan snyde og missse store forskelle i data.
+Betragt disse data:
+```{r}
+library(tidyverse)
+anscombe |> 
+    pivot_longer(x1:y4, names_to = "variabel", values_to = "value") |> 
+    group_by(variabel) |> 
+    summarise(middel = mean(value),
+              median = median(value),
+              stdafv = sd (value),
+              iqr = IQR(value))
+
+```
+
+De ser ret ens ud.
+
+Korrelationen mellem parrene er også ret ens:
+der er noget med x4 og y4. Men ellers - ret ens.
+
+```{r}
+x <- anscombe[,1:4]
+y <- anscombe[,5:8]
+cor(x,y)
+```
+
+Er de nu også det?
+Ikke hvis vi plotter dem:
+```{r}
+anscombe |> 
+    pivot_longer(everything(), names_to = "par", values_to = "value") |> 
+    separate_wider_position(par, c(xy=1, gruppe = 1)) |> 
+    pivot_wider(names_from = xy, values_from = value)  |> 
+    unnest(cols = c(x,y)) |> 
+    ggplot(aes(x,y)) + 
+    geom_point() +
+    facet_wrap(~gruppe)
+
+```
+
+## Kirsebærplukning
+
+Eller på engelsk "Cherry picking"
+
+Når vi kun udvælger de data der passer med det vi gerne vil vise...
+
+
+```{r}
+data(co2)  # indbygget
+start_yr  <- start(co2)[1]
+start_mon <- start(co2)[2]
+n         <- length(co2)
+
+dates <- seq.Date(
+  from = as.Date(sprintf("%d-%02d-01", start_yr, start_mon)),
+  by   = "month",
+  length.out = n
+)
+
+df <- data.frame(date = dates, co2 = as.numeric(co2))
+
+cherry_start <- as.Date("1973-01-01")
+cherry_end   <- as.Date("1975-12-01")
+
+df$cherry <- ifelse(df$date >= cherry_start & df$date <= cherry_end, "Cherry", "Hele serien")
+
+df  |> filter(cherry == "Cherry") |> 
+ggplot(aes(x = date, y = co2)) +
+  geom_line(size = 0.8) +
+  scale_color_manual(values = c("Hele serien" = "grey40", "Cherry" = "red")) +
+  geom_smooth(method = "lm", se = FALSE, aes(color = cherry), size = 1) +
+  labs(title = "Cherry picking: Mauna Loa CO₂ (1959–1997)",
+       subtitle = "Cherry-picked vindue (1973–1975)",
+       x = "År", y = "CO₂ (ppm)", color = "Datasæt") +
+  theme_minimal(base_size = 13)
+```
+
+
+```{r}
+df  |>
+ggplot(aes(x = date, y = co2)) +
+  geom_line(size = 0.8, aes(color = cherry)) +
+  scale_color_manual(values = c("Hele serien" = "grey40", "Cherry" = "red")) +
+  geom_smooth(method = "lm", se = FALSE, aes(color = cherry), size = 1) +
+  labs(title = "Cherry picking: Mauna Loa CO₂",
+       subtitle = "Hele datasættet",
+       x = "År", y = "CO₂ (ppm)", color = "Datasæt") +
+  theme_minimal(base_size = 13)
+```
+
+## p-fishing
+
+https://xkcd.com/882/
+
+vores p-værdi på 5% - det fortæller os at der er 5% risiko for.
+
+Matematikken er ikke helt sådan, men intuitivt. Hvis vi tester for 20
+forskellige ting, så vil en af dem - helt tilfældigt - have en p-værdi vi 
+kan lide.
+
+## Sampling bias
+
+Når vi konkluderer ud fra et datasæt, der ikke er repræsentativt for 
+den population vi ønsker at undersøge.
+
+Valgprognoser der udelukkende baserer sig på journalister, vil systematisk
+forudsige flertal til rød blok.
+
+### Præference forfalskning
+
+Det fænomen at folk svarer det de tror eller mener er det ønskede. 
+
+"Hvor mange genstande drikker du om ugen?"
+
+Hvor ærligt svarer folk?
+
+Hvis vi et øjeblik glemmer at de tilstedeværende nok ikke 
+er specielt repræsentative for hele befolkningen (sampling bias). 
+
+```{webr}
+# Dansk Folkepartis vælgertilslutning i meningsmåling 22. august 2025 var 8.1%
+andel_df <- 0.081
+# juster så n er antallet tilstede: 
+n <- 30 
+
+# Antal DF-vælgere i lokalet:
+n*andel_df
+```
+
+Hvem af jer er det?
+
+## Overlevelsesbias 
+
+Når vi drager konklusioner på basis af et ukomplet datasæt, der består af 
+de data der har overlevet et eller andet udvælgelseskriterium.
+Dette er klassikeren. 
+
+Jagerfly under 2. verdenskrig der overlevede turen over Tyskland havde skudhuller.
+Her er en visualisering af de skudhuller man observerede (for flere fly)
+https://en.wikipedia.org/wiki/Survivorship_bias#/media/File:Survivorship-bias.svg
+
+Hvilke dele af flyet skal vi tilfører mere armering?
+
+De dele hvor der ikke er skudhuller i de fly der vender tilbage. For det kunne
+de jo overleve. De fly der ikke når tilbage - de er formentlig blevet ramt 
+andre steder.
+
+## Overfitting
+
+Når vi skaber en model der er skræddersyet de data vi har - og ikke
+er repræsentativ for en generel tendens.
+
+## Publicerings bias
+
+Du har to resultater fra din undersøgelse.
+
+Interessante resultater har større chance for at blive publiceret. Vi
+hører ikke om de negative resultater (altså dem hvor der ikke er en
+sammenhæng)
+
+## korrelation er ikke kausalitet
+
+spurious correlations
+
+https://www.tylervigen.com/spurious/correlation/5920_per-capita-consumption-of-margarine_correlates-with_the-divorce-rate-in-maine
+
+Kausalitet betyder at en hændelse er det den direkte konsekvens af en anden.
+Når jeg trykker på kontakten, tænder lyset. Lyset tænder som en direkte 
+konsekvens af at jeg har trykket på kontakten.
+
+Korrelation betyder at to hændelser (eller variable) bevæger sig sammen.
+Når x stiger, stiger y også. Eller, en negativ korrelation. Når x stiger, 
+falder y. 
+
+Der kan være en sammenhæng. Når salget af solcreme stiger, stiger salget af 
+ispinde også. Ikke fordi man får behov for solcreme når man spiser is. Men 
+fordi solskin og godt vejr om sommeren fører til stigende behov for solcreme.
+Og fordi varmt vejr fører til større efterspørgsel efter ispinde.
+
+Hvordan tester vi for om x og y har en kausal sammenhæng?
+
+Vi designer vores eksperimenter så vi kan afgøre det. Random sampling,
+dobbelt blindede forsøg, tilpas store sample størrelser.
+
+Og så kan vi infer en sammenhæng. Men næppe bevise den.
+

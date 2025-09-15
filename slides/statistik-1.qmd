@@ -1,6 +1,6 @@
 ---
 title: "Statistik"
-subtitle: "Intro" 
+subtitle: "Del 1" 
 format: revealjs
 engine: knitr
 filters:
@@ -10,6 +10,22 @@ webr:
 ---
 {{< include ../_extensions/r-wasm/live/_knitr.qmd >}}
 
+
+## Indhold
+
+* Formålet med statistik
+* Målet med statistik
+* Stikprøve vs. population
+* parametre vs statistik
+* Kategoriske data
+* Kvantitative data
+* Deskriptiv statistik
+* placering af data
+* Spredning af data
+* CFD
+* Normalfordelingen
+* Den centrale grænseværdisætning
+* Hypotesetest
 
 
 
@@ -51,14 +67,27 @@ Forudisge fremtidige eller ukendte observation baseret på de data vi har.
 
 Vi ønsker ofte at kunne sige noget om populationen, baseret på stikprøven. Det kalder vi inferens.
 
-†) Alle børn i Danmark. Alle heste i Danmark. Koncentrationen af Magnesium i drikkevandet
+†) Alle børn i Danmark. Alle heste i Danmark. Koncentrationen af Magnesium i drikkevandet - over alt!
 ‡) Danske registerdata kan være undtagelsen
+
+
+## Fordelinger
+
+Der er i populationen aldrig en enkelt værdi. Der er altid flere.
+
+Når vitager en stikprøve får vi aldrig en enkelt værdi. Der er altid flere.
+
+Eller - der er en fordeling af værdier. 
+
+Så vi har en fordeling af værdier i populationen - det er den "sande" fordeling.
+
+Og vi har en fordeling af værdier i stikprøven - det er fordelingen i vores _stikprøve_
 
 ## Parametre vs statistik
 
-En parameter er et tal der beskriver en population.
+Parametre beskriver fordelingen i _populationen_.
 
-Dette er et teoretisk tal - vi kan ikke måle det. Det eksisterer, men vi kender det ikke.
+(delvist) Teoretiske tal - de eksisterer, men vi kan ikke måle dem.
 
 Den sande værdi af den gennemsnitlige højde af mænd i Danmark findes. Men vi ved ikke hvad
 den er, for vi kan ikke måle højden af alle mænd. Det sande gennemsnit kalder vi $\mu$.
@@ -71,14 +100,16 @@ Den kalder vi $\hbar{X}$. Variansen kan vi også beregne. Den kalder vi $s^2$
 
 Bemærk forskellen i notationen.
 
+## Fra statistik til parametre
+
 Vi kan bruge $\hbar{X}$ og $s^2$ til at estimere de ukendte parametre: $\mu$ og $\sigma^2$
 
 Hvis man vil kunne huske hvad non-parametriske tests er - så skal man kunne huske det her.
 
 ## Typer af data - kategoriske
 
-Data falder i en kategori. Eller i en anden. Ikke i begge.
-
+Data falder i _en_ kategori. Eller i _en_ anden. _Ikke_ i begge.
+Vi kalder dem ofte kvalitative.
 :::{.incremental}
 * Nominale data
   - Der er ingen rækkefølge - ingen er "bedre" end andre
@@ -193,11 +224,13 @@ Vis gerne data i kodeblokken.
 Hvad hvis der er et lige antal observationer? Så tager vi gennemsnittet af de to midterste
 ::::
 
-## Typetal
+## Modus
 
-Ved kategoriske data giver det ikke mening at tale om gennemsnit.
+Hvad er gennemsnittet af hårfarve?
 
-Istedet: Typetallet (engelsk "mode").
+Kategoriske værdier kan vi ikke beregne middelværdier for. Eller medianer
+
+Istedet: Modus (engelsk "mode"). Ofte "typetal"
 
 Den hyppigst forekommende observation (der kan være mere end en, men så er de lige store)
 
@@ -205,11 +238,19 @@ Ikke følsom overfor outliers. Særligt nyttig ved kvalitative data.
 
 Ikke en indbygget funktion i R!
 
-## Deskriptiv statistik til beskrivelse af data
+## Ingen modus i R? 
+No problem
+
+Modus for `Species` i datasættet `iris`:
+```{webr}
+head(penguins)
+table(penguins$species) |> sort(decreasing = TRUE) |>
+```
+
+## Deskriptiv statistik til beskrivelse af data - variation
 
 Der er variation i vores data. Gennemsnittet af højden for alle mænd i vores stikprøve er
 muligvis 182 cm. Men nogen er højere, og andre lavere.
-
 
 Variationen - hvordan er data spredt?
 
@@ -283,16 +324,111 @@ Hvor ligger kvartilerne?
 
 Hvor ligger 2½ procent percentilen?
 
+Ud fra det kan vi aflæse ved hvilken værdi 25% af observationerne ligger over. Og 75% ligger under. 
+
+Vi kan aflæse en hvilken som helst percentil
+
 ## Hvad med den der normalfordeling?
 
 Vi har set hvordan vores data fordeler sig. De følger sådan nogenlunde
-normalfordelingen. Men hvad er den?
+normalfordelingen. Men hvad er det?
 
 Hvordan ser normalfordelingen ud?
 
-grafisk
+$$f(x) = \frac{1}{\sqrt{2\pi\sigma^2}}e^{-\frac{(x-\mu)^2}{2\sigma^2}}$$
 
-cdf
+Den har nogle rare matematiske egenskaber
+
+## grafisk
+
+```{r echo = FALSE}
+library(grid)
+library(gtable)
+library(tidyverse)
+
+
+markers <- tibble(x = seq(from = -3, to = 3, by = 0.5)) |> 
+   mutate(y=dnorm(x))
+
+labels <- tribble(~x, ~y, ~label,
+-0.25 , dnorm(-0.25)/2, "19.1%",
+0.25 , dnorm(0.25)/2, "19.1%",
+-0.75, dnorm(0.75)/2, "15.0%",
+0.75, dnorm(0.75)/2, "15.0%",
+-1.25, dnorm(1.25)/3, "9.2%",
+1.25, dnorm(1.25)/3, "9.2%",
+-1.75, dnorm(2.25), "4.4%",
+1.75, dnorm(2.25), "4.4%",
+-2.25, dnorm(2.25)/2, "1.7%",
+2.25, dnorm(2.25)/2, "1.7%",
+2.75, dnorm(2.75)*2, "~0.5%",
+3.25, dnorm(3.25)*4, "~0.1%",
+-2.75, dnorm(2.75)*2, "~0.5%",
+-3.25, dnorm(3.25)*4, "~0.1%")
+
+
+# Samme lineheight begge steder
+lh <- 1.00
+
+breaks_1 <- seq(-3, 3, by = 1)
+sigma_labels <- c("-3σ","-2σ","-1σ","0","+1σ","+2σ","+3σ")
+z_labels     <- as.character(breaks_1)
+cum_labels   <- c("0.1%","2.3%","15.9%","50%","84.1%","97.7%","99.9%")
+tick_labels  <- paste(sigma_labels, z_labels, cum_labels, sep = "\n")
+
+
+p <- ggplot(data = data.frame(x = c(-4, 4)), aes(x)) +
+  stat_function(fun = dnorm, n = 101, args = list(mean = 0, sd = 1)) + ylab("") +
+  scale_y_continuous(breaks = NULL) +
+  geom_segment(data = markers, aes(x=x, y =0, xend = x, yend = y)) +
+  geom_text(data = labels, mapping= aes(x,y, label = label)) +
+  scale_x_continuous(breaks = breaks_1, labels = tick_labels, name = NULL) +
+  annotate("segment", x = -1, y = dnorm(1), xend = 1, yend = dnorm(1), color = "red") +
+  annotate("text", x = 0, y = dnorm(0.97), label = "68%", color = "RED") +
+
+  annotate("segment", x = -1.96, y = dnorm(1.96), xend = 1.96, yend = dnorm(1.96), color = "blue") +
+  annotate("text", x = 0, y = dnorm(1.9), label = "95%", color = "BLUE") +
+  theme(line = element_blank(), rect = element_blank())
+
+
+# --- Tilføj venstre kolonne med 3-linjers label, med vertikal nudge ---
+gt <- ggplotGrob(p)
+axis_b_id <- which(gt$layout$name == "axis-b")
+axis_b    <- gt$layout[axis_b_id, ]
+
+# Justér denne for at løfte/sænke venstreteksten i forhold til tick-linjerne
+y_nudge_lines <- 0.9  # positiv = lidt op, negativ = lidt ned
+
+left_lab <- textGrob(
+  "Standard Deviation\nZ-Score\nCumulative Percent",
+  x = unit(1, "npc"),
+  just = c("right","top"),
+  gp = gpar(fontsize = 10, lineheight = lh)
+)
+# Flyt grob'en en smule op i samme celle som x-aksen
+left_lab$vp <- viewport(y = unit(1, "npc") + unit(y_nudge_lines, "lines"),
+                        just = c("center","top"))
+
+# Kolonnebredde baseret på tekstens faktiske bredde + lidt luft
+left_w <- grobWidth(left_lab) + unit(0.6, "lines")
+
+gt <- gtable_add_cols(gt, widths = left_w, pos = axis_b$l - 1)
+left_col <- axis_b$l
+
+gt <- gtable_add_grob(
+  gt, left_lab,
+  t = axis_b$t, b = axis_b$b,
+  l = left_col, r = left_col,
+  clip = "off"
+)
+
+grid.newpage()
+ grid.draw(gt)
+
+
+```
+
+## cdf
 
 Normalfordelingen har en helt præcis definition, hvor vi ved at 
 95% af observationerne ligger inden for +/- 1.96 standardafvigelser.

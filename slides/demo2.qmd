@@ -79,6 +79,7 @@ Den del af fejlen der ikke kan minimeres kalder vi residualerne.
 
 ```{r}
 # Eksempeldata
+library(ggplot2)
 set.seed(123)
 df <- data.frame(
   x = 1:10,

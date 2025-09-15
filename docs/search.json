@@ -544,5 +544,201 @@
     "title": "Lineære modeller",
     "section": "Hvad er en lineær model",
     "text": "Hvad er en lineær model\nKært barn har mange navne.\nI R skriver vi det som regel som y ~x der betyder at vi forsøger at forklare y som en funktion af x.\ny kan vi også kalde for udfaldet. Eller responsvariablen. Eller den afhængige variabel (fordi den afhænger af x).\nx kalder vi også for den uafhængige variabel - fordi vi i princippet kan justere helt frit på den og se hvad der så sker med y. Den kaldes også den forklarende variabel. Eller prædiktoren (fordi den kan bruges til at forudsige y). Er vi virkelig avancerede kan vi kalde den kovariaten.\nPointen er sådan set bare at vi gerne vil finde den lineære sammenhæng mellem de to variable. Vi prøver at forudsige/prædiktere.\nOg der er ikke nødvendigvis en kausal retning. Vi kunne også bruge prisen til at forklare antallet af kilometre kørt.\nDatasættet fev\nlm af den.\nGraf med punkter, ret linie og “pinde” op til linien.\nDet computeren, algoritmen, gør for os, er at justere på a og b, så fejlen bliver minimeret.\nDen del af fejlen der ikke kan minimeres kalder vi residualerne."
+  },
+  {
+    "objectID": "slides/demo3.html#når-x-ændrer-sig-emd-1-så-ændrer-y-sig-med",
+    "href": "slides/demo3.html#når-x-ændrer-sig-emd-1-så-ændrer-y-sig-med",
+    "title": "Statistik",
+    "section": "Når X ændrer sig emd 1 så ændrer y sig med",
+    "text": "Når X ændrer sig emd 1 så ændrer y sig med\nI den simple linieære model, kunne vi let fortolke hvad \\(\\beta\\) betød, nemlig ændringen i pris for hver ekstra km vi kørte.\nMan er fristet til at tro at det nu bliver meget mere kompliceret. Men det er næsten lige så simpelt. Men vi skal holde tunge lige i munden alligevel. Hvis vi kører en kilometer mere, stiger prisen med \\(\\beta_1\\) hvis vi ikke ændrer på hvor mange minutter vi kørte. Og hvis turen tager et minut længere, så stiger prisen med \\(\\beta_2\\) hvis vi ikke ændrer på turens længde."
+  },
+  {
+    "objectID": "slides/statistik-1.html#indhold",
+    "href": "slides/statistik-1.html#indhold",
+    "title": "Statistik",
+    "section": "Indhold",
+    "text": "Indhold\n\nFormålet med statistik\nMålet med statistik\nStikprøve vs. population\nparametre vs statistik\nKategoriske data\nKvantitative data\nDeskriptiv statistik\nplacering af data\nSpredning af data\nCFD\nNormalfordelingen\nDen centrale grænseværdisætning\nHypotesetest"
+  },
+  {
+    "objectID": "slides/statistik-1.html#formålet-med-statistik",
+    "href": "slides/statistik-1.html#formålet-med-statistik",
+    "title": "Statistik",
+    "section": "Formålet med statistik",
+    "text": "Formålet med statistik\n”Statistics is the science of collecting, summarizing, presenting and interpreting data, and of using them to estimate the magnitude of associations and test hypotheses. It has a central role in medical investigations” Indledende afsnit i lærebogen ”Medical statistics””\n\nDet vil sige at vi bruger statistik til at forstå, estimere og udlede information, baseret på data."
+  },
+  {
+    "objectID": "slides/statistik-1.html#målet-med-statistik",
+    "href": "slides/statistik-1.html#målet-med-statistik",
+    "title": "Statistik",
+    "section": "Målet med statistik",
+    "text": "Målet med statistik\n\nDeskriptiv statistik\n\nHistogrammer\nGennemsnit, median\nSpredning, percentiler, range\n\nInferens\n\nGenerel information fra en stikprøve\nHypotesetest og konfidensintervaller\n\nPrædiktion\n\nForudsige udfald baseret på data\n\n\n\nDeskriptiv til at forstå data. Inferens - til at drage konklusioner om en hel population ud fra en stikprøve Det er sådan noget som hypotesetest og konfidensintervaller. Forudisge fremtidige eller ukendte observation baseret på de data vi har."
+  },
+  {
+    "objectID": "slides/statistik-1.html#stikprøve-vs-population",
+    "href": "slides/statistik-1.html#stikprøve-vs-population",
+    "title": "Statistik",
+    "section": "Stikprøve vs population",
+    "text": "Stikprøve vs population\n\nPopulationen er det komplette sæt af entiteter† vi ønsker at lære noget om\nStikprøven er den del mængde af det komplette, som vi har data for\nPopulationen indeholder stikprøven. Men stikprøven dækker sjældent hele populationen‡\n\nVi ønsker ofte at kunne sige noget om populationen, baseret på stikprøven. Det kalder vi inferens.\n†) Alle børn i Danmark. Alle heste i Danmark. Koncentrationen af Magnesium i drikkevandet - over alt! ‡) Danske registerdata kan være undtagelsen"
+  },
+  {
+    "objectID": "slides/statistik-1.html#fordelinger",
+    "href": "slides/statistik-1.html#fordelinger",
+    "title": "Statistik",
+    "section": "Fordelinger",
+    "text": "Fordelinger\nDer er i populationen aldrig en enkelt værdi. Der er altid flere.\nNår vitager en stikprøve får vi aldrig en enkelt værdi. Der er altid flere.\nEller - der er en fordeling af værdier.\nSå vi har en fordeling af værdier i populationen - det er den “sande” fordeling.\nOg vi har en fordeling af værdier i stikprøven - det er fordelingen i vores stikprøve"
+  },
+  {
+    "objectID": "slides/statistik-1.html#parametre-vs-statistik",
+    "href": "slides/statistik-1.html#parametre-vs-statistik",
+    "title": "Statistik",
+    "section": "Parametre vs statistik",
+    "text": "Parametre vs statistik\nParametre beskriver fordelingen i populationen.\n(delvist) Teoretiske tal - de eksisterer, men vi kan ikke måle dem.\nDen sande værdi af den gennemsnitlige højde af mænd i Danmark findes. Men vi ved ikke hvad den er, for vi kan ikke måle højden af alle mænd. Det sande gennemsnit kalder vi \\(\\mu\\).\nDer er en sand variation (vi kommer til det) af højden af alle mænd i Danmark. Den findes, og vi kalder den \\(\\sigma^2\\). Men vi ved ikke hvad den er, og vi kan ikke finde ud af hvad den er.\nStatistikken derimod er det vi ved hvad er. Det er gennemsnitshøjden af alle mænd i vore stikprøve. Den kalder vi \\(\\hbar{X}\\). Variansen kan vi også beregne. Den kalder vi \\(s^2\\)\nBemærk forskellen i notationen."
+  },
+  {
+    "objectID": "slides/statistik-1.html#fra-statistik-til-parametre",
+    "href": "slides/statistik-1.html#fra-statistik-til-parametre",
+    "title": "Statistik",
+    "section": "Fra statistik til parametre",
+    "text": "Fra statistik til parametre\nVi kan bruge \\(\\hbar{X}\\) og \\(s^2\\) til at estimere de ukendte parametre: \\(\\mu\\) og \\(\\sigma^2\\)\nHvis man vil kunne huske hvad non-parametriske tests er - så skal man kunne huske det her."
+  },
+  {
+    "objectID": "slides/statistik-1.html#typer-af-data---kategoriske",
+    "href": "slides/statistik-1.html#typer-af-data---kategoriske",
+    "title": "Statistik",
+    "section": "Typer af data - kategoriske",
+    "text": "Typer af data - kategoriske\nData falder i en kategori. Eller i en anden. Ikke i begge. Vi kalder dem ofte kvalitative. :::{.incremental} * Nominale data - Der er ingen rækkefølge - ingen er “bedre” end andre - Yndlingsfarve - mand/kvinde - Ja/nej * Ordinale data - Stadig kategoriske - Der er en naturlig rækkefølge - Højde: Lav, medium, høj - Terningekast - Socialklasse :::"
+  },
+  {
+    "objectID": "slides/statistik-1.html#typer-af-data---kvantitative",
+    "href": "slides/statistik-1.html#typer-af-data---kvantitative",
+    "title": "Statistik",
+    "section": "Typer af data - kvantitative",
+    "text": "Typer af data - kvantitative\nNumeriske data - målinger eller optællinger\n\nDiskrete\n\nKun specifikke værdier er mulige\n\nAntal børn\nAntal senge på et hospital\n\n\nKontinuærte\n\nMålbare enheder, med mulige værdier der ligger i et interval\n\nBMI\nBlodtryk\nHøjde\n\n\n\n\nKvantitative data er typisk noget vi måler. Og i princippet kan vi måle med arbitrær præcision. Kvalitative data er data der kun kan være i en kasse. Enten er man gravid. Eller også er man ikke. Man er ikke en lille smule gravid. Der er to typer. Nominale hvor der ikke er nogen orden. Kvinder er ikke bedre end mænd. Ordinale data - og der er en orden. Det er (ofte) bedre at slå en sekser end en treer når man kaster med terninger."
+  },
+  {
+    "objectID": "slides/statistik-1.html#her-kunne-vi-have-noget-om-visning-af-data",
+    "href": "slides/statistik-1.html#her-kunne-vi-have-noget-om-visning-af-data",
+    "title": "Statistik",
+    "section": "Her kunne vi have noget om visning af data",
+    "text": "Her kunne vi have noget om visning af data\nMen det tror jeg hellere jeg vil have senere"
+  },
+  {
+    "objectID": "slides/statistik-1.html#deskriptiv-statistik-til-beskrivelse-af-data",
+    "href": "slides/statistik-1.html#deskriptiv-statistik-til-beskrivelse-af-data",
+    "title": "Statistik",
+    "section": "Deskriptiv statistik til beskrivelse af data",
+    "text": "Deskriptiv statistik til beskrivelse af data\n\n\nHvordan kan vi beskrive datasættet til højre?\n\nMinimum\nMaximum\nGennemsnit\nSpredning\nNormalområde\nHistogram\n\n\n\n\n\n\n\n\n\n\n10.2\n13.7\n10.4\n14.9\n11.5\n12.0\n11.0\n\n\n13.3\n12.9\n12.1\n9.4\n13.2\n10.8\n11.7\n\n\n10.6\n10.5\n13.7\n11.8\n14.1\n10.3\n13.6\n\n\n12.1\n12.9\n11.4\n12.7\n10.6\n11.4\n11.9\n\n\n9.3\n13.5\n14.6\n11.2\n11.7\n10.9\n10.4\n\n\n12.0\n12.9\n11.1\n8.8\n10.2\n11.6\n12.5\n\n\n13.4\n12.1\n10.9\n11.3\n14.7\n10.8\n13.3\n\n\n11.9\n11.4\n12.5\n13.0\n11.6\n13.1\n9.7\n\n\n11.2\n15.1\n10.7\n12.9\n13.4\n12.3\n11.0\n\n\n14.6\n11.1\n13.5\n10.9\n13.1\n11.8\n12.2\n\n\n\nHaemoglobin levels in g/100 ml for 70 women"
+  },
+  {
+    "objectID": "slides/statistik-1.html#deskriptiv-statistik-til-beskrivelse-af-data-1",
+    "href": "slides/statistik-1.html#deskriptiv-statistik-til-beskrivelse-af-data-1",
+    "title": "Statistik",
+    "section": "Deskriptiv statistik til beskrivelse af data",
+    "text": "Deskriptiv statistik til beskrivelse af data\nPlacering. Hvor ca. ligger data?\n\nMiddelværdi: \\(\\bar{x} = \\frac{1}{n}\\big(\\sum_{i=1}^{n}x_i\\big) = \\frac{x_1 + x_2 + ... + x_n}{n}\\)\n\nFølsom(ish) overfor outliers\n\nMedian: Den midterste værdi - når alle værdier er stillet op fra mindste til største\n\nHalvdelen af observationerne ligger over medianen. Halvdelen under.\nUfølsom(ish) overfor outliers\n\n\nDet beregner vi “let” i R:\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\nVis gerne data i kodeblokken. Hvad hvis der er et lige antal observationer? Så tager vi gennemsnittet af de to midterste"
+  },
+  {
+    "objectID": "slides/statistik-1.html#modus",
+    "href": "slides/statistik-1.html#modus",
+    "title": "Statistik",
+    "section": "Modus",
+    "text": "Modus\nHvad er gennemsnittet af hårfarve?\nKategoriske værdier kan vi ikke beregne middelværdier for. Eller medianer\nIstedet: Modus (engelsk “mode”). Ofte “typetal”\nDen hyppigst forekommende observation (der kan være mere end en, men så er de lige store)\nIkke følsom overfor outliers. Særligt nyttig ved kvalitative data.\nIkke en indbygget funktion i R!"
+  },
+  {
+    "objectID": "slides/statistik-1.html#ingen-modus-i-r",
+    "href": "slides/statistik-1.html#ingen-modus-i-r",
+    "title": "Statistik",
+    "section": "Ingen modus i R?",
+    "text": "Ingen modus i R?\nNo problem\nModus for Species i datasættet iris:\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page."
+  },
+  {
+    "objectID": "slides/statistik-1.html#deskriptiv-statistik-til-beskrivelse-af-data---variation",
+    "href": "slides/statistik-1.html#deskriptiv-statistik-til-beskrivelse-af-data---variation",
+    "title": "Statistik",
+    "section": "Deskriptiv statistik til beskrivelse af data - variation",
+    "text": "Deskriptiv statistik til beskrivelse af data - variation\nDer er variation i vores data. Gennemsnittet af højden for alle mænd i vores stikprøve er muligvis 182 cm. Men nogen er højere, og andre lavere.\nVariationen - hvordan er data spredt?\nHvordan kan vi beskrive det?\nHvor meget afviger de enkelte observation fra gennemsnittet\nIntuitivt kan vi se at ikke alle værdierne ligger lige tæt på gennemsnittet. Så. Vi kan beregne hvor langt hver værdi ligger fra gennemsnittet. Hvis vi bare lægger de tal sammen, så bliver størrelsen afhængig af hvor mange data punkter vi har. s Vi kan have 10000 punkter der alle sammen ligger utroligt tæt på gennemsnittet. Eller vi kan have 10 punkter der alle ligger meget langt fra gennemsnittet. Vi har brug for et gennemsnit. Problemet er, at gennemsnittet af forskellen for de enkelte punkter fra gennemsnittet, vil give 0. I stedet tager vi kvadratet på alle forskellene - og beregner gennemsnittet af dem. Det betyder også at punkter der ligger langt fra gennemsnittet “fylder” mere end punkter der ligger tæt på gennemsnittet.\nDet kalder vi for variansen.\nDer er et problem med den. Enheden. Enheden af vores hæmoglobin målinger bliver\n\\(g^2/ml^2\\) Den giver ingen mening. I stedet ser vi på standardafvigelsen, hvor vi tager kvadratroden på variansen."
+  },
+  {
+    "objectID": "slides/statistik-1.html#formlerne",
+    "href": "slides/statistik-1.html#formlerne",
+    "title": "Statistik",
+    "section": "formlerne",
+    "text": "formlerne\n\nVarians: \\(\\sigma^2 = \\frac{1}{N}\\sum_{i = 1}^{N}(x_i - \\mu)^2\\)\nSpredning: sd = \\(\\sigma = \\sqrt{\\frac{1}{N}\\sum_{i = 1}^{N}(x_i - \\mu)^2}\\)"
+  },
+  {
+    "objectID": "slides/statistik-1.html#deskriptiv-statistik-til-beskrivelse-af-data-2",
+    "href": "slides/statistik-1.html#deskriptiv-statistik-til-beskrivelse-af-data-2",
+    "title": "Statistik",
+    "section": "Deskriptiv statistik til beskrivelse af data",
+    "text": "Deskriptiv statistik til beskrivelse af data\nHvordan fordeler data sig?\nHistogrammet er en frekvenstabel hvor vi opgiver frekvenser (antallet) af værdier indenfor (ens) intervaller:\n\n\n\n\n\n\n\n\n\nMeget afhængig af hvilke intervaller man vælger!"
+  },
+  {
+    "objectID": "slides/statistik-1.html#cfd",
+    "href": "slides/statistik-1.html#cfd",
+    "title": "Statistik",
+    "section": "cfd",
+    "text": "cfd\nUd fra histogrammet får vi en ok ide om hvordan data fordeler sig.\nVi kan også vælge en mere finkornet visualisering, Den Empiriske Kumulative Tæthed af data. Vi har 70 observationer. Hver af dem svarer derfor til 1.4285714%\n\nDet her er vigtigt at forstå.\nHvor ligger kvartilerne?\nHvor ligger 2½ procent percentilen?\nUd fra det kan vi aflæse ved hvilken værdi 25% af observationerne ligger over. Og 75% ligger under.\nVi kan aflæse en hvilken som helst percentil"
+  },
+  {
+    "objectID": "slides/statistik-1.html#hvad-med-den-der-normalfordeling",
+    "href": "slides/statistik-1.html#hvad-med-den-der-normalfordeling",
+    "title": "Statistik",
+    "section": "Hvad med den der normalfordeling?",
+    "text": "Hvad med den der normalfordeling?\nVi har set hvordan vores data fordeler sig. De følger sådan nogenlunde normalfordelingen. Men hvad er det?\nHvordan ser normalfordelingen ud?\n\\[f(x) = \\frac{1}{\\sqrt{2\\pi\\sigma^2}}e^{-\\frac{(x-\\mu)^2}{2\\sigma^2}}\\]\nDen har nogle rare matematiske egenskaber"
+  },
+  {
+    "objectID": "slides/statistik-1.html#men-det-er-jo-stikprøver",
+    "href": "slides/statistik-1.html#men-det-er-jo-stikprøver",
+    "title": "Statistik",
+    "section": "Men det er jo stikprøver!",
+    "text": "Men det er jo stikprøver!\nOg det er forskelligt fra populationen. Og er vores data overhovede normalfordelte?\nHer er et tricky punkt, hvor vi skal holde tungen lige i munden.\nVi har en population af kvinder. Det kunne være alle kvinder i Danmark. Nu måler hæmoglobin på 70 af dem (den tabel har vi set før). Det er en stikprøve. Vi beregner middelværdi og standardafvigelsen.\nVi tager en anden stikprøve. Og beregner middelværdi og standardafvigelse\n(og kalder i øvrigt middelværdien for xbar, i stedet for mu. Og sd for sd i stedet for sigma). Og det gør vi mange gange.\nDet der nu viser sig er, at alle de her middelværdier. De er normalfordelte. En enkelt stikprøve behøver ikke at være det. Men middelværdierne fra alle vores mange stikprøver. De er normalfordelte.\nDet følger af “Den Centrale Grænseværdisætning”. Det er for matematisk bøvlet at gå i detaljer med. Det vigtige er, at middelværdie for en stikprøve kan vi antage kommer fra en normalfordeling."
+  },
+  {
+    "objectID": "slides/statistik-1.html#heromkring-pnorm-etc.",
+    "href": "slides/statistik-1.html#heromkring-pnorm-etc.",
+    "title": "Statistik",
+    "section": "Heromkring pnorm etc.",
+    "text": "Heromkring pnorm etc.\nI gamle dage var den slags noget man slog op i tabeller. Det er der ingen der gider.\n\n\n[1] -1.959964"
+  },
+  {
+    "objectID": "slides/statistik-1.html#øvelse",
+    "href": "slides/statistik-1.html#øvelse",
+    "title": "Statistik",
+    "section": "Øvelse",
+    "text": "Øvelse\nDette er værdier fra R. Datasæt B er den målte hastighed af biler på en landevej. Vi antager at værdierne i dataæsttet B er normalfordelte. Beregn et interval som indeholder 95% af B’s værdier\nPå en eller anden måde skal jeg have kontstrueret et datasæt der giver:\nc(mean(A), mean(B), mean(Diff)) = 68.59, 81.18, -12.59 c(sd(A), sd(B), sd(Diff)) 13.81 15.39 14.16\nDa vi kan antage normalfordeling (det kan vi ikke, men opgaven siger vi kan, så det kan vi) er 95% af værdierne indeholdt i intervallet\n\n\n[1]  51.01615 111.34385\n\n\nSå - 95% af hastighederne vi har målt på landevejen ligger mellem disse to værdier. Og! vi kan antage at den fordeling også gælder i baggrundspopulationen (der altså er alle biler, også dem vi ikke målte på)"
+  },
+  {
+    "objectID": "slides/statistik-1.html#en-gang-til.",
+    "href": "slides/statistik-1.html#en-gang-til.",
+    "title": "Statistik",
+    "section": "En gang til.",
+    "text": "En gang til.\nFordelingen af tilfældigt udtagne stikprøvers gennemsnit er altid normalfordelt.\nTilbage til haem tallene. Det er en tilfældig stikprøve. Det vil sige at den estimerer gennemsnittet for populationen. Men ikke præcist. Hvis vi tager en ny stikprøve, får vi et nyt gennemsnit.\nMen. De forskellige gennemsnit er normalfordelte omkring gennemsnittet af populationen.\nOGSÅ SELVOM POPULATIONEN IKKE SELV ER NORMALFORDELT!\nSE, SEM og forskellen mellem dem og sd."
+  },
+  {
+    "objectID": "slides/statistik-1.html#webr-i-browseren",
+    "href": "slides/statistik-1.html#webr-i-browseren",
+    "title": "Statistik",
+    "section": "webR i browseren",
+    "text": "webR i browseren\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page."
+  },
+  {
+    "objectID": "slides/statistik-1.html#read-only-eksempel",
+    "href": "slides/statistik-1.html#read-only-eksempel",
+    "title": "Statistik",
+    "section": "Read-only eksempel",
+    "text": "Read-only eksempel\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page."
+  },
+  {
+    "objectID": "slides/statistik-1.html#grafisk",
+    "href": "slides/statistik-1.html#grafisk",
+    "title": "Statistik",
+    "section": "grafisk",
+    "text": "grafisk"
+  },
+  {
+    "objectID": "slides/statistik-1.html#cdf",
+    "href": "slides/statistik-1.html#cdf",
+    "title": "Statistik",
+    "section": "cdf",
+    "text": "cdf\nNormalfordelingen har en helt præcis definition, hvor vi ved at 95% af observationerne ligger inden for +/- 1.96 standardafvigelser.\nSå hvis vi kan antage at vores data er normal fordelt. Så kan vi bruge middelværdi og standardafvigelse til at beregne indenfor hvilket interval en observation vil ligge."
   }
 ]
