@@ -10,6 +10,10 @@ website:
         href: slides/demo.qmd
       - href: slides/demo2.qmd
         text: Demo 2
+      - href: slides/statitik-1.qmd
+        text: statistik 1
+      - href: slides/data-fallacies.qmd
+        text: data fallacies
 
 format:
   # fælles HTML-indstillinger for live-sider
