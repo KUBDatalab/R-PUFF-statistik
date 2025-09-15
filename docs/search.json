@@ -683,7 +683,7 @@
     "href": "slides/statistik-1.html#hvad-med-den-der-normalfordeling",
     "title": "Statistik",
     "section": "Hvad med den der normalfordeling?",
-    "text": "Hvad med den der normalfordeling?\nVi har set hvordan vores data fordeler sig. De følger sådan nogenlunde normalfordelingen. Men hvad er det?\nHvordan ser normalfordelingen ud?\n\\[f(x) = \\frac{1}{\\sqrt{2\\pi\\sigma^2}}e^{-\\frac{(x-\\mu)^2}{2\\sigma^2}}\\]"
+    "text": "Hvad med den der normalfordeling?\nVi har set hvordan vores data fordeler sig. De følger sådan nogenlunde normalfordelingen. Men hvad er det?\nHvordan ser normalfordelingen ud?\n\\[f(x) = \\frac{1}{\\sqrt{2\\pi\\sigma^2}}e^{-\\frac{(x-\\mu)^2}{2\\sigma^2}}\\]\nDen har nogle rare matematiske egenskaber"
   },
   {
     "objectID": "slides/statistik-1.html#men-det-er-jo-stikprøver",
