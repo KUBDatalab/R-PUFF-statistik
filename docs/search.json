@@ -683,7 +683,7 @@
     "href": "slides/statistik-1.html#hvad-med-den-der-normalfordeling",
     "title": "Statistik",
     "section": "Hvad med den der normalfordeling?",
-    "text": "Hvad med den der normalfordeling?\nVi har set hvordan vores data fordeler sig. De følger sådan nogenlunde normalfordelingen. Men hvad er det?\nHvordan ser normalfordelingen ud?\n\\[f(x) = \\frac{1}{\\sqrt{2\\pi\\sigma^2}}e^{-\\frac{(x-\\mu)^2}{2\\sigma^2}}\\]\nDen har nogle rare matematiske egenskaber"
+    "text": "Hvad med den der normalfordeling?\nVi har set hvordan vores data fordeler sig. De følger sådan nogenlunde normalfordelingen. Men hvad er det?\nHvordan ser normalfordelingen ud?\n\\[f(x) = \\frac{1}{\\sqrt{2\\pi\\sigma^2}}e^{-\\frac{(x-\\mu)^2}{2\\sigma^2}}\\]\nDen har nogle rare matematiske egenskaber\nBemærk: Afhænger af to parametre. Middelværdien (\\(\\mu\\)), og standardafvigelsen \\(\\sigma\\) (eller er det variansen?) Kender vi dem, kan vi beskrive alt ved den fordeling."
   },
   {
     "objectID": "slides/statistik-1.html#men-det-er-jo-stikprøver",
@@ -704,7 +704,7 @@
     "href": "slides/statistik-1.html#øvelse",
     "title": "Statistik",
     "section": "Øvelse",
-    "text": "Øvelse\nDette er værdier fra R. Datasæt B er den målte hastighed af biler på en landevej. Vi antager at værdierne i dataæsttet B er normalfordelte. Beregn et interval som indeholder 95% af B’s værdier\nPå en eller anden måde skal jeg have kontstrueret et datasæt der giver:\nc(mean(A), mean(B), mean(Diff)) = 68.59, 81.18, -12.59 c(sd(A), sd(B), sd(Diff)) 13.81 15.39 14.16\nDa vi kan antage normalfordeling (det kan vi ikke, men opgaven siger vi kan, så det kan vi) er 95% af værdierne indeholdt i intervallet\n\n\n[1]  51.01615 111.34385\n\n\nSå - 95% af hastighederne vi har målt på landevejen ligger mellem disse to værdier. Og! vi kan antage at den fordeling også gælder i baggrundspopulationen (der altså er alle biler, også dem vi ikke målte på)"
+    "text": "Øvelse\n\nHvor mange % af data er mindre end 1.5 sigma?\nHvor mange % af data ligger mellem 1 og 2 sigma?\nHvis jeg vil have de 10% største værdier af data - hvilken sigma er de så større end? (hint husk at qnorm giver os værdierne fra -uendelig)\n\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page."
   },
   {
     "objectID": "slides/statistik-1.html#en-gang-til.",
@@ -740,5 +740,173 @@
     "title": "Statistik",
     "section": "cdf",
     "text": "cdf\nNormalfordelingen har en helt præcis definition, hvor vi ved at 95% af observationerne ligger inden for +/- 1.96 standardafvigelser.\nSå hvis vi kan antage at vores data er normal fordelt. Så kan vi bruge middelværdi og standardafvigelse til at beregne indenfor hvilket interval en observation vil ligge."
+  },
+  {
+    "objectID": "slides/data-fallacies.html#hyppige-fejl",
+    "href": "slides/data-fallacies.html#hyppige-fejl",
+    "title": "Statistik",
+    "section": "Hyppige fejl",
+    "text": "Hyppige fejl\nJa, det er fejl I kommer til at begå. For de bliver begået så ofte, at de har fået navne."
+  },
+  {
+    "objectID": "slides/data-fallacies.html#pas-på-summary-statistics.",
+    "href": "slides/data-fallacies.html#pas-på-summary-statistics.",
+    "title": "Statistik",
+    "section": "Pas på summary statistics.",
+    "text": "Pas på summary statistics.\nSummary statistics kan snyde og missse store forskelle i data. Betragt disse data:\n\n\n# A tibble: 8 × 5\n  variabel middel median stdafv   iqr\n  &lt;chr&gt;     &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt;\n1 x1         9      9      3.32  5   \n2 x2         9      9      3.32  5   \n3 x3         9      9      3.32  5   \n4 x4         9      8      3.32  0   \n5 y1         7.50   7.58   2.03  2.26\n6 y2         7.50   8.14   2.03  2.25\n7 y3         7.5    7.11   2.03  1.73\n8 y4         7.50   7.04   2.03  2.02\n\n\nDe ser ret ens ud.\nKorrelationen mellem parrene er også ret ens: der er noget med x4 og y4. Men ellers - ret ens.\n\n\n           y1         y2         y3         y4\nx1  0.8164205  0.8162365  0.8162867 -0.3140467\nx2  0.8164205  0.8162365  0.8162867 -0.3140467\nx3  0.8164205  0.8162365  0.8162867 -0.3140467\nx4 -0.5290927 -0.7184365 -0.3446610  0.8165214\n\n\nEr de nu også det? Ikke hvis vi plotter dem:"
+  },
+  {
+    "objectID": "slides/data-fallacies.html#kirsebærplukning",
+    "href": "slides/data-fallacies.html#kirsebærplukning",
+    "title": "Statistik",
+    "section": "Kirsebærplukning",
+    "text": "Kirsebærplukning\nEller på engelsk “Cherry picking”\nNår vi kun udvælger de data der passer med det vi gerne vil vise…"
+  },
+  {
+    "objectID": "slides/data-fallacies.html#p-fishing",
+    "href": "slides/data-fallacies.html#p-fishing",
+    "title": "Statistik",
+    "section": "p-fishing",
+    "text": "p-fishing\nhttps://xkcd.com/882/\nvores p-værdi på 5% - det fortæller os at der er 5% risiko for.\nMatematikken er ikke helt sådan, men intuitivt. Hvis vi tester for 20 forskellige ting, så vil en af dem - helt tilfældigt - have en p-værdi vi kan lide."
+  },
+  {
+    "objectID": "slides/data-fallacies.html#sampling-bias",
+    "href": "slides/data-fallacies.html#sampling-bias",
+    "title": "Statistik",
+    "section": "Sampling bias",
+    "text": "Sampling bias\nNår vi konkluderer ud fra et datasæt, der ikke er repræsentativt for den population vi ønsker at undersøge.\nValgprognoser der udelukkende baserer sig på journalister, vil systematisk forudsige flertal til rød blok. https://sketchplanations.com/correlation-is-not-causation"
+  },
+  {
+    "objectID": "slides/data-fallacies.html#overlevelsesbias",
+    "href": "slides/data-fallacies.html#overlevelsesbias",
+    "title": "Statistik",
+    "section": "Overlevelsesbias",
+    "text": "Overlevelsesbias\nNår vi drager konklusioner på basis af et ukomplet datasæt, der består af de data der har overlevet et eller andet udvælgelseskriterium. Dette er klassikeren.\nJagerfly under 2. verdenskrig der overlevede turen over Tyskland havde skudhuller. Her er en visualisering af de skudhuller man observerede (for flere fly) https://en.wikipedia.org/wiki/Survivorship_bias#/media/File:Survivorship-bias.svg\nHvilke dele af flyet skal vi tilfører mere armering?\nDe dele hvor der ikke er skudhuller i de fly der vender tilbage. For det kunne de jo overleve. De fly der ikke når tilbage - de er formentlig blevet ramt andre steder."
+  },
+  {
+    "objectID": "slides/data-fallacies.html#overfitting",
+    "href": "slides/data-fallacies.html#overfitting",
+    "title": "Statistik",
+    "section": "Overfitting",
+    "text": "Overfitting\nNår vi skaber en model der er skræddersyet de data vi har - og ikke er repræsentativ for en generel tendens."
+  },
+  {
+    "objectID": "slides/data-fallacies.html#publicerings-bias",
+    "href": "slides/data-fallacies.html#publicerings-bias",
+    "title": "Statistik",
+    "section": "Publicerings bias",
+    "text": "Publicerings bias\nDu har to resultater fra din undersøgelse.\nInteressante resultater har større chance for at blive publiceret. Vi hører ikke om de negative resultater (altså dem hvor der ikke er en sammenhæng)"
+  },
+  {
+    "objectID": "slides/data-fallacies.html#korrelation-er-ikke-kausalitet",
+    "href": "slides/data-fallacies.html#korrelation-er-ikke-kausalitet",
+    "title": "Statistik",
+    "section": "Korrelation er ikke kausalitet",
+    "text": "Korrelation er ikke kausalitet\nspurious correlations\nhttps://www.tylervigen.com/spurious/correlation/5920_per-capita-consumption-of-margarine_correlates-with_the-divorce-rate-in-maine\nKausalitet betyder at en hændelse er det den direkte konsekvens af en anden. Når jeg trykker på kontakten, tænder lyset. Lyset tænder som en direkte konsekvens af at jeg har trykket på kontakten.\nKorrelation betyder at to hændelser (eller variable) bevæger sig sammen. Når x stiger, stiger y også. Eller, en negativ korrelation. Når x stiger, falder y.\nDer kan være en sammenhæng. Når salget af solcreme stiger, stiger salget af ispinde også. Ikke fordi man får behov for solcreme når man spiser is. Men fordi solskin og godt vejr om sommeren fører til stigende behov for solcreme. Og fordi varmt vejr fører til større efterspørgsel efter ispinde.\nHvordan tester vi for om x og y har en kausal sammenhæng?\nVi designer vores eksperimenter så vi kan afgøre det. Random sampling, dobbelt blindede forsøg, tilpas store sample størrelser.\nOg så kan vi infer en sammenhæng. Men næppe bevise den. https://sketchplanations.com/correlation-is-not-causation"
+  },
+  {
+    "objectID": "slides/data-fallacies.html#pas-på-summary-statistics",
+    "href": "slides/data-fallacies.html#pas-på-summary-statistics",
+    "title": "Statistik",
+    "section": "Pas på summary statistics",
+    "text": "Pas på summary statistics\nSummary statistics kan snyde og missse store forskelle i data. Betragt disse data:\n\n\n# A tibble: 8 × 5\n  variabel middel median stdafv   iqr\n  &lt;chr&gt;     &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt;\n1 x1         9      9      3.32  5   \n2 x2         9      9      3.32  5   \n3 x3         9      9      3.32  5   \n4 x4         9      8      3.32  0   \n5 y1         7.50   7.58   2.03  2.26\n6 y2         7.50   8.14   2.03  2.25\n7 y3         7.5    7.11   2.03  1.73\n8 y4         7.50   7.04   2.03  2.02\n\n\nDe ser ret ens ud."
+  },
+  {
+    "objectID": "slides/data-fallacies.html#correlationen-ser-også-fin-ud",
+    "href": "slides/data-fallacies.html#correlationen-ser-også-fin-ud",
+    "title": "Statistik",
+    "section": "Correlationen ser også fin ud",
+    "text": "Correlationen ser også fin ud\nKorrelationen mellem parrene er også ret ens: der er noget med x4 og y4. Men ellers - ret ens.\n\n\n           y1         y2         y3         y4\nx1  0.8164205  0.8162365  0.8162867 -0.3140467\nx2  0.8164205  0.8162365  0.8162867 -0.3140467\nx3  0.8164205  0.8162365  0.8162867 -0.3140467\nx4 -0.5290927 -0.7184365 -0.3446610  0.8165214\n\n\nMen er de nu også det?"
+  },
+  {
+    "objectID": "slides/data-fallacies.html#ikke-hvis-vi-plotter-dem",
+    "href": "slides/data-fallacies.html#ikke-hvis-vi-plotter-dem",
+    "title": "Statistik",
+    "section": "Ikke hvis vi plotter dem:",
+    "text": "Ikke hvis vi plotter dem:\n\nDet er ikke nok at se på summary statistics. Husk at plotte!"
+  },
+  {
+    "objectID": "slides/data-fallacies.html#del-2",
+    "href": "slides/data-fallacies.html#del-2",
+    "title": "Statistik",
+    "section": "del 2",
+    "text": "del 2"
+  },
+  {
+    "objectID": "slides/data-fallacies.html#hele-træet",
+    "href": "slides/data-fallacies.html#hele-træet",
+    "title": "Statistik",
+    "section": "Hele træet",
+    "text": "Hele træet"
+  },
+  {
+    "objectID": "slides/data-fallacies.html#præference-forfalskning",
+    "href": "slides/data-fallacies.html#præference-forfalskning",
+    "title": "Statistik",
+    "section": "Præference forfalskning",
+    "text": "Præference forfalskning\nDet fænomen at folk svarer det de tror eller mener er det ønskede.\n“Hvor mange genstande drikker du om ugen?”\nHvor ærligt svarer folk?\nHvis vi et øjeblik glemmer at de tilstedeværende nok ikke er specielt repræsentative for hele befolkningen (sampling bias).\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\nHvem af jer er det?"
+  },
+  {
+    "objectID": "slides/statistik-1.html#hvordan-fandt-vi-de-værdier",
+    "href": "slides/statistik-1.html#hvordan-fandt-vi-de-værdier",
+    "title": "Statistik",
+    "section": "Hvordan fandt vi de værdier?",
+    "text": "Hvordan fandt vi de værdier?"
+  },
+  {
+    "objectID": "slides/statistik-1.html#øvelse-1",
+    "href": "slides/statistik-1.html#øvelse-1",
+    "title": "Statistik",
+    "section": "Øvelse",
+    "text": "Øvelse\nDette er værdier fra R. Datasæt B er den målte hastighed af biler på en landevej. Vi antager at værdierne i dataæsttet B er normalfordelte. Beregn et interval som indeholder 95% af B’s værdier\nPå en eller anden måde skal jeg have kontstrueret et datasæt der giver:\nc(mean(A), mean(B), mean(Diff)) = 68.59, 81.18, -12.59 c(sd(A), sd(B), sd(Diff)) 13.81 15.39 14.16\nDa vi kan antage normalfordeling (det kan vi ikke, men opgaven siger vi kan, så det kan vi) er 95% af værdierne indeholdt i intervallet\n\n\n[1]  51.01615 111.34385\n\n\nSå - 95% af hastighederne vi har målt på landevejen ligger mellem disse to værdier. Og! vi kan antage at den fordeling også gælder i baggrundspopulationen (der altså er alle biler, også dem vi ikke målte på)"
+  },
+  {
+    "objectID": "slides/statistik-1.html#løsning",
+    "href": "slides/statistik-1.html#løsning",
+    "title": "Statistik",
+    "section": "Løsning",
+    "text": "Løsning\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page."
+  },
+  {
+    "objectID": "slides/statistik-1.html#mange-normalfordelinger",
+    "href": "slides/statistik-1.html#mange-normalfordelinger",
+    "title": "Statistik",
+    "section": "Mange normalfordelinger",
+    "text": "Mange normalfordelinger\nDen normalfordeling vi har set er den standardiserede. Hvor \\(\\mu = 0\\) og \\(\\sigma^2 = 1\\). Men der er mange andre! Prøv at ændre middelværdien og standardafvigelsen (eller er det varians?)\nHm. Få ændret på lims på en anden måde…\n\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page."
+  },
+  {
+    "objectID": "slides/statistik-1.html#test-af-kode",
+    "href": "slides/statistik-1.html#test-af-kode",
+    "title": "Statistik",
+    "section": "test af kode",
+    "text": "test af kode\n\n\nI would like to have text here\nSentence becomes longer, it should automatically stay in their column\n\n\n\nand here\nMore text"
+  },
+  {
+    "objectID": "slides/statistik-1.html#alternativ-quarto-columns-uden-tom-midterkolonne",
+    "href": "slides/statistik-1.html#alternativ-quarto-columns-uden-tom-midterkolonne",
+    "title": "Statistik",
+    "section": "Alternativ: Quarto columns (uden tom midterkolonne)",
+    "text": "Alternativ: Quarto columns (uden tom midterkolonne)"
+  },
+  {
+    "objectID": "slides/statistik-1.html#robust-layout-pull-left-pull-right",
+    "href": "slides/statistik-1.html#robust-layout-pull-left-pull-right",
+    "title": "Statistik",
+    "section": "Robust layout: pull-left / pull-right",
+    "text": "Robust layout: pull-left / pull-right\n\nVenstre kolonne – tekst/kode\n\n\nHøjre kolonne – output\n\n::::"
+  },
+  {
+    "objectID": "slides/statistik-1.html#endnu-en-test",
+    "href": "slides/statistik-1.html#endnu-en-test",
+    "title": "Statistik",
+    "section": "endnu en test",
+    "text": "endnu en test"
+  },
+  {
+    "objectID": "slides/statistik-1.html#én-webr-chunk-skriv-venstre-se-output-højre",
+    "href": "slides/statistik-1.html#én-webr-chunk-skriv-venstre-se-output-højre",
+    "title": "Statistik",
+    "section": "Én webR-chunk: skriv venstre, se output højre",
+    "text": "Én webR-chunk: skriv venstre, se output højre\n\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page."
   }
 ]
