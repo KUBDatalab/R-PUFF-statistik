@@ -872,7 +872,7 @@
     "href": "slides/statistik-1.html#mange-normalfordelinger",
     "title": "Statistik",
     "section": "Mange normalfordelinger",
-    "text": "Mange normalfordelinger\nDen normalfordeling vi har set er den standardiserede. Hvor \\(\\mu = 0\\) og \\(\\sigma^2 = 1\\). Men der er mange andre! Prøv at ændre middelværdien og standardafvigelsen (eller er det varians?)\nHm. Få ændret på lims på en anden måde…\n\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page."
+    "text": "Mange normalfordelinger\nDen normalfordeling vi har set er den standardiserede. Hvor \\(\\mu = 0\\) og \\(\\sigma^2 = 1\\). Men der er mange andre! Prøv at ændre middelværdien og standardafvigelsen (eller er det varians?)\n\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page."
   },
   {
     "objectID": "slides/statistik-1.html#test-af-kode",

@@ -489,8 +489,6 @@ print(qnorm(0.9))
 Den normalfordeling vi har set er den standardiserede. Hvor $\mu = 0$
 og $\sigma^2 = 1$. Men der er mange andre! Prøv at ændre middelværdien og standardafvigelsen (eller er det varians?)
 
-Hm. Få ændret på lims på en anden måde...
-
 ::: {side-by-side}
 ```{webr}
 #| echo: true
@@ -500,8 +498,9 @@ Hm. Få ændret på lims på en anden måde...
 #| out-width: 50%
 
 mu <- 0; sigma <- 1
+xmin <- -4 ; xmax <- 4  # juster hvis grafen bliver væk
 ggplot() +
-  stat_function(fun = dnorm, args = list(mean = mu, sd = sigma), n = 1001, xlim = mu + c(-4, 4) * sigma)
+  stat_function(fun = dnorm, args = list(mean = mu, sd = sigma), n = 101, xlim = c(xmin, xmax))
 ```
 :::
 
