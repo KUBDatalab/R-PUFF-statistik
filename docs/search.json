@@ -417,7 +417,7 @@
     "href": "index.html",
     "title": "Untitled",
     "section": "",
-    "text": "Præsentationer\n\nDemo\nDemo 2\nstat 1\nfallacies"
+    "text": "Præsentationer\n\nDemo\nDemo 2\nstat 1\nfallacies\ntests"
   },
   {
     "objectID": "slides/demo.html#formålet-med-statistik",
@@ -872,7 +872,7 @@
     "href": "slides/statistik-1.html#mange-normalfordelinger",
     "title": "Statistik",
     "section": "Mange normalfordelinger",
-    "text": "Mange normalfordelinger\nDen normalfordeling vi har set er den standardiserede. Hvor \\(\\mu = 0\\) og \\(\\sigma^2 = 1\\). Men der er mange andre! Prøv at ændre middelværdien og standardafvigelsen (eller er det varians?)\n\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page."
+    "text": "Mange normalfordelinger\nDen normalfordeling vi har set er standardiserede. Hvor \\(\\mu = 0\\) og \\(\\sigma = 1\\). Men der er mange andre! Prøv at ændre middelværdien og standardafvigelsen.\n\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page."
   },
   {
     "objectID": "slides/statistik-1.html#test-af-kode",
@@ -908,5 +908,82 @@
     "title": "Statistik",
     "section": "Én webR-chunk: skriv venstre, se output højre",
     "text": "Én webR-chunk: skriv venstre, se output højre\n\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page."
+  },
+  {
+    "objectID": "slides/statistik-47.html#mange-normalfordelinger",
+    "href": "slides/statistik-47.html#mange-normalfordelinger",
+    "title": "Statistik",
+    "section": "Mange normalfordelinger",
+    "text": "Mange normalfordelinger\n\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page."
+  },
+  {
+    "objectID": "slides/statistik-47.html#flere-normalfordelinger-samtidigt",
+    "href": "slides/statistik-47.html#flere-normalfordelinger-samtidigt",
+    "title": "Statistik",
+    "section": "Flere normalfordelinger samtidigt",
+    "text": "Flere normalfordelinger samtidigt\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page."
+  },
+  {
+    "objectID": "slides/statistik-1.html#med-andre-ord",
+    "href": "slides/statistik-1.html#med-andre-ord",
+    "title": "Statistik",
+    "section": "Med andre ord…",
+    "text": "Med andre ord…\nHvis vi har noget data der er normalfordelt Og vi kender middelværdi og standardafvigelse Så kan vi beregne inden for hvilket interval 95% af observationerne ligger.\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page."
+  },
+  {
+    "objectID": "slides/statistik-1.html#og-hvis-data-ikke-er-standardiserede",
+    "href": "slides/statistik-1.html#og-hvis-data-ikke-er-standardiserede",
+    "title": "Statistik",
+    "section": "Og hvis data ikke er standardiserede:",
+    "text": "Og hvis data ikke er standardiserede:\nHvor mange procent af observationerne er mindre end 2, hvis middelværdien er 4 og standardafvigelsen er 2:\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page."
+  },
+  {
+    "objectID": "slides/statistik-1.html#hvordan-standardiserer-vi-vores-egne-data",
+    "href": "slides/statistik-1.html#hvordan-standardiserer-vi-vores-egne-data",
+    "title": "Statistik",
+    "section": "Hvordan standardiserer vi vores egne data?",
+    "text": "Hvordan standardiserer vi vores egne data?\n\nVi har lov at trække en værdi fra vores observationer.\nVi har også lov at gange eller dividere vores observationer med en værdi.\nSå længe vi gør det samme med alle observationerne!\n\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page."
+  },
+  {
+    "objectID": "slides/statistik-1.html#hvordan-standardiseres-egne-data",
+    "href": "slides/statistik-1.html#hvordan-standardiseres-egne-data",
+    "title": "Statistik",
+    "section": "Hvordan standardiseres egne data?",
+    "text": "Hvordan standardiseres egne data?\n\nVi har lov at trække en værdi fra vores observationer.\nVi har også lov at gange eller dividere vores observationer med en værdi.\nSå længe vi gør det samme med alle observationerne!\n\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page."
+  },
+  {
+    "objectID": "slides/statistik-1.html#og-hvad-skal-vi-så-bruge-det-til",
+    "href": "slides/statistik-1.html#og-hvad-skal-vi-så-bruge-det-til",
+    "title": "Statistik",
+    "section": "Og hvad skal vi så bruge det til?",
+    "text": "Og hvad skal vi så bruge det til?\n\nMit kriterium for om matematik er avanceret: Hvis jeg synes det er svært at forstå, men jeg dog kan forstå det. Så er det ikke meget avanceret matematik. For så god er jeg heller ikke til matematik. CLT er ikke avanceret. Men jeg synes stadig det er svært.\n\nEt helt centralt begreb i statistik er grænseværdisætningen. Eller på engelsk Central Limit Theorem (CLT)\nTager vi mange stikprøver i en population, vil middelværdierne af stikprøverne være normalfordelte. Også selvom værdierne i populationen ikke er normalfordelte."
+  },
+  {
+    "objectID": "slides/statistik-1.html#demo1",
+    "href": "slides/statistik-1.html#demo1",
+    "title": "Statistik",
+    "section": "demo1",
+    "text": "demo1\nDet her er i hvertfald ikke normal fordelt"
+  },
+  {
+    "objectID": "slides/statistik-1.html#demo2",
+    "href": "slides/statistik-1.html#demo2",
+    "title": "Statistik",
+    "section": "demo2",
+    "text": "demo2\n\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page."
+  },
+  {
+    "objectID": "slides/statistik-1.html#men-det-er-jo-en-stikprøve",
+    "href": "slides/statistik-1.html#men-det-er-jo-en-stikprøve",
+    "title": "Statistik",
+    "section": "Men det er jo en stikprøve!",
+    "text": "Men det er jo en stikprøve!\nSå vi bruger xbar i stedet for mu. og s i stedet for sigma. Og hvordan passer det så?\nOg det er forskelligt fra populationen. Og vi tager normalt heller ikke mange stikprøver. Vi har en.\nStandardafvigelsen viser variationen i vores stikprøve.\nMen vi er egentlig interesseret i hvordan variationen i mange middelværdier vil være.\nDen beregner vi ved:\n\\[SEM = \\frac{s}{\\sqrt{n}}\\]\nhvor n er antallet af observationer i vores stikprøve. og s er stikprøvens standardafvigelse\nSå det med at beregne en standardafvigelse på mange stikprøver, når vi kun har en stikprøve. Hvordan håndterer vi det?\nFor standardafvigelsen fortæller os hvordan observationerne i vores stikprøve afviger fra middelværdien. Ikke hvordan gennemsnittet ville ændre sig hvis vi tog en ny stikprøve.\nTil det formål bruger vi SEM¨\n“SD viser variationen i data – SEM viser usikkerheden på gennemsnittet.”\neller endnu kortere:\n“SD = spredning af observationer, SEM = spredning af middelværdier.”\nvi skal nok også lige have præciseret hvad det faktisk er der er på x-aksen. Observationernes afstand fra middelværdien, målt i standardafvigelser."
+  },
+  {
+    "objectID": "slides/statistik-1.html#og-så-kan-vi-gå-i-gang-med-hypotesetests",
+    "href": "slides/statistik-1.html#og-så-kan-vi-gå-i-gang-med-hypotesetests",
+    "title": "Statistik",
+    "section": "Og så kan vi gå i gang med hypotesetests!",
+    "text": "Og så kan vi gå i gang med hypotesetests!"
   }
 ]

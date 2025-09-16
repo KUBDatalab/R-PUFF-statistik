@@ -14,6 +14,8 @@ website:
         text: statistik 1
       - href: slides/data-fallacies.qmd
         text: data fallacies
+      - href: slides/statistik-47.qmd
+        text: side-by-side forsøg
 
 format:
   # fælles HTML-indstillinger for live-sider

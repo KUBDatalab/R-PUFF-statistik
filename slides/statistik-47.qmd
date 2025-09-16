@@ -1,0 +1,88 @@
+---
+title: "Statistik"
+subtitle: "Del 47"
+format: revealjs
+engine: knitr
+filters: 
+  - webr
+webr:
+  packages: ["gt", "tidyverse"]
+---
+
+{{< include ../_extensions/r-wasm/live/_knitr.qmd >}}
+
+## Mange normalfordelinger
+<style>
+/* Hele webR-blokken: fyld slide-højden */
+.qwebr-interactive-area[data-id="mange_normalfordelinger"]{
+  width: 100%;
+  height: 80vh;
+  box-sizing: border-box;
+}
+
+/* Toolbar i toppen med fast højde */
+.qwebr-interactive-area[data-id="mange_normalfordelinger"] .qwebr-editor-toolbar{
+  --toolbar-h: 44px;          /* justér hvis din toolbar er højere/lavere */
+  height: var(--toolbar-h);
+  box-sizing: border-box;
+  float: none;
+}
+
+/* Venstre/højre kolonne: fyld resten af højden, scrol indeni (ikke hele siden) */
+.qwebr-interactive-area[data-id="mange_normalfordelinger"] .qwebr-console-area,
+.qwebr-interactive-area[data-id="mange_normalfordelinger"] .qwebr-output-graph-area{
+  height: calc(80vh - var(--toolbar-h));
+  overflow: auto;
+  box-sizing: border-box;
+}
+
+/* Bevar dine floats og bredder */
+.qwebr-interactive-area[data-id="mange_normalfordelinger"] .qwebr-console-area{
+  float: left;
+  width: 48%;
+}
+.qwebr-interactive-area[data-id="mange_normalfordelinger"] .qwebr-output-graph-area{
+  float: right;
+  width: 48%;
+}
+
+/* Få canvas til at fylde kolonnen pænt */
+.qwebr-interactive-area[data-id="mange_normalfordelinger"] .qwebr-output-graph-area figure.qwebr-canvas-image{ 
+  margin: 0;
+  height: 100%;
+}
+.qwebr-interactive-area[data-id="mange_normalfordelinger"] .qwebr-output-graph-area canvas{
+  display: block;
+  width: 100% !important;
+  height: auto !important;   /* bevar aspect ratio */
+  max-height: 100%;
+}
+
+/* (Valgfrit) skjul tekst-output, så det ikke skubber højden */
+.qwebr-interactive-area[data-id="mange_normalfordelinger"] .qwebr-output-code-area{
+  display: none;
+}
+
+
+
+</style>
+
+```{webr}
+#| label: mange_normalfordelinger
+#| echo: false
+#| autorun: true
+#| warning: false
+#| message: false
+#| fig-width: 6
+#| fig-height: 4
+#| out-width: 100%
+
+mu <- 0; sigma <- 1
+
+xmin <- -4; xmax <-  4  # justér hvis grafen bliver væk
+
+library(ggplot2)
+
+ggplot() +
+  stat_function(fun = dnorm, args = list(mean = mu, sd = sigma), n = 201, xlim = c(xmin, xmax)) 
+```

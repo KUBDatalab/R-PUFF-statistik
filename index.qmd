@@ -9,3 +9,4 @@ format: html
 - [Demo 2](slides/demo2.qmd)
 - [stat 1](slides/statistik-1.qmd)
 - [fallacies](slides/data-fallacies.qmd)
+- [tests](slides/statistik-47.qmd)
