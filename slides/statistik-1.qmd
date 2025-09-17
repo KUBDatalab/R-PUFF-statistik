@@ -1,15 +1,18 @@
 ---
 title: "Statistik"
-subtitle: "Del 1" 
+subtitle: "Del 1. Grundlaget" 
 format: revealjs
 engine: knitr
-filters:
+filters: 
   - webr
 webr:
   packages: ["gt", "tidyverse"]
 ---
+
+
 {{< include ../_extensions/r-wasm/live/_knitr.qmd >}}
 
+  
 
 ## Indhold
 
@@ -339,6 +342,10 @@ $$f(x) = \frac{1}{\sqrt{2\pi\sigma^2}}e^{-\frac{(x-\mu)^2}{2\sigma^2}}$$
 
 Den har nogle rare matematiske egenskaber
 
+Bemærk: Afhænger af to parametre. Middelværdien ($\mu$), og 
+standardafvigelsen $\sigma$ (eller er det variansen?)
+Kender vi dem, kan vi beskrive alt ved den fordeling.
+ 
 ## grafisk
 
 ```{r echo = FALSE}
@@ -428,51 +435,396 @@ grid.newpage()
 
 ```
 
-## cdf
+## Hvordan fandt vi de værdier?
 
-Normalfordelingen har en helt præcis definition, hvor vi ved at 
-95% af observationerne ligger inden for +/- 1.96 standardafvigelser.
-
-Så hvis vi kan antage at vores data er normal fordelt. Så kan vi bruge
-middelværdi og standardafvigelse til at beregne indenfor hvilket interval
-en observation vil ligge.
+```{r echo = FALSE}
+library(tidyverse)
 
 
-
-## Men det er jo stikprøver!
-
-Og det er forskelligt fra populationen. Og er vores data overhovede
-normalfordelte?
-
-Her er et tricky punkt, hvor vi skal holde tungen lige i munden.
-
-Vi har en population af kvinder. Det kunne være alle kvinder i Danmark.
-Nu måler hæmoglobin på 70 af dem (den tabel har vi set før). 
-Det er en stikprøve. Vi beregner middelværdi og standardafvigelsen.
-
-Vi tager en anden stikprøve. Og beregner middelværdi og standardafvigelse
-
-(og kalder i øvrigt middelværdien for xbar, i stedet for mu. Og sd for sd
-i stedet for sigma).
-Og det gør vi _mange_ gange.
-
-Det der nu viser sig er, at alle de her middelværdier. De er normalfordelte.
-En enkelt stikprøve behøver ikke at være det. Men middelværdierne fra
-alle vores mange stikprøver. De er normalfordelte.
-
-Det følger af "Den Centrale Grænseværdisætning". Det er for matematisk
-bøvlet at gå i detaljer med. Det vigtige er, at middelværdie for en 
-stikprøve kan vi antage kommer fra en normalfordeling.
+markers <- tibble(x = c(-1,1)) |> 
+   mutate(y=dnorm(x))
 
 
-## Heromkring pnorm etc.
 
-I gamle dage var den slags noget man slog op i tabeller. Det er der
-ingen der gider.
+p <- ggplot(data = data.frame(x = c(-4, 4)), aes(x)) +
+  stat_function(fun = dnorm, n = 101, args = list(mean = 0, sd = 1)) + ylab("") +
+    theme(line = element_blank(), rect = element_blank()) +
+  geom_segment(data = markers, aes(x=x, y =0, xend = x, yend = y)) +
+  
+  annotate("segment", x = -2, y = 0.25, xend = -1, yend=dnorm(-1), arrow = arrow()) +
+  annotate("text", x = -2, y = 0.28, label = "dnorm(-1) = 0.242") +
+  annotate("segment", x = 2, y = 0.25, xend = 1, yend=dnorm(1), arrow = arrow()) +
+  annotate("text", x = 2, y = 0.28, label = "dnorm(1) = 0.242") +
+   stat_function(fun = dnorm, args = list(mean = 0, sd = 1),
+                geom = "area", xlim = c(-4, -1), alpha = 0.4) +
+  annotate("text", x = -1.4, y = 0.07, label = "pnorm(-1) \n = 15.9%") +
+annotate("segment", x = -3, y = 0.15, xend = -1, yend=0, arrow = arrow()) +
+  annotate("text", x = -3, y = 0.17, label = "qnorm(0.159) = ~1") +
+  stat_function(fun = dnorm, args = list(mean = 0, sd = 1),
+                geom = "area", xlim = c(-1, 1), alpha = 0.4, fill = "red") +
+  annotate("text", x = 0, y = 0.17, label = "pnorm(1) - pnorm(-1) = 68.3%") 
+p +
+  annotate("text", x = -2, y = 0.4, label = "15.9% af data er mindre end -1 sigma \n 68.3% af data ligger mellem -1 og 1 sigma")
+
+
+```
+
+## Øvelse
+
+* Hvor mange % af data er mindre end 1.5 sigma?
+* Hvor mange % af data ligger mellem 1 og 2 sigma?
+* Hvis jeg vil have de 10% største værdier af data - hvilken sigma er de så større end? (hint husk at qnorm giver os værdierne fra -uendelig)
+
+```{webr}
+
+```
+
+## Løsning
+
+```{webr}
+print(pnorm(1.5))
+print(pnorm(2) - pnorm(1))
+print(qnorm(0.9))
+```
+
+
+## Mange normalfordelinger
+
+
+Den normalfordeling vi har set er standardiserede. Hvor $\mu = 0$
+og $\sigma = 1$. Men der er mange andre! Prøv at ændre middelværdien og standardafvigelsen.
+<style>
+/* Hele webR-blokken: fyld slide-højden */
+.qwebr-interactive-area[data-id="mange_normalfordelinger"]{
+  width: 100%;
+  height: 80vh;
+  box-sizing: border-box;
+}
+
+/* Toolbar i toppen med fast højde */
+.qwebr-interactive-area[data-id="mange_normalfordelinger"] .qwebr-editor-toolbar{
+  --toolbar-h: 44px;          /* justér hvis din toolbar er højere/lavere */
+  height: var(--toolbar-h);
+  box-sizing: border-box;
+  float: none;
+}
+
+/* Venstre/højre kolonne: fyld resten af højden, scrol indeni (ikke hele siden) */
+.qwebr-interactive-area[data-id="mange_normalfordelinger"] .qwebr-console-area,
+.qwebr-interactive-area[data-id="mange_normalfordelinger"] .qwebr-output-graph-area{
+  height: calc(80vh - var(--toolbar-h));
+  overflow: auto;
+  box-sizing: border-box;
+}
+
+/* Bevar dine floats og bredder */
+.qwebr-interactive-area[data-id="mange_normalfordelinger"] .qwebr-console-area{
+  float: left;
+  width: 48%;
+}
+.qwebr-interactive-area[data-id="mange_normalfordelinger"] .qwebr-output-graph-area{
+  float: right;
+  width: 48%;
+}
+
+/* Få canvas til at fylde kolonnen pænt */
+.qwebr-interactive-area[data-id="mange_normalfordelinger"] .qwebr-output-graph-area figure.qwebr-canvas-image{ 
+  margin: 0;
+  height: 100%;
+}
+.qwebr-interactive-area[data-id="mange_normalfordelinger"] .qwebr-output-graph-area canvas{
+  display: block;
+  width: 100% !important;
+  height: auto !important;   /* bevar aspect ratio */
+  max-height: 100%;
+}
+
+/* (Valgfrit) skjul tekst-output, så det ikke skubber højden */
+.qwebr-interactive-area[data-id="mange_normalfordelinger"] .qwebr-output-code-area{
+  display: none;
+}
+
+
+
+</style>
+
+```{webr}
+#| label: mange_normalfordelinger
+#| echo: false
+#| autorun: true
+#| warning: false
+#| message: false
+#| fig-width: 6
+#| fig-height: 4
+#| out-width: 100%
+
+mu <- 0; sigma <- 1
+
+xmin <- -4; xmax <-  4  # justér hvis grafen bliver væk
+
+library(ggplot2)
+
+ggplot() +
+  stat_function(fun = dnorm, args = list(mean = mu, sd = sigma), n = 201, xlim = c(xmin, xmax)) 
+```
+
+
+## Med andre ord...
+
+Hvis vi har noget data der er normalfordelt
+Og vi kender middelværdi og standardafvigelse
+Så kan vi beregne inden for hvilket interval 95% af observationerne ligger.
+
+```{webr}
+qnorm(0.975) # for hvilken x er 97.5% af observationerne mindre?
+qnorm(0.025) # for hvilken x er 2.5% af observationerne mindre
+pnorm(1.96) # hvor mange % af observationerne er mindre end 1.96?
+pnorm(-1.96) # hvor mange % af observationerne er mindre end -1.96
+```
+
+## Og hvis data ikke er standardiserede:
+
+Hvor mange procent af observationerne er mindre end 2, hvis middelværdien er 4 og standardafvigelsen er 2:
+
+```{webr}
+pnorm(2, mean = 4, sd = 2 )
+```
+
+
+## Hvordan standardiseres egne data?
+
+* Vi har lov at trække en værdi fra vores observationer. 
+* Vi har også lov at gange eller dividere vores observationer med en værdi.
+* Så længe vi gør det samme med alle observationerne!
+
+```{webr}
+demo <- c(1,47,5,8)
+middel <- mean(demo)
+stdafv <- sd(demo)
+norm_demo <- (demo - middel)/stdafv
+```
+
+Det betyder også, at det vi har på x-aksen for en given normaliseret værdi af en
+observation, er afstanden til middelværdien. Målt i enheder af standardafvigelsen.
+
+## Og hvad skal vi så bruge det til?
+
+::::notes
+Mit kriterium for om matematik er avanceret: Hvis jeg synes det er svært at forstå, men jeg dog kan forstå det. Så er det 
+ikke meget avanceret matematik. For så god er jeg heller ikke til matematik. 
+CLT er ikke avanceret. Men jeg synes stadig det er svært.
+::::
+
+Et helt centralt begreb i statistik er grænseværdisætningen. Eller på engelsk Central Limit Theorem (CLT)
+
+Tager vi mange stikprøver i en population, vil middelværdierne af stikprøverne være normalfordelte. Også selvom værdierne i 
+populationen ikke er normalfordelte.
+
+## demo1
+
+Det her er i hvertfald ikke normal fordelt
+```{r}
+library(ggplot2)
+x <- runif(10000)
+
+# Læg data i en data frame til ggplot
+df <- data.frame(x = x)
+
+# Plot som histogram
+ggplot(df, aes(x = x)) +
+  geom_histogram(breaks = seq(0,1,0.1), color = "black", fill = "skyblue") +
+  labs(
+    title = "Histogram af 1000 uniformt fordelte værdier",
+    x = "Værdi",
+    y = "Frekvens"
+  ) +
+  theme_minimal() 
+```
+
+
+## demo2
+
+<style>
+/* Hele webR-blokken: fyld slide-højden */
+.qwebr-interactive-area[data-id="cltdemo"]{
+  width: 100%;
+  height: 80vh;
+  box-sizing: border-box;
+}
+
+/* Toolbar i toppen med fast højde */
+.qwebr-interactive-area[data-id="cltdemo"] .qwebr-editor-toolbar{
+  --toolbar-h: 44px;          /* justér hvis din toolbar er højere/lavere */
+  height: var(--toolbar-h);
+  box-sizing: border-box;
+  float: none;
+}
+
+/* Venstre/højre kolonne: fyld resten af højden, scrol indeni (ikke hele siden) */
+.qwebr-interactive-area[data-id="cltdemo"] .qwebr-console-area,
+.qwebr-interactive-area[data-id="cltdemo"] .qwebr-output-graph-area{
+  height: calc(80vh - var(--toolbar-h));
+  overflow: auto;
+  box-sizing: border-box;
+}
+
+/* Bevar dine floats og bredder */
+.qwebr-interactive-area[data-id="cltdemo"] .qwebr-console-area{
+  float: left;
+  width: 48%;
+}
+.qwebr-interactive-area[data-id="cltdemo"] .qwebr-output-graph-area{
+  float: right;
+  width: 48%;
+}
+
+/* Få canvas til at fylde kolonnen pænt */
+.qwebr-interactive-area[data-id="cltdemo"] .qwebr-output-graph-area figure.qwebr-canvas-image{ 
+  margin: 0;
+  height: 100%;
+}
+.qwebr-interactive-area[data-id="cltdemo"] .qwebr-output-graph-area canvas{
+  display: block;
+  width: 100% !important;
+  height: auto !important;   /* bevar aspect ratio */
+  max-height: 100%;
+}
+
+/* (Valgfrit) skjul tekst-output, så det ikke skubber højden */
+.qwebr-interactive-area[data-id="cltdemo"] .qwebr-output-code-area{
+  display: none;
+}
+</style>
+
+```{webr}
+#| label: cltdemo
+#| echo: false
+#| autorun: true
+#| warning: false
+#| message: false
+#| fig-width: 6
+#| fig-height: 4
+#| out-width: 100%
+
+x <- runif(10000)
+middelværdier <- numeric() # slet denne linie efter første gang
+middelværdi <- mean(sample(x, 10))
+middelværdier <- c(middelværdier, middelværdi)
+data.frame(x = middelværdier) |> 
+  ggplot(aes(x = x)) +
+  geom_histogram(aes(y = ..density..),breaks = seq(0,1,0.05), color = "black", fill = "skyblue") +
+  stat_function(fun = dnorm, n = 101, args=list(mean= mean(middelværdier), sd = sd(middelværdier)))
+```
+
+
+## Tilbage til vores stikprøve
+
+Som jo netop blot er _en_ stikprøve. 
+Det er derfor vi bruger xbar i stedet for mu og s i stedet for sigma.
+
+s er standardafvigelsen for observatinoerne i vores stikprøve. Vi har ikke 
+en standardafvigelse for hvad middelværdien ville være hvis vi havde mange stikprøver.
+
+Og det ville være rart at have. 
+
+Det kan vi få. Det kalder vi for SEM, Standard Error of the Mean.
+
+Den beregnes ud fra stikprøvens størrelse og standardafvigelse:
+
+$$SEM = \frac{s}{\sqrt{n}}$$
+
+hvor n er antallet af observationer i stikprøven.
+
+
+
+For standardafvigelsen fortæller os hvordan observationerne i vores stikprøve
+afviger fra middelværdien. Ikke hvordan gennemsnittet ville ændre sig
+hvis vi tog en ny stikprøve.
+
+Til det formål bruger vi SEM¨
+
+“SD viser variationen i data – SEM viser usikkerheden på gennemsnittet.”
+
+eller endnu kortere:
+
+“SD = spredning af observationer, SEM = spredning af middelværdier.”
+
+
+vi skal nok også lige have præciseret hvad det faktisk er der er på
+x-aksen. Observationernes afstand fra middelværdien, målt i standardafvigelser.
+
+## Og hvad bruger vi SEM til?
+
+Jo, vi har stikprøvens middelværdi. Og dens standardafvigelse. Og antallet af
+observationer. Og så har vi SEM. Og når vi har SEM, kan vi beregne et interval
+hvor vi er 95% sikre på indeholder populationens middelværdi:
+
+```{webr}
+x <- c(12.3, 11.7, 13.1, 12.8, 12.0, 11.9, 12.5, 13.0, 12.2, 12.6)
+
+mean_x <- mean(x)
+s      <- sd(x)
+n      <- length(x)
+sem    <- s / sqrt(n)
+
+alpha  <- 0.05
+t_crit <- qt(1 - alpha/2, df = n - 1)
+
+ci <- mean_x + c(-1, 1) * t_crit * sem
+ci
+```
+
+## qt?
+
+Normalfordelingen fortæller at 95% af observationerne ligger mellem -1.96 og 1.96
+standardafvigelser, $\sigma$ fra middelværdien. 
+
+Vi har jo (stort set altid) kun en stikprøve. Så vi kender kun s, ikke $\sigma$.
+
+Og vi vil nødig sige noget der er forkert. Så i stedet for normalfordelingen, 
+bruger vi t-fordelingen. Den er bredere og har tykkere haler end normalfordelingen.
+
 
 ```{r}
-qnorm(0.025)
+library(tidyverse)
+
+
+ggplot(data = data.frame(x = c(-4, 4)), aes(x)) +
+  stat_function(fun = dnorm, n = 101, args = list(mean = 0, sd = 1), color = "red") +   stat_function(fun = dt, n = 101, args = list(df = 5), color = "blue") +
+    ylab("") +
+    theme(line = element_blank(), rect = element_blank()) +
+    ggtitle("Normalfordelingen (rød) & t-fordelingen (blå)")
+
 ```
+
+Det giver os et bredere interval i hvilket de 95% af observationerne ligger.
+Altså et mere konservativt skøn på intervallet - som er mere sikkert.
+
+t-fordelingen har også den fordel at den tager højde for hvor stor vores stikprøve
+er - så jo større stikprøven er, jo tættere kommer den på normalfordelingen.
+
+## type 1 og type 2 fejl
+
+Når vi laver statistik er vi ude efter at få svar på et spørgsmål. 
+
+Eksempelvis: Vi tester om en ny type medicin faktisk virker. 
+
+Det kan gå galt på to måder.
+
+Vi kan konkludere at 
+ja, det gør den. Også selvom den i virkeligheden _ikke_ gør. Det kalder vi en
+type 1 fejl.
+
+Vi kan også konkludere at, nej, det gør den ikke. Selvom den faktisk gør. 
+Det er en type 2 fejl. 
+
+Og det relaterer sig til hypotesetesten. Når vi forkaster null-hypotesen,
+og derfor "tror" på den alternative hypotese, så gør vi det fordi alpha, 
+p-værdien er tilpas lav. Så når p-værdien er 0.04 er vi ofte glade, for så
+forkaster vi null-hypotesen. de 0.04, svarende til 4% er risikoen for at vi begår
+en type 1 fejl.
+
+
 
 ## Øvelse
 
@@ -498,33 +850,7 @@ Så - 95% af hastighederne vi har målt på landevejen ligger mellem disse
 to værdier. Og! vi kan antage at den fordeling også gælder i baggrundspopulationen
 (der altså er alle biler, også dem vi ikke målte på)
 
-## En gang til.
-
-Fordelingen af tilfældigt udtagne stikprøvers gennemsnit er altid 
-normalfordelt. 
-
-Tilbage til haem tallene. Det er en tilfældig stikprøve. Det vil sige at 
-den estimerer gennemsnittet for populationen. Men ikke præcist. Hvis vi
-tager en ny stikprøve, får vi et nyt gennemsnit. 
-
-Men. De forskellige gennemsnit er normalfordelte omkring gennemsnittet af
-populationen.
-
-OGSÅ SELVOM POPULATIONEN IKKE SELV ER NORMALFORDELT!
 
 
-SE, SEM og forskellen mellem dem og sd.
+## Og så kan vi gå i gang med hypotesetests!
 
-## webR i browseren
-```{webr}
-#| autorun: true
-#| min-lines: 8
-summary(cars)
-plot(cars)
-```
-
-## Read-only eksempel
-```{webr}
-#| edit: false
-mean(rnorm(100))
-```

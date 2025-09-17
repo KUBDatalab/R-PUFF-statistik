@@ -5,7 +5,19 @@ format: html
 
 # Præsentationer
 
-- [Demo](slides/demo.qmd)
-- [Demo 2](slides/demo2.qmd)
-- [stat 1](slides/statistik-1.qmd)
-- [fallacies](slides/data-fallacies.qmd)
+- [Demo - mit første forsøg](slides/demo.qmd)
+- [Demo 2 - lineære modeller mit første forsøg](slides/demo2.qmd)
+- [Stat 1 - faktisk resultat](slides/statistik-1.qmd)
+- [Stat 2 - faktisk resultat](slides/statistik-2.qmd)
+- [fallacies - ikke helt i mål endnu](slides/data-fallacies.qmd)
+- [Forsøg med webr](slides/statistik-47.qmd)
+- [demo3](slides/demo3)
+- [demo4](slides/demo4.qmd)
+- [del2](noter/del2.qmd)
+- [del3](noter/del3.qmd)
+- [intro](noter/intro.qmd)
+- [modul1](noter/modul 1.qmd)
+- [modul2](noter/modul 2.qmd)
+- [modul3](noter/modul 3.qmd)
+- [modul4](noter/modul 4.qmd)
+- [modul5](noter/modul 5.qmd)

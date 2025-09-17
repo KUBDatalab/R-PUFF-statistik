@@ -6,14 +6,46 @@ website:
   title: "Slides + webR"
   navbar:
     left:
-      - text: "Demo"
+      - text: "Demo - mit første forsøg"
         href: slides/demo.qmd
       - href: slides/demo2.qmd
-        text: Demo 2
+        text: Linerære modeller første forsøg
       - href: slides/statitik-1.qmd
-        text: statistik 1
+        text: "statistik 1 - faktisk"
+      - href: slides/statistik-2.qmd
+        text: Stat 2 - faktisk resultat
       - href: slides/data-fallacies.qmd
-        text: data fallacies
+        text: data fallacies - ikke helt i mål endnu
+      - href: slides/statistik-47.qmd
+        text: side-by-side forsøg
+      - href: slides/demo3)
+        text: demo3
+      - href: slides/demo4.qmd
+        text: demo4
+      - href: noter/del2.qmd
+        text: del2
+      - href: noter/del3.qmd
+        text: del3
+      - href: noter/intro.qmd
+        text: intro
+      - href: noter/modul 1.qmd
+        text: modul1
+      - href: noter/modul 2.qmd
+        text: modul2
+      - href: noter/modul 3.qmd
+        text: modul3
+      - href: noter/modul 4.qmd
+        text: modul4
+      - href: noter/modul 5.qmd
+        text: modul5
+
+
+
+
+
+
+
+
 
 format:
   # fælles HTML-indstillinger for live-sider

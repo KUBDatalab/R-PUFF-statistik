@@ -2,7 +2,7 @@
 title: "Untitled"
 format: revealjs
 ---
-C:/Users/cbk/AppData/Local/Programs/MiKTeX/miktex/bin/x64/pdflatex.exe: error while loading shared libraries: MiKTeX240100-regex.dll: cannot open shared object file: No such file or directory
+
 
 # Lineære modeller
 

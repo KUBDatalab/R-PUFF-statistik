@@ -1974,8 +1974,8 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 <h2>Hyppige fejl</h2>
 <p>Ja, det er fejl I kommer til at begå. For de bliver begået så ofte, at de har fået navne.</p>
 </section>
-<section id="pas-på-summary-statistics." class="slide level2">
-<h2>Pas på summary statistics.</h2>
+<section id="pas-på-summary-statistics" class="slide level2">
+<h2>Pas på summary statistics</h2>
 <p>Summary statistics kan snyde og missse store forskelle i data. Betragt disse data:</p>
 <div class="cell">
 <div class="cell-output cell-output-stdout">
@@ -1993,6 +1993,9 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 </div>
 </div>
 <p>De ser ret ens ud.</p>
+</section>
+<section id="correlationen-ser-også-fin-ud" class="slide level2">
+<h2>Correlationen ser også fin ud</h2>
 <p>Korrelationen mellem parrene er også ret ens: der er noget med x4 og y4. Men ellers - ret ens.</p>
 <div class="cell">
 <div class="cell-output cell-output-stdout">
@@ -2003,32 +2006,23 @@ x3  0.8164205  0.8162365  0.8162867 -0.3140467
 x4 -0.5290927 -0.7184365 -0.3446610  0.8165214</code></pre>
 </div>
 </div>
-<p>Er de nu også det? Ikke hvis vi plotter dem:</p>
+<p>Men er de nu også det?</p>
+</section>
+<section id="ikke-hvis-vi-plotter-dem" class="slide level2">
+<h2>Ikke hvis vi plotter dem:</h2>
 
-<img data-src="data-fallacies_files/figure-revealjs/unnamed-chunk-4-1.png" width="960" class="r-stretch"></section>
+<img data-src="data-fallacies_files/figure-revealjs/unnamed-chunk-4-1.png" width="960" class="r-stretch"><p>Det er ikke nok at se på summary statistics. Husk at plotte!</p>
+</section>
 <section id="kirsebærplukning" class="slide level2">
 <h2>Kirsebærplukning</h2>
 <p>Eller på engelsk “Cherry picking”</p>
 <p>Når vi kun udvælger de data der passer med det vi gerne vil vise…</p>
-<div class="cell">
-<div class="cell-output-display">
-<div>
-<figure>
-<p><img data-src="data-fallacies_files/figure-revealjs/unnamed-chunk-5-1.png" width="960"></p>
-</figure>
-</div>
-</div>
-</div>
-<div class="cell">
-<div class="cell-output-display">
-<div>
-<figure>
-<p><img data-src="data-fallacies_files/figure-revealjs/unnamed-chunk-6-1.png" width="960"></p>
-</figure>
-</div>
-</div>
-</div>
-</section>
+
+<img data-src="data-fallacies_files/figure-revealjs/unnamed-chunk-5-1.png" width="960" class="r-stretch"></section>
+<section id="hele-træet" class="slide level2">
+<h2>Hele træet</h2>
+
+<img data-src="data-fallacies_files/figure-revealjs/unnamed-chunk-6-1.png" width="960" class="r-stretch"></section>
 <section id="p-fishing" class="slide level2">
 <h2>p-fishing</h2>
 <p>https://xkcd.com/882/</p>
@@ -2038,8 +2032,10 @@ x4 -0.5290927 -0.7184365 -0.3446610  0.8165214</code></pre>
 <section id="sampling-bias" class="slide level2">
 <h2>Sampling bias</h2>
 <p>Når vi konkluderer ud fra et datasæt, der ikke er repræsentativt for den population vi ønsker at undersøge.</p>
-<p>Valgprognoser der udelukkende baserer sig på journalister, vil systematisk forudsige flertal til rød blok.</p>
-<h3 id="præference-forfalskning">Præference forfalskning</h3>
+<p>Valgprognoser der udelukkende baserer sig på journalister, vil systematisk forudsige flertal til rød blok. https://sketchplanations.com/correlation-is-not-causation</p>
+</section>
+<section id="præference-forfalskning" class="slide level2">
+<h2>Præference forfalskning</h2>
 <p>Det fænomen at folk svarer det de tror eller mener er det ønskede.</p>
 <p>“Hvor mange genstande drikker du om ugen?”</p>
 <p>Hvor ærligt svarer folk?</p>
@@ -2067,7 +2063,7 @@ x4 -0.5290927 -0.7184365 -0.3446610  0.8165214</code></pre>
 <p>Interessante resultater har større chance for at blive publiceret. Vi hører ikke om de negative resultater (altså dem hvor der ikke er en sammenhæng)</p>
 </section>
 <section id="korrelation-er-ikke-kausalitet" class="slide level2">
-<h2>korrelation er ikke kausalitet</h2>
+<h2>Korrelation er ikke kausalitet</h2>
 <p>spurious correlations</p>
 <p>https://www.tylervigen.com/spurious/correlation/5920_per-capita-consumption-of-margarine_correlates-with_the-divorce-rate-in-maine</p>
 <p>Kausalitet betyder at en hændelse er det den direkte konsekvens af en anden. Når jeg trykker på kontakten, tænder lyset. Lyset tænder som en direkte konsekvens af at jeg har trykket på kontakten.</p>
@@ -2075,7 +2071,7 @@ x4 -0.5290927 -0.7184365 -0.3446610  0.8165214</code></pre>
 <p>Der kan være en sammenhæng. Når salget af solcreme stiger, stiger salget af ispinde også. Ikke fordi man får behov for solcreme når man spiser is. Men fordi solskin og godt vejr om sommeren fører til stigende behov for solcreme. Og fordi varmt vejr fører til større efterspørgsel efter ispinde.</p>
 <p>Hvordan tester vi for om x og y har en kausal sammenhæng?</p>
 <p>Vi designer vores eksperimenter så vi kan afgøre det. Random sampling, dobbelt blindede forsøg, tilpas store sample størrelser.</p>
-<p>Og så kan vi infer en sammenhæng. Men næppe bevise den.</p>
+<p>Og så kan vi infer en sammenhæng. Men næppe bevise den. https://sketchplanations.com/correlation-is-not-causation</p>
 
 
 </section>

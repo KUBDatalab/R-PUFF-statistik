@@ -17,7 +17,7 @@ webr:
 Ja, det er fejl I kommer til at begå. For de bliver begået så
 ofte, at de har fået navne.
 
-## Pas på summary statistics.
+## Pas på summary statistics
 
 Summary statistics kan snyde og missse store forskelle i data.
 Betragt disse data:
@@ -35,6 +35,8 @@ anscombe |>
 
 De ser ret ens ud.
 
+## Correlationen ser også fin ud
+
 Korrelationen mellem parrene er også ret ens:
 der er noget med x4 og y4. Men ellers - ret ens.
 
@@ -44,8 +46,9 @@ y <- anscombe[,5:8]
 cor(x,y)
 ```
 
-Er de nu også det?
-Ikke hvis vi plotter dem:
+Men er de nu også det?
+
+## Ikke hvis vi plotter dem:
 ```{r}
 anscombe |> 
     pivot_longer(everything(), names_to = "par", values_to = "value") |> 
@@ -55,8 +58,9 @@ anscombe |>
     ggplot(aes(x,y)) + 
     geom_point() +
     facet_wrap(~gruppe)
-
 ```
+
+Det er ikke nok at se på summary statistics. Husk at plotte!
 
 ## Kirsebærplukning
 
@@ -79,8 +83,8 @@ dates <- seq.Date(
 
 df <- data.frame(date = dates, co2 = as.numeric(co2))
 
-cherry_start <- as.Date("1973-01-01")
-cherry_end   <- as.Date("1975-12-01")
+cherry_start <- as.Date("1973-03-01")
+cherry_end   <- as.Date("1975-03-01")
 
 df$cherry <- ifelse(df$date >= cherry_start & df$date <= cherry_end, "Cherry", "Hele serien")
 
@@ -89,13 +93,13 @@ ggplot(aes(x = date, y = co2)) +
   geom_line(size = 0.8) +
   scale_color_manual(values = c("Hele serien" = "grey40", "Cherry" = "red")) +
   geom_smooth(method = "lm", se = FALSE, aes(color = cherry), size = 1) +
-  labs(title = "Cherry picking: Mauna Loa CO₂ (1959–1997)",
+  labs(title = "Cherry picking: Mauna Loa $CO_2$ (1959–1997)",
        subtitle = "Cherry-picked vindue (1973–1975)",
        x = "År", y = "CO₂ (ppm)", color = "Datasæt") +
   theme_minimal(base_size = 13)
 ```
 
-
+## Hele træet
 ```{r}
 df  |>
 ggplot(aes(x = date, y = co2)) +
@@ -125,8 +129,9 @@ den population vi ønsker at undersøge.
 
 Valgprognoser der udelukkende baserer sig på journalister, vil systematisk
 forudsige flertal til rød blok.
+https://sketchplanations.com/correlation-is-not-causation
 
-### Præference forfalskning
+## Præference forfalskning
 
 Det fænomen at folk svarer det de tror eller mener er det ønskede. 
 
@@ -178,7 +183,7 @@ Interessante resultater har større chance for at blive publiceret. Vi
 hører ikke om de negative resultater (altså dem hvor der ikke er en
 sammenhæng)
 
-## korrelation er ikke kausalitet
+## Korrelation er ikke kausalitet
 
 spurious correlations
 
@@ -203,4 +208,6 @@ Vi designer vores eksperimenter så vi kan afgøre det. Random sampling,
 dobbelt blindede forsøg, tilpas store sample størrelser.
 
 Og så kan vi infer en sammenhæng. Men næppe bevise den.
+https://sketchplanations.com/correlation-is-not-causation
+
 

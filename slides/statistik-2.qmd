@@ -1,0 +1,12 @@
+---
+title: "Statistik"
+subtitle: "Del 2. Hypotesetests" 
+format: revealjs
+engine: knitr
+filters: 
+  - webr
+webr:
+  packages: ["gt", "tidyverse"]
+---
+
+{{< include ../_extensions/r-wasm/live/_knitr.qmd >}}

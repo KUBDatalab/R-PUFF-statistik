@@ -417,7 +417,7 @@
     "href": "index.html",
     "title": "Untitled",
     "section": "",
-    "text": "Præsentationer\n\nDemo\nDemo 2\nstat 1\nfallacies"
+    "text": "Præsentationer\n\nDemo - mit første forsøg\nDemo 2 - lineære modeller mit første forsøg\nStat 1 - faktisk resultat\nfallacies - ikke helt i mål endnu\nForsøg med webr\ndemo3\ndemo4\ndel2\ndel3\nintro\nmodul1\nmodul2\nmodul3\nmodul4\nmodul5"
   },
   {
     "objectID": "slides/demo.html#formålet-med-statistik",
@@ -452,14 +452,14 @@
     "href": "slides/demo.html#deskriptiv-statistik-til-beskrivelse-af-data-1",
     "title": "Statistik",
     "section": "Deskriptiv statistik til beskrivelse af data",
-    "text": "Deskriptiv statistik til beskrivelse af data\nPlacering. Hvor ca. ligger data?\n\nMiddelværdi: \\(\\bar{x} = \\frac{1}{n}\\big(\\sum_{i=1}^{n}x_i\\big) = \\frac{x_1 + x_2 + ... + x_n}{n}\\)\nMedian: Den midterste værdi - når alle værdier er stillet op fra mindste til største\n\nDet beregner vi “let” i R:\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page."
+    "text": "Deskriptiv statistik til beskrivelse af data\nPlacering. Hvor ca. ligger data?\n\nMiddelværdi: \\(\\bar{x} = \\frac{1}{n}\\big(\\sum_{i=1}^{n}x_i\\big) = \\frac{x_1 + x_2 + ... + x_n}{n}\\)\n\nFølsom(ish) overfor outliers\n\nMedian: Den midterste værdi - når alle værdier er stillet op fra mindste til største\n\nHalvdelen af observationerne ligger over medianen. Halvdelen under.\nUfølsom(ish) overfor outliers\n\n\nDet beregner vi “let” i R:\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\nVis gerne data i kodeblokken. Hvad hvis der er et lige antal observationer? Så tager vi gennemsnittet af de to midterste"
   },
   {
     "objectID": "slides/demo.html#deskriptiv-statistik-til-beskrivelse-af-data-2",
     "href": "slides/demo.html#deskriptiv-statistik-til-beskrivelse-af-data-2",
     "title": "Statistik",
     "section": "Deskriptiv statistik til beskrivelse af data",
-    "text": "Deskriptiv statistik til beskrivelse af data\nVariationen - hvordan er data spredt?\nHvordan kan vi beskrive det?\nHvor meget afviger de enkelte observation fra gennemsnittet\nIntuitivt kan vi se at ikke alle værdierne ligger lige tæt på gennemsnittet. Så. Vi kan beregne hvor langt hver værdi ligger fra gennemsnittet. Hvis vi bare lægger de tal sammen, så bliver størrelsen afhængig af hvor mange data punkter vi har. s Vi kan have 10000 punkter der alle sammen ligger utroligt tæt på gennemsnittet. Eller vi kan have 10 punkter der alle ligger meget langt fra gennemsnittet. Vi har brug for et gennemsnit. Problemet er, at gennemsnittet af forskellen for de enkelte punkter fra gennemsnittet, vil give 0. I stedet tager vi kvadratet på alle forskellene - og beregner gennemsnittet af dem. Det betyder også at punkter der ligger langt fra gennemsnittet “fylder” mere end punkter der ligger tæt på gennemsnittet.\nDet kalder vi for variansen.\nDer er et problem med den. Enheden. Enheden af vores hæmoglobin målinger bliver\n\\(g^2/ml^2\\) Den giver ingen mening. I stedet ser vi på standardafvigelsen, hvor vi tager kvadratroden på variansen."
+    "text": "Deskriptiv statistik til beskrivelse af data\nDer er variation i vores data. Gennemsnittet af højden for alle mænd i vores stikprøve er muligvis 182 cm. Men nogen er højere, og andre lavere.\nVariationen - hvordan er data spredt?\nHvordan kan vi beskrive det?\nHvor meget afviger de enkelte observation fra gennemsnittet\nIntuitivt kan vi se at ikke alle værdierne ligger lige tæt på gennemsnittet. Så. Vi kan beregne hvor langt hver værdi ligger fra gennemsnittet. Hvis vi bare lægger de tal sammen, så bliver størrelsen afhængig af hvor mange data punkter vi har. s Vi kan have 10000 punkter der alle sammen ligger utroligt tæt på gennemsnittet. Eller vi kan have 10 punkter der alle ligger meget langt fra gennemsnittet. Vi har brug for et gennemsnit. Problemet er, at gennemsnittet af forskellen for de enkelte punkter fra gennemsnittet, vil give 0. I stedet tager vi kvadratet på alle forskellene - og beregner gennemsnittet af dem. Det betyder også at punkter der ligger langt fra gennemsnittet “fylder” mere end punkter der ligger tæt på gennemsnittet.\nDet kalder vi for variansen.\nDer er et problem med den. Enheden. Enheden af vores hæmoglobin målinger bliver\n\\(g^2/ml^2\\) Den giver ingen mening. I stedet ser vi på standardafvigelsen, hvor vi tager kvadratroden på variansen."
   },
   {
     "objectID": "slides/demo.html#deskriptiv-statistik-til-beskrivelse-af-data-3",
@@ -683,7 +683,7 @@
     "href": "slides/statistik-1.html#hvad-med-den-der-normalfordeling",
     "title": "Statistik",
     "section": "Hvad med den der normalfordeling?",
-    "text": "Hvad med den der normalfordeling?\nVi har set hvordan vores data fordeler sig. De følger sådan nogenlunde normalfordelingen. Men hvad er det?\nHvordan ser normalfordelingen ud?\n\\[f(x) = \\frac{1}{\\sqrt{2\\pi\\sigma^2}}e^{-\\frac{(x-\\mu)^2}{2\\sigma^2}}\\]\nDen har nogle rare matematiske egenskaber"
+    "text": "Hvad med den der normalfordeling?\nVi har set hvordan vores data fordeler sig. De følger sådan nogenlunde normalfordelingen. Men hvad er det?\nHvordan ser normalfordelingen ud?\n\\[f(x) = \\frac{1}{\\sqrt{2\\pi\\sigma^2}}e^{-\\frac{(x-\\mu)^2}{2\\sigma^2}}\\]\nDen har nogle rare matematiske egenskaber\nBemærk: Afhænger af to parametre. Middelværdien (\\(\\mu\\)), og standardafvigelsen \\(\\sigma\\) (eller er det variansen?) Kender vi dem, kan vi beskrive alt ved den fordeling."
   },
   {
     "objectID": "slides/statistik-1.html#men-det-er-jo-stikprøver",
@@ -704,7 +704,7 @@
     "href": "slides/statistik-1.html#øvelse",
     "title": "Statistik",
     "section": "Øvelse",
-    "text": "Øvelse\nDette er værdier fra R. Datasæt B er den målte hastighed af biler på en landevej. Vi antager at værdierne i dataæsttet B er normalfordelte. Beregn et interval som indeholder 95% af B’s værdier\nPå en eller anden måde skal jeg have kontstrueret et datasæt der giver:\nc(mean(A), mean(B), mean(Diff)) = 68.59, 81.18, -12.59 c(sd(A), sd(B), sd(Diff)) 13.81 15.39 14.16\nDa vi kan antage normalfordeling (det kan vi ikke, men opgaven siger vi kan, så det kan vi) er 95% af værdierne indeholdt i intervallet\n\n\n[1]  51.01615 111.34385\n\n\nSå - 95% af hastighederne vi har målt på landevejen ligger mellem disse to værdier. Og! vi kan antage at den fordeling også gælder i baggrundspopulationen (der altså er alle biler, også dem vi ikke målte på)"
+    "text": "Øvelse\n\nHvor mange % af data er mindre end 1.5 sigma?\nHvor mange % af data ligger mellem 1 og 2 sigma?\nHvis jeg vil have de 10% største værdier af data - hvilken sigma er de så større end? (hint husk at qnorm giver os værdierne fra -uendelig)\n\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page."
   },
   {
     "objectID": "slides/statistik-1.html#en-gang-til.",
@@ -740,5 +740,327 @@
     "title": "Statistik",
     "section": "cdf",
     "text": "cdf\nNormalfordelingen har en helt præcis definition, hvor vi ved at 95% af observationerne ligger inden for +/- 1.96 standardafvigelser.\nSå hvis vi kan antage at vores data er normal fordelt. Så kan vi bruge middelværdi og standardafvigelse til at beregne indenfor hvilket interval en observation vil ligge."
+  },
+  {
+    "objectID": "slides/data-fallacies.html#hyppige-fejl",
+    "href": "slides/data-fallacies.html#hyppige-fejl",
+    "title": "Statistik",
+    "section": "Hyppige fejl",
+    "text": "Hyppige fejl\nJa, det er fejl I kommer til at begå. For de bliver begået så ofte, at de har fået navne."
+  },
+  {
+    "objectID": "slides/data-fallacies.html#pas-på-summary-statistics.",
+    "href": "slides/data-fallacies.html#pas-på-summary-statistics.",
+    "title": "Statistik",
+    "section": "Pas på summary statistics.",
+    "text": "Pas på summary statistics.\nSummary statistics kan snyde og missse store forskelle i data. Betragt disse data:\n\n\n# A tibble: 8 × 5\n  variabel middel median stdafv   iqr\n  &lt;chr&gt;     &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt;\n1 x1         9      9      3.32  5   \n2 x2         9      9      3.32  5   \n3 x3         9      9      3.32  5   \n4 x4         9      8      3.32  0   \n5 y1         7.50   7.58   2.03  2.26\n6 y2         7.50   8.14   2.03  2.25\n7 y3         7.5    7.11   2.03  1.73\n8 y4         7.50   7.04   2.03  2.02\n\n\nDe ser ret ens ud.\nKorrelationen mellem parrene er også ret ens: der er noget med x4 og y4. Men ellers - ret ens.\n\n\n           y1         y2         y3         y4\nx1  0.8164205  0.8162365  0.8162867 -0.3140467\nx2  0.8164205  0.8162365  0.8162867 -0.3140467\nx3  0.8164205  0.8162365  0.8162867 -0.3140467\nx4 -0.5290927 -0.7184365 -0.3446610  0.8165214\n\n\nEr de nu også det? Ikke hvis vi plotter dem:"
+  },
+  {
+    "objectID": "slides/data-fallacies.html#kirsebærplukning",
+    "href": "slides/data-fallacies.html#kirsebærplukning",
+    "title": "Statistik",
+    "section": "Kirsebærplukning",
+    "text": "Kirsebærplukning\nEller på engelsk “Cherry picking”\nNår vi kun udvælger de data der passer med det vi gerne vil vise…"
+  },
+  {
+    "objectID": "slides/data-fallacies.html#p-fishing",
+    "href": "slides/data-fallacies.html#p-fishing",
+    "title": "Statistik",
+    "section": "p-fishing",
+    "text": "p-fishing\nhttps://xkcd.com/882/\nvores p-værdi på 5% - det fortæller os at der er 5% risiko for.\nMatematikken er ikke helt sådan, men intuitivt. Hvis vi tester for 20 forskellige ting, så vil en af dem - helt tilfældigt - have en p-værdi vi kan lide."
+  },
+  {
+    "objectID": "slides/data-fallacies.html#sampling-bias",
+    "href": "slides/data-fallacies.html#sampling-bias",
+    "title": "Statistik",
+    "section": "Sampling bias",
+    "text": "Sampling bias\nNår vi konkluderer ud fra et datasæt, der ikke er repræsentativt for den population vi ønsker at undersøge.\nValgprognoser der udelukkende baserer sig på journalister, vil systematisk forudsige flertal til rød blok. https://sketchplanations.com/correlation-is-not-causation"
+  },
+  {
+    "objectID": "slides/data-fallacies.html#overlevelsesbias",
+    "href": "slides/data-fallacies.html#overlevelsesbias",
+    "title": "Statistik",
+    "section": "Overlevelsesbias",
+    "text": "Overlevelsesbias\nNår vi drager konklusioner på basis af et ukomplet datasæt, der består af de data der har overlevet et eller andet udvælgelseskriterium. Dette er klassikeren.\nJagerfly under 2. verdenskrig der overlevede turen over Tyskland havde skudhuller. Her er en visualisering af de skudhuller man observerede (for flere fly) https://en.wikipedia.org/wiki/Survivorship_bias#/media/File:Survivorship-bias.svg\nHvilke dele af flyet skal vi tilfører mere armering?\nDe dele hvor der ikke er skudhuller i de fly der vender tilbage. For det kunne de jo overleve. De fly der ikke når tilbage - de er formentlig blevet ramt andre steder."
+  },
+  {
+    "objectID": "slides/data-fallacies.html#overfitting",
+    "href": "slides/data-fallacies.html#overfitting",
+    "title": "Statistik",
+    "section": "Overfitting",
+    "text": "Overfitting\nNår vi skaber en model der er skræddersyet de data vi har - og ikke er repræsentativ for en generel tendens."
+  },
+  {
+    "objectID": "slides/data-fallacies.html#publicerings-bias",
+    "href": "slides/data-fallacies.html#publicerings-bias",
+    "title": "Statistik",
+    "section": "Publicerings bias",
+    "text": "Publicerings bias\nDu har to resultater fra din undersøgelse.\nInteressante resultater har større chance for at blive publiceret. Vi hører ikke om de negative resultater (altså dem hvor der ikke er en sammenhæng)"
+  },
+  {
+    "objectID": "slides/data-fallacies.html#korrelation-er-ikke-kausalitet",
+    "href": "slides/data-fallacies.html#korrelation-er-ikke-kausalitet",
+    "title": "Statistik",
+    "section": "Korrelation er ikke kausalitet",
+    "text": "Korrelation er ikke kausalitet\nspurious correlations\nhttps://www.tylervigen.com/spurious/correlation/5920_per-capita-consumption-of-margarine_correlates-with_the-divorce-rate-in-maine\nKausalitet betyder at en hændelse er det den direkte konsekvens af en anden. Når jeg trykker på kontakten, tænder lyset. Lyset tænder som en direkte konsekvens af at jeg har trykket på kontakten.\nKorrelation betyder at to hændelser (eller variable) bevæger sig sammen. Når x stiger, stiger y også. Eller, en negativ korrelation. Når x stiger, falder y.\nDer kan være en sammenhæng. Når salget af solcreme stiger, stiger salget af ispinde også. Ikke fordi man får behov for solcreme når man spiser is. Men fordi solskin og godt vejr om sommeren fører til stigende behov for solcreme. Og fordi varmt vejr fører til større efterspørgsel efter ispinde.\nHvordan tester vi for om x og y har en kausal sammenhæng?\nVi designer vores eksperimenter så vi kan afgøre det. Random sampling, dobbelt blindede forsøg, tilpas store sample størrelser.\nOg så kan vi infer en sammenhæng. Men næppe bevise den. https://sketchplanations.com/correlation-is-not-causation"
+  },
+  {
+    "objectID": "slides/data-fallacies.html#pas-på-summary-statistics",
+    "href": "slides/data-fallacies.html#pas-på-summary-statistics",
+    "title": "Statistik",
+    "section": "Pas på summary statistics",
+    "text": "Pas på summary statistics\nSummary statistics kan snyde og missse store forskelle i data. Betragt disse data:\n\n\n# A tibble: 8 × 5\n  variabel middel median stdafv   iqr\n  &lt;chr&gt;     &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt;\n1 x1         9      9      3.32  5   \n2 x2         9      9      3.32  5   \n3 x3         9      9      3.32  5   \n4 x4         9      8      3.32  0   \n5 y1         7.50   7.58   2.03  2.26\n6 y2         7.50   8.14   2.03  2.25\n7 y3         7.5    7.11   2.03  1.73\n8 y4         7.50   7.04   2.03  2.02\n\n\nDe ser ret ens ud."
+  },
+  {
+    "objectID": "slides/data-fallacies.html#correlationen-ser-også-fin-ud",
+    "href": "slides/data-fallacies.html#correlationen-ser-også-fin-ud",
+    "title": "Statistik",
+    "section": "Correlationen ser også fin ud",
+    "text": "Correlationen ser også fin ud\nKorrelationen mellem parrene er også ret ens: der er noget med x4 og y4. Men ellers - ret ens.\n\n\n           y1         y2         y3         y4\nx1  0.8164205  0.8162365  0.8162867 -0.3140467\nx2  0.8164205  0.8162365  0.8162867 -0.3140467\nx3  0.8164205  0.8162365  0.8162867 -0.3140467\nx4 -0.5290927 -0.7184365 -0.3446610  0.8165214\n\n\nMen er de nu også det?"
+  },
+  {
+    "objectID": "slides/data-fallacies.html#ikke-hvis-vi-plotter-dem",
+    "href": "slides/data-fallacies.html#ikke-hvis-vi-plotter-dem",
+    "title": "Statistik",
+    "section": "Ikke hvis vi plotter dem:",
+    "text": "Ikke hvis vi plotter dem:\n\nDet er ikke nok at se på summary statistics. Husk at plotte!"
+  },
+  {
+    "objectID": "slides/data-fallacies.html#del-2",
+    "href": "slides/data-fallacies.html#del-2",
+    "title": "Statistik",
+    "section": "del 2",
+    "text": "del 2"
+  },
+  {
+    "objectID": "slides/data-fallacies.html#hele-træet",
+    "href": "slides/data-fallacies.html#hele-træet",
+    "title": "Statistik",
+    "section": "Hele træet",
+    "text": "Hele træet"
+  },
+  {
+    "objectID": "slides/data-fallacies.html#præference-forfalskning",
+    "href": "slides/data-fallacies.html#præference-forfalskning",
+    "title": "Statistik",
+    "section": "Præference forfalskning",
+    "text": "Præference forfalskning\nDet fænomen at folk svarer det de tror eller mener er det ønskede.\n“Hvor mange genstande drikker du om ugen?”\nHvor ærligt svarer folk?\nHvis vi et øjeblik glemmer at de tilstedeværende nok ikke er specielt repræsentative for hele befolkningen (sampling bias).\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\nHvem af jer er det?"
+  },
+  {
+    "objectID": "slides/statistik-1.html#hvordan-fandt-vi-de-værdier",
+    "href": "slides/statistik-1.html#hvordan-fandt-vi-de-værdier",
+    "title": "Statistik",
+    "section": "Hvordan fandt vi de værdier?",
+    "text": "Hvordan fandt vi de værdier?"
+  },
+  {
+    "objectID": "slides/statistik-1.html#øvelse-1",
+    "href": "slides/statistik-1.html#øvelse-1",
+    "title": "Statistik",
+    "section": "Øvelse",
+    "text": "Øvelse\nDette er værdier fra R. Datasæt B er den målte hastighed af biler på en landevej. Vi antager at værdierne i dataæsttet B er normalfordelte. Beregn et interval som indeholder 95% af B’s værdier\nPå en eller anden måde skal jeg have kontstrueret et datasæt der giver:\nc(mean(A), mean(B), mean(Diff)) = 68.59, 81.18, -12.59 c(sd(A), sd(B), sd(Diff)) 13.81 15.39 14.16\nDa vi kan antage normalfordeling (det kan vi ikke, men opgaven siger vi kan, så det kan vi) er 95% af værdierne indeholdt i intervallet\n\n\n[1]  51.01615 111.34385\n\n\nSå - 95% af hastighederne vi har målt på landevejen ligger mellem disse to værdier. Og! vi kan antage at den fordeling også gælder i baggrundspopulationen (der altså er alle biler, også dem vi ikke målte på)"
+  },
+  {
+    "objectID": "slides/statistik-1.html#løsning",
+    "href": "slides/statistik-1.html#løsning",
+    "title": "Statistik",
+    "section": "Løsning",
+    "text": "Løsning\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page."
+  },
+  {
+    "objectID": "slides/statistik-1.html#mange-normalfordelinger",
+    "href": "slides/statistik-1.html#mange-normalfordelinger",
+    "title": "Statistik",
+    "section": "Mange normalfordelinger",
+    "text": "Mange normalfordelinger\nDen normalfordeling vi har set er standardiserede. Hvor \\(\\mu = 0\\) og \\(\\sigma = 1\\). Men der er mange andre! Prøv at ændre middelværdien og standardafvigelsen.\n\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page."
+  },
+  {
+    "objectID": "slides/statistik-1.html#test-af-kode",
+    "href": "slides/statistik-1.html#test-af-kode",
+    "title": "Statistik",
+    "section": "test af kode",
+    "text": "test af kode\n\n\nI would like to have text here\nSentence becomes longer, it should automatically stay in their column\n\n\n\nand here\nMore text"
+  },
+  {
+    "objectID": "slides/statistik-1.html#alternativ-quarto-columns-uden-tom-midterkolonne",
+    "href": "slides/statistik-1.html#alternativ-quarto-columns-uden-tom-midterkolonne",
+    "title": "Statistik",
+    "section": "Alternativ: Quarto columns (uden tom midterkolonne)",
+    "text": "Alternativ: Quarto columns (uden tom midterkolonne)"
+  },
+  {
+    "objectID": "slides/statistik-1.html#robust-layout-pull-left-pull-right",
+    "href": "slides/statistik-1.html#robust-layout-pull-left-pull-right",
+    "title": "Statistik",
+    "section": "Robust layout: pull-left / pull-right",
+    "text": "Robust layout: pull-left / pull-right\n\nVenstre kolonne – tekst/kode\n\n\nHøjre kolonne – output\n\n::::"
+  },
+  {
+    "objectID": "slides/statistik-1.html#endnu-en-test",
+    "href": "slides/statistik-1.html#endnu-en-test",
+    "title": "Statistik",
+    "section": "endnu en test",
+    "text": "endnu en test"
+  },
+  {
+    "objectID": "slides/statistik-1.html#én-webr-chunk-skriv-venstre-se-output-højre",
+    "href": "slides/statistik-1.html#én-webr-chunk-skriv-venstre-se-output-højre",
+    "title": "Statistik",
+    "section": "Én webR-chunk: skriv venstre, se output højre",
+    "text": "Én webR-chunk: skriv venstre, se output højre\n\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page."
+  },
+  {
+    "objectID": "slides/statistik-47.html#mange-normalfordelinger",
+    "href": "slides/statistik-47.html#mange-normalfordelinger",
+    "title": "Statistik",
+    "section": "Mange normalfordelinger",
+    "text": "Mange normalfordelinger\n\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page."
+  },
+  {
+    "objectID": "slides/statistik-47.html#flere-normalfordelinger-samtidigt",
+    "href": "slides/statistik-47.html#flere-normalfordelinger-samtidigt",
+    "title": "Statistik",
+    "section": "Flere normalfordelinger samtidigt",
+    "text": "Flere normalfordelinger samtidigt\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page."
+  },
+  {
+    "objectID": "slides/statistik-1.html#med-andre-ord",
+    "href": "slides/statistik-1.html#med-andre-ord",
+    "title": "Statistik",
+    "section": "Med andre ord…",
+    "text": "Med andre ord…\nHvis vi har noget data der er normalfordelt Og vi kender middelværdi og standardafvigelse Så kan vi beregne inden for hvilket interval 95% af observationerne ligger.\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page."
+  },
+  {
+    "objectID": "slides/statistik-1.html#og-hvis-data-ikke-er-standardiserede",
+    "href": "slides/statistik-1.html#og-hvis-data-ikke-er-standardiserede",
+    "title": "Statistik",
+    "section": "Og hvis data ikke er standardiserede:",
+    "text": "Og hvis data ikke er standardiserede:\nHvor mange procent af observationerne er mindre end 2, hvis middelværdien er 4 og standardafvigelsen er 2:\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page."
+  },
+  {
+    "objectID": "slides/statistik-1.html#hvordan-standardiserer-vi-vores-egne-data",
+    "href": "slides/statistik-1.html#hvordan-standardiserer-vi-vores-egne-data",
+    "title": "Statistik",
+    "section": "Hvordan standardiserer vi vores egne data?",
+    "text": "Hvordan standardiserer vi vores egne data?\n\nVi har lov at trække en værdi fra vores observationer.\nVi har også lov at gange eller dividere vores observationer med en værdi.\nSå længe vi gør det samme med alle observationerne!\n\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page."
+  },
+  {
+    "objectID": "slides/statistik-1.html#hvordan-standardiseres-egne-data",
+    "href": "slides/statistik-1.html#hvordan-standardiseres-egne-data",
+    "title": "Statistik",
+    "section": "Hvordan standardiseres egne data?",
+    "text": "Hvordan standardiseres egne data?\n\nVi har lov at trække en værdi fra vores observationer.\nVi har også lov at gange eller dividere vores observationer med en værdi.\nSå længe vi gør det samme med alle observationerne!\n\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\nDet betyder også, at det vi har på x-aksen for en given normaliseret værdi af en observation, er afstanden til middelværdien. Målt i enheder af standardafvigelsen."
+  },
+  {
+    "objectID": "slides/statistik-1.html#og-hvad-skal-vi-så-bruge-det-til",
+    "href": "slides/statistik-1.html#og-hvad-skal-vi-så-bruge-det-til",
+    "title": "Statistik",
+    "section": "Og hvad skal vi så bruge det til?",
+    "text": "Og hvad skal vi så bruge det til?\n\nMit kriterium for om matematik er avanceret: Hvis jeg synes det er svært at forstå, men jeg dog kan forstå det. Så er det ikke meget avanceret matematik. For så god er jeg heller ikke til matematik. CLT er ikke avanceret. Men jeg synes stadig det er svært.\n\nEt helt centralt begreb i statistik er grænseværdisætningen. Eller på engelsk Central Limit Theorem (CLT)\nTager vi mange stikprøver i en population, vil middelværdierne af stikprøverne være normalfordelte. Også selvom værdierne i populationen ikke er normalfordelte."
+  },
+  {
+    "objectID": "slides/statistik-1.html#demo1",
+    "href": "slides/statistik-1.html#demo1",
+    "title": "Statistik",
+    "section": "demo1",
+    "text": "demo1\nDet her er i hvertfald ikke normal fordelt"
+  },
+  {
+    "objectID": "slides/statistik-1.html#demo2",
+    "href": "slides/statistik-1.html#demo2",
+    "title": "Statistik",
+    "section": "demo2",
+    "text": "demo2\n\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page."
+  },
+  {
+    "objectID": "slides/statistik-1.html#men-det-er-jo-en-stikprøve",
+    "href": "slides/statistik-1.html#men-det-er-jo-en-stikprøve",
+    "title": "Statistik",
+    "section": "Men det er jo en stikprøve!",
+    "text": "Men det er jo en stikprøve!\nSå vi bruger xbar i stedet for mu. og s i stedet for sigma. Og hvordan passer det så?\nOg det er forskelligt fra populationen. Og vi tager normalt heller ikke mange stikprøver. Vi har en.\nStandardafvigelsen viser variationen i vores stikprøve.\nMen vi er egentlig interesseret i hvordan variationen i mange middelværdier vil være.\nDen beregner vi ved:\n\\[SEM = \\frac{s}{\\sqrt{n}}\\]\nhvor n er antallet af observationer i vores stikprøve. og s er stikprøvens standardafvigelse\nSå det med at beregne en standardafvigelse på mange stikprøver, når vi kun har en stikprøve. Hvordan håndterer vi det?\nFor standardafvigelsen fortæller os hvordan observationerne i vores stikprøve afviger fra middelværdien. Ikke hvordan gennemsnittet ville ændre sig hvis vi tog en ny stikprøve.\nTil det formål bruger vi SEM¨\n“SD viser variationen i data – SEM viser usikkerheden på gennemsnittet.”\neller endnu kortere:\n“SD = spredning af observationer, SEM = spredning af middelværdier.”\nvi skal nok også lige have præciseret hvad det faktisk er der er på x-aksen. Observationernes afstand fra middelværdien, målt i standardafvigelser."
+  },
+  {
+    "objectID": "slides/statistik-1.html#og-så-kan-vi-gå-i-gang-med-hypotesetests",
+    "href": "slides/statistik-1.html#og-så-kan-vi-gå-i-gang-med-hypotesetests",
+    "title": "Statistik",
+    "section": "Og så kan vi gå i gang med hypotesetests!",
+    "text": "Og så kan vi gå i gang med hypotesetests!"
+  },
+  {
+    "objectID": "slides/statistik-1.html#tilbage-til-vores-stikprøve",
+    "href": "slides/statistik-1.html#tilbage-til-vores-stikprøve",
+    "title": "Statistik",
+    "section": "Tilbage til vores stikprøve",
+    "text": "Tilbage til vores stikprøve\nSom jo netop blot er en stikprøve. Det er derfor vi bruger xbar i stedet for mu og s i stedet for sigma.\ns er standardafvigelsen for observatinoerne i vores stikprøve. Vi har ikke en standardafvigelse for hvad middelværdien ville være hvis vi havde mange stikprøver.\nOg det ville være rart at have.\nDet kan vi få. Det kalder vi for SEM, Standard Error of the Mean.\nDen beregnes ud fra stikprøvens størrelse og standardafvigelse:\n\\[SEM = \\frac{s}{\\sqrt{n}}\\]\nhvor n er antallet af observationer i stikprøven.\nFor standardafvigelsen fortæller os hvordan observationerne i vores stikprøve afviger fra middelværdien. Ikke hvordan gennemsnittet ville ændre sig hvis vi tog en ny stikprøve.\nTil det formål bruger vi SEM¨\n“SD viser variationen i data – SEM viser usikkerheden på gennemsnittet.”\neller endnu kortere:\n“SD = spredning af observationer, SEM = spredning af middelværdier.”\nvi skal nok også lige have præciseret hvad det faktisk er der er på x-aksen. Observationernes afstand fra middelværdien, målt i standardafvigelser."
+  },
+  {
+    "objectID": "slides/statistik-1.html#og-hvad-bruger-vi-sem-til",
+    "href": "slides/statistik-1.html#og-hvad-bruger-vi-sem-til",
+    "title": "Statistik",
+    "section": "Og hvad bruger vi SEM til?",
+    "text": "Og hvad bruger vi SEM til?\nJo, vi har stikprøvens middelværdi. Og dens standardafvigelse. Og antallet af observationer. Og så har vi SEM. Og når vi har SEM, kan vi beregne et interval hvor vi er 95% sikre på indeholder populationens middelværdi:\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page."
+  },
+  {
+    "objectID": "slides/demo.html#stikprøve-vs-population",
+    "href": "slides/demo.html#stikprøve-vs-population",
+    "title": "Statistik",
+    "section": "Stikprøve vs population",
+    "text": "Stikprøve vs population\n\nPopulationen er det komplette sæt af entiteter† vi ønsker at lære noget om\nStikprøven er den del mængde af det komplette, som vi har data for\nPopulationen indeholder stikprøven. Men stikprøven dækker sjældent hele populationen‡\n\nVi ønsker ofte at kunne sige noget om populationen, baseret på stikprøven. Det kalder vi inferens.\n†) Alle børn i Danmark. Alle heste i Danmark. Koncentrationen af Magnesium i drikkevandet ‡) Danske registerdata kan være undtagelsen"
+  },
+  {
+    "objectID": "slides/demo.html#parametre-vs-statistik",
+    "href": "slides/demo.html#parametre-vs-statistik",
+    "title": "Statistik",
+    "section": "Parametre vs statistik",
+    "text": "Parametre vs statistik\nEn parameter er et tal der beskriver en population.\nDette er et teoretisk tal - vi kan ikke måle det. Det eksisterer, men vi kender det ikke.\nDen sande værdi af den gennemsnitlige højde af mænd i Danmark findes. Men vi ved ikke hvad den er, for vi kan ikke måle højden af alle mænd. Det sande gennemsnit kalder vi \\(\\mu\\).\nDer er en sand variation (vi kommer til det) af højden af alle mænd i Danmark. Den findes, og vi kalder den \\(\\sigma^2\\). Men vi ved ikke hvad den er, og vi kan ikke finde ud af hvad den er.\nStatistikken derimod er det vi ved hvad er. Det er gennemsnitshøjden af alle mænd i vore stikprøve. Den kalder vi \\(\\hbar{X}\\). Variansen kan vi også beregne. Den kalder vi \\(s^2\\)\nBemærk forskellen i notationen.\nVi kan bruge \\(\\hbar{X}\\) og \\(s^2\\) til at estimere de ukendte parametre: \\(\\mu\\) og \\(\\sigma^2\\)\nHvis man vil kunne huske hvad non-parametriske tests er - så skal man kunne huske det her."
+  },
+  {
+    "objectID": "slides/demo.html#typer-af-data---kategoriske",
+    "href": "slides/demo.html#typer-af-data---kategoriske",
+    "title": "Statistik",
+    "section": "Typer af data - kategoriske",
+    "text": "Typer af data - kategoriske\nData falder i en kategori. Eller i en anden. Ikke i begge.\n\nNominale data\n\nDer er ingen rækkefølge - ingen er “bedre” end andre\n\nYndlingsfarve\nmand/kvinde\nJa/nej\n\n\nOrdinale data\n\nStadig kategoriske\nDer er en naturlig rækkefølge\n\nHøjde: Lav, medium, høj\nTerningekast\nSocialklasse"
+  },
+  {
+    "objectID": "slides/demo.html#typer-af-data---kvantitative",
+    "href": "slides/demo.html#typer-af-data---kvantitative",
+    "title": "Statistik",
+    "section": "Typer af data - kvantitative",
+    "text": "Typer af data - kvantitative\nNumeriske data - målinger eller optællinger\n\nDiskrete\n\nKun specifikke værdier er mulige\n\nAntal børn\nAntal senge på et hospital\n\n\nKontinuærte\n\nMålbare enheder, med mulige værdier der ligger i et interval\n\nBMI\nBlodtryk\nHøjde\n\n\n\n\nKvantitative data er typisk noget vi måler. Og i princippet kan vi måle med arbitrær præcision. Kvalitative data er data der kun kan være i en kasse. Enten er man gravid. Eller også er man ikke. Man er ikke en lille smule gravid. Der er to typer. Nominale hvor der ikke er nogen orden. Kvinder er ikke bedre end mænd. Ordinale data - og der er en orden. Det er (ofte) bedre at slå en sekser end en treer når man kaster med terninger."
+  },
+  {
+    "objectID": "slides/demo.html#her-kunne-vi-have-noget-om-visning-af-data",
+    "href": "slides/demo.html#her-kunne-vi-have-noget-om-visning-af-data",
+    "title": "Statistik",
+    "section": "Her kunne vi have noget om visning af data",
+    "text": "Her kunne vi have noget om visning af data\nMen det tror jeg hellere jeg vil have senere"
+  },
+  {
+    "objectID": "slides/demo.html#typetal",
+    "href": "slides/demo.html#typetal",
+    "title": "Statistik",
+    "section": "Typetal",
+    "text": "Typetal\nVed kategoriske data giver det ikke mening at tale om gennemsnit.\nIstedet: Typetallet (engelsk “mode”).\nDen hyppigst forekommende observation (der kan være mere end en, men så er de lige store)\nIkke følsom overfor outliers. Særligt nyttig ved kvalitative data.\nIkke en indbygget funktion i R!"
+  },
+  {
+    "objectID": "noter/modul 4.html",
+    "href": "noter/modul 4.html",
+    "title": "modul 4 - nicolai",
+    "section": "",
+    "text": "![]](paste-KSjH352LZRbfQn_9lCco2)"
+  },
+  {
+    "objectID": "slides/statistik-1.html#qt",
+    "href": "slides/statistik-1.html#qt",
+    "title": "Statistik",
+    "section": "qt?",
+    "text": "qt?\nNormalfordelingen fortæller at 95% af observationerne ligger mellem -1.96 og 1.96 standardafvigelser, \\(\\sigma\\) fra middelværdien.\nVi har jo (stort set altid) kun en stikprøve. Så vi kender kun s, ikke \\(\\sigma\\).\nOg vi vil nødig sige noget der er forkert. Så i stedet for normalfordelingen, bruger vi t-fordelingen. Den er bredere og har tykkere haler end normalfordelingen.\n\nDet giver os et bredere interval i hvilket de 95% af observationerne ligger. Altså et mere konservativt skøn på intervallet - som er mere sikkert.\nt-fordelingen har også den fordel at den tager højde for hvor stor vores stikprøve er - så jo større stikprøven er, jo tættere kommer den på normalfordelingen."
+  },
+  {
+    "objectID": "slides/statistik-1.html#type-1-og-type-2-fejl",
+    "href": "slides/statistik-1.html#type-1-og-type-2-fejl",
+    "title": "Statistik",
+    "section": "type 1 og type 2 fejl",
+    "text": "type 1 og type 2 fejl\nNår vi laver statistik er vi ude efter at få svar på et spørgsmål.\nEksempelvis: Vi tester om en ny type medicin faktisk virker.\nDet kan gå galt på to måder.\nVi kan konkludere at ja, det gør den. Også selvom den i virkeligheden ikke gør. Det kalder vi en type 1 fejl.\nVi kan også konkludere at, nej, det gør den ikke. Selvom den faktisk gør. Det er en type 2 fejl.\nOg det relaterer sig til hypotesetesten. Når vi forkaster null-hypotesen, og derfor “tror” på den alternative hypotese, så gør vi det fordi alpha, p-værdien er tilpas lav. Så når p-værdien er 0.04 er vi ofte glade, for så forkaster vi null-hypotesen. de 0.04, svarende til 4% er risikoen for at vi begår en type 1 fejl."
   }
 ]
