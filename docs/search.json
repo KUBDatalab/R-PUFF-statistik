@@ -417,7 +417,7 @@
     "href": "index.html",
     "title": "Untitled",
     "section": "",
-    "text": "Præsentationer\n\nDemo\nDemo 2\nstat 1\nfallacies\ntests"
+    "text": "Præsentationer\n\nDemo - mit første forsøg\nDemo 2 - lineære modeller mit første forsøg\nStat 1 - faktisk resultat\nfallacies - ikke helt i mål endnu\nForsøg med webr\ndemo3\ndemo4\ndel2\ndel3\nintro\nmodul1\nmodul2\nmodul3\nmodul4\nmodul5"
   },
   {
     "objectID": "slides/demo.html#formålet-med-statistik",
@@ -452,14 +452,14 @@
     "href": "slides/demo.html#deskriptiv-statistik-til-beskrivelse-af-data-1",
     "title": "Statistik",
     "section": "Deskriptiv statistik til beskrivelse af data",
-    "text": "Deskriptiv statistik til beskrivelse af data\nPlacering. Hvor ca. ligger data?\n\nMiddelværdi: \\(\\bar{x} = \\frac{1}{n}\\big(\\sum_{i=1}^{n}x_i\\big) = \\frac{x_1 + x_2 + ... + x_n}{n}\\)\nMedian: Den midterste værdi - når alle værdier er stillet op fra mindste til største\n\nDet beregner vi “let” i R:\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page."
+    "text": "Deskriptiv statistik til beskrivelse af data\nPlacering. Hvor ca. ligger data?\n\nMiddelværdi: \\(\\bar{x} = \\frac{1}{n}\\big(\\sum_{i=1}^{n}x_i\\big) = \\frac{x_1 + x_2 + ... + x_n}{n}\\)\n\nFølsom(ish) overfor outliers\n\nMedian: Den midterste værdi - når alle værdier er stillet op fra mindste til største\n\nHalvdelen af observationerne ligger over medianen. Halvdelen under.\nUfølsom(ish) overfor outliers\n\n\nDet beregner vi “let” i R:\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\nVis gerne data i kodeblokken. Hvad hvis der er et lige antal observationer? Så tager vi gennemsnittet af de to midterste"
   },
   {
     "objectID": "slides/demo.html#deskriptiv-statistik-til-beskrivelse-af-data-2",
     "href": "slides/demo.html#deskriptiv-statistik-til-beskrivelse-af-data-2",
     "title": "Statistik",
     "section": "Deskriptiv statistik til beskrivelse af data",
-    "text": "Deskriptiv statistik til beskrivelse af data\nVariationen - hvordan er data spredt?\nHvordan kan vi beskrive det?\nHvor meget afviger de enkelte observation fra gennemsnittet\nIntuitivt kan vi se at ikke alle værdierne ligger lige tæt på gennemsnittet. Så. Vi kan beregne hvor langt hver værdi ligger fra gennemsnittet. Hvis vi bare lægger de tal sammen, så bliver størrelsen afhængig af hvor mange data punkter vi har. s Vi kan have 10000 punkter der alle sammen ligger utroligt tæt på gennemsnittet. Eller vi kan have 10 punkter der alle ligger meget langt fra gennemsnittet. Vi har brug for et gennemsnit. Problemet er, at gennemsnittet af forskellen for de enkelte punkter fra gennemsnittet, vil give 0. I stedet tager vi kvadratet på alle forskellene - og beregner gennemsnittet af dem. Det betyder også at punkter der ligger langt fra gennemsnittet “fylder” mere end punkter der ligger tæt på gennemsnittet.\nDet kalder vi for variansen.\nDer er et problem med den. Enheden. Enheden af vores hæmoglobin målinger bliver\n\\(g^2/ml^2\\) Den giver ingen mening. I stedet ser vi på standardafvigelsen, hvor vi tager kvadratroden på variansen."
+    "text": "Deskriptiv statistik til beskrivelse af data\nDer er variation i vores data. Gennemsnittet af højden for alle mænd i vores stikprøve er muligvis 182 cm. Men nogen er højere, og andre lavere.\nVariationen - hvordan er data spredt?\nHvordan kan vi beskrive det?\nHvor meget afviger de enkelte observation fra gennemsnittet\nIntuitivt kan vi se at ikke alle værdierne ligger lige tæt på gennemsnittet. Så. Vi kan beregne hvor langt hver værdi ligger fra gennemsnittet. Hvis vi bare lægger de tal sammen, så bliver størrelsen afhængig af hvor mange data punkter vi har. s Vi kan have 10000 punkter der alle sammen ligger utroligt tæt på gennemsnittet. Eller vi kan have 10 punkter der alle ligger meget langt fra gennemsnittet. Vi har brug for et gennemsnit. Problemet er, at gennemsnittet af forskellen for de enkelte punkter fra gennemsnittet, vil give 0. I stedet tager vi kvadratet på alle forskellene - og beregner gennemsnittet af dem. Det betyder også at punkter der ligger langt fra gennemsnittet “fylder” mere end punkter der ligger tæt på gennemsnittet.\nDet kalder vi for variansen.\nDer er et problem med den. Enheden. Enheden af vores hæmoglobin målinger bliver\n\\(g^2/ml^2\\) Den giver ingen mening. I stedet ser vi på standardafvigelsen, hvor vi tager kvadratroden på variansen."
   },
   {
     "objectID": "slides/demo.html#deskriptiv-statistik-til-beskrivelse-af-data-3",
@@ -949,7 +949,7 @@
     "href": "slides/statistik-1.html#hvordan-standardiseres-egne-data",
     "title": "Statistik",
     "section": "Hvordan standardiseres egne data?",
-    "text": "Hvordan standardiseres egne data?\n\nVi har lov at trække en værdi fra vores observationer.\nVi har også lov at gange eller dividere vores observationer med en værdi.\nSå længe vi gør det samme med alle observationerne!\n\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page."
+    "text": "Hvordan standardiseres egne data?\n\nVi har lov at trække en værdi fra vores observationer.\nVi har også lov at gange eller dividere vores observationer med en værdi.\nSå længe vi gør det samme med alle observationerne!\n\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\nDet betyder også, at det vi har på x-aksen for en given normaliseret værdi af en observation, er afstanden til middelværdien. Målt i enheder af standardafvigelsen."
   },
   {
     "objectID": "slides/statistik-1.html#og-hvad-skal-vi-så-bruge-det-til",
@@ -985,5 +985,82 @@
     "title": "Statistik",
     "section": "Og så kan vi gå i gang med hypotesetests!",
     "text": "Og så kan vi gå i gang med hypotesetests!"
+  },
+  {
+    "objectID": "slides/statistik-1.html#tilbage-til-vores-stikprøve",
+    "href": "slides/statistik-1.html#tilbage-til-vores-stikprøve",
+    "title": "Statistik",
+    "section": "Tilbage til vores stikprøve",
+    "text": "Tilbage til vores stikprøve\nSom jo netop blot er en stikprøve. Det er derfor vi bruger xbar i stedet for mu og s i stedet for sigma.\ns er standardafvigelsen for observatinoerne i vores stikprøve. Vi har ikke en standardafvigelse for hvad middelværdien ville være hvis vi havde mange stikprøver.\nOg det ville være rart at have.\nDet kan vi få. Det kalder vi for SEM, Standard Error of the Mean.\nDen beregnes ud fra stikprøvens størrelse og standardafvigelse:\n\\[SEM = \\frac{s}{\\sqrt{n}}\\]\nhvor n er antallet af observationer i stikprøven.\nFor standardafvigelsen fortæller os hvordan observationerne i vores stikprøve afviger fra middelværdien. Ikke hvordan gennemsnittet ville ændre sig hvis vi tog en ny stikprøve.\nTil det formål bruger vi SEM¨\n“SD viser variationen i data – SEM viser usikkerheden på gennemsnittet.”\neller endnu kortere:\n“SD = spredning af observationer, SEM = spredning af middelværdier.”\nvi skal nok også lige have præciseret hvad det faktisk er der er på x-aksen. Observationernes afstand fra middelværdien, målt i standardafvigelser."
+  },
+  {
+    "objectID": "slides/statistik-1.html#og-hvad-bruger-vi-sem-til",
+    "href": "slides/statistik-1.html#og-hvad-bruger-vi-sem-til",
+    "title": "Statistik",
+    "section": "Og hvad bruger vi SEM til?",
+    "text": "Og hvad bruger vi SEM til?\nJo, vi har stikprøvens middelværdi. Og dens standardafvigelse. Og antallet af observationer. Og så har vi SEM. Og når vi har SEM, kan vi beregne et interval hvor vi er 95% sikre på indeholder populationens middelværdi:\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page."
+  },
+  {
+    "objectID": "slides/demo.html#stikprøve-vs-population",
+    "href": "slides/demo.html#stikprøve-vs-population",
+    "title": "Statistik",
+    "section": "Stikprøve vs population",
+    "text": "Stikprøve vs population\n\nPopulationen er det komplette sæt af entiteter† vi ønsker at lære noget om\nStikprøven er den del mængde af det komplette, som vi har data for\nPopulationen indeholder stikprøven. Men stikprøven dækker sjældent hele populationen‡\n\nVi ønsker ofte at kunne sige noget om populationen, baseret på stikprøven. Det kalder vi inferens.\n†) Alle børn i Danmark. Alle heste i Danmark. Koncentrationen af Magnesium i drikkevandet ‡) Danske registerdata kan være undtagelsen"
+  },
+  {
+    "objectID": "slides/demo.html#parametre-vs-statistik",
+    "href": "slides/demo.html#parametre-vs-statistik",
+    "title": "Statistik",
+    "section": "Parametre vs statistik",
+    "text": "Parametre vs statistik\nEn parameter er et tal der beskriver en population.\nDette er et teoretisk tal - vi kan ikke måle det. Det eksisterer, men vi kender det ikke.\nDen sande værdi af den gennemsnitlige højde af mænd i Danmark findes. Men vi ved ikke hvad den er, for vi kan ikke måle højden af alle mænd. Det sande gennemsnit kalder vi \\(\\mu\\).\nDer er en sand variation (vi kommer til det) af højden af alle mænd i Danmark. Den findes, og vi kalder den \\(\\sigma^2\\). Men vi ved ikke hvad den er, og vi kan ikke finde ud af hvad den er.\nStatistikken derimod er det vi ved hvad er. Det er gennemsnitshøjden af alle mænd i vore stikprøve. Den kalder vi \\(\\hbar{X}\\). Variansen kan vi også beregne. Den kalder vi \\(s^2\\)\nBemærk forskellen i notationen.\nVi kan bruge \\(\\hbar{X}\\) og \\(s^2\\) til at estimere de ukendte parametre: \\(\\mu\\) og \\(\\sigma^2\\)\nHvis man vil kunne huske hvad non-parametriske tests er - så skal man kunne huske det her."
+  },
+  {
+    "objectID": "slides/demo.html#typer-af-data---kategoriske",
+    "href": "slides/demo.html#typer-af-data---kategoriske",
+    "title": "Statistik",
+    "section": "Typer af data - kategoriske",
+    "text": "Typer af data - kategoriske\nData falder i en kategori. Eller i en anden. Ikke i begge.\n\nNominale data\n\nDer er ingen rækkefølge - ingen er “bedre” end andre\n\nYndlingsfarve\nmand/kvinde\nJa/nej\n\n\nOrdinale data\n\nStadig kategoriske\nDer er en naturlig rækkefølge\n\nHøjde: Lav, medium, høj\nTerningekast\nSocialklasse"
+  },
+  {
+    "objectID": "slides/demo.html#typer-af-data---kvantitative",
+    "href": "slides/demo.html#typer-af-data---kvantitative",
+    "title": "Statistik",
+    "section": "Typer af data - kvantitative",
+    "text": "Typer af data - kvantitative\nNumeriske data - målinger eller optællinger\n\nDiskrete\n\nKun specifikke værdier er mulige\n\nAntal børn\nAntal senge på et hospital\n\n\nKontinuærte\n\nMålbare enheder, med mulige værdier der ligger i et interval\n\nBMI\nBlodtryk\nHøjde\n\n\n\n\nKvantitative data er typisk noget vi måler. Og i princippet kan vi måle med arbitrær præcision. Kvalitative data er data der kun kan være i en kasse. Enten er man gravid. Eller også er man ikke. Man er ikke en lille smule gravid. Der er to typer. Nominale hvor der ikke er nogen orden. Kvinder er ikke bedre end mænd. Ordinale data - og der er en orden. Det er (ofte) bedre at slå en sekser end en treer når man kaster med terninger."
+  },
+  {
+    "objectID": "slides/demo.html#her-kunne-vi-have-noget-om-visning-af-data",
+    "href": "slides/demo.html#her-kunne-vi-have-noget-om-visning-af-data",
+    "title": "Statistik",
+    "section": "Her kunne vi have noget om visning af data",
+    "text": "Her kunne vi have noget om visning af data\nMen det tror jeg hellere jeg vil have senere"
+  },
+  {
+    "objectID": "slides/demo.html#typetal",
+    "href": "slides/demo.html#typetal",
+    "title": "Statistik",
+    "section": "Typetal",
+    "text": "Typetal\nVed kategoriske data giver det ikke mening at tale om gennemsnit.\nIstedet: Typetallet (engelsk “mode”).\nDen hyppigst forekommende observation (der kan være mere end en, men så er de lige store)\nIkke følsom overfor outliers. Særligt nyttig ved kvalitative data.\nIkke en indbygget funktion i R!"
+  },
+  {
+    "objectID": "noter/modul 4.html",
+    "href": "noter/modul 4.html",
+    "title": "modul 4 - nicolai",
+    "section": "",
+    "text": "![]](paste-KSjH352LZRbfQn_9lCco2)"
+  },
+  {
+    "objectID": "slides/statistik-1.html#qt",
+    "href": "slides/statistik-1.html#qt",
+    "title": "Statistik",
+    "section": "qt?",
+    "text": "qt?\nNormalfordelingen fortæller at 95% af observationerne ligger mellem -1.96 og 1.96 standardafvigelser, \\(\\sigma\\) fra middelværdien.\nVi har jo (stort set altid) kun en stikprøve. Så vi kender kun s, ikke \\(\\sigma\\).\nOg vi vil nødig sige noget der er forkert. Så i stedet for normalfordelingen, bruger vi t-fordelingen. Den er bredere og har tykkere haler end normalfordelingen.\n\nDet giver os et bredere interval i hvilket de 95% af observationerne ligger. Altså et mere konservativt skøn på intervallet - som er mere sikkert.\nt-fordelingen har også den fordel at den tager højde for hvor stor vores stikprøve er - så jo større stikprøven er, jo tættere kommer den på normalfordelingen."
+  },
+  {
+    "objectID": "slides/statistik-1.html#type-1-og-type-2-fejl",
+    "href": "slides/statistik-1.html#type-1-og-type-2-fejl",
+    "title": "Statistik",
+    "section": "type 1 og type 2 fejl",
+    "text": "type 1 og type 2 fejl\nNår vi laver statistik er vi ude efter at få svar på et spørgsmål.\nEksempelvis: Vi tester om en ny type medicin faktisk virker.\nDet kan gå galt på to måder.\nVi kan konkludere at ja, det gør den. Også selvom den i virkeligheden ikke gør. Det kalder vi en type 1 fejl.\nVi kan også konkludere at, nej, det gør den ikke. Selvom den faktisk gør. Det er en type 2 fejl.\nOg det relaterer sig til hypotesetesten. Når vi forkaster null-hypotesen, og derfor “tror” på den alternative hypotese, så gør vi det fordi alpha, p-værdien er tilpas lav. Så når p-værdien er 0.04 er vi ofte glade, for så forkaster vi null-hypotesen. de 0.04, svarende til 4% er risikoen for at vi begår en type 1 fejl."
   }
 ]

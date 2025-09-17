@@ -1,6 +1,6 @@
 ---
 title: "Statistik"
-subtitle: "Del 1" 
+subtitle: "Del 1. Grundlaget" 
 format: revealjs
 engine: knitr
 filters: 
@@ -9,33 +9,7 @@ webr:
   packages: ["gt", "tidyverse"]
 ---
 
-<style>
-/* Targetter din custom webr-extension */
-.r-wasm-editor {
-  float: left;
-  width: 48%;
-  height: 80vh;
-  box-sizing: border-box;
-  padding-right: 10px;
-  overflow: auto;
-}
 
-.r-wasm-output {
-  float: right;
-  width: 48%;
-  height: 80vh;
-  box-sizing: border-box;
-  padding-left: 10px;
-  overflow: auto;
-}
-
-/* Clearfix */
-.slide:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-</style>
 {{< include ../_extensions/r-wasm/live/_knitr.qmd >}}
 
   
@@ -630,6 +604,9 @@ stdafv <- sd(demo)
 norm_demo <- (demo - middel)/stdafv
 ```
 
+Det betyder også, at det vi har på x-aksen for en given normaliseret værdi af en
+observation, er afstanden til middelværdien. Målt i enheder af standardafvigelsen.
+
 ## Og hvad skal vi så bruge det til?
 
 ::::notes
@@ -739,29 +716,26 @@ data.frame(x = middelværdier) |>
   stat_function(fun = dnorm, n = 101, args=list(mean= mean(middelværdier), sd = sd(middelværdier)))
 ```
 
-## Men det er jo _en_ stikprøve!
 
-Så vi bruger xbar i stedet for mu. og s i stedet for sigma. Og hvordan 
-passer det så?
+## Tilbage til vores stikprøve
 
-Og det er forskelligt fra populationen. 
-Og vi tager normalt heller ikke mange stikprøver. Vi har en.
+Som jo netop blot er _en_ stikprøve. 
+Det er derfor vi bruger xbar i stedet for mu og s i stedet for sigma.
 
-Standardafvigelsen viser variationen i vores stikprøve.
+s er standardafvigelsen for observatinoerne i vores stikprøve. Vi har ikke 
+en standardafvigelse for hvad middelværdien ville være hvis vi havde mange stikprøver.
 
-Men vi er egentlig interesseret i hvordan variationen i mange middelværdier 
-vil være.
+Og det ville være rart at have. 
 
-Den beregner vi ved:
+Det kan vi få. Det kalder vi for SEM, Standard Error of the Mean.
+
+Den beregnes ud fra stikprøvens størrelse og standardafvigelse:
 
 $$SEM = \frac{s}{\sqrt{n}}$$
 
-hvor n er antallet af observationer i vores stikprøve.
-og s er stikprøvens standardafvigelse
+hvor n er antallet af observationer i stikprøven.
 
 
-Så det med at beregne en standardafvigelse på mange stikprøver, når vi kun
-har en stikprøve. Hvordan håndterer vi det?
 
 For standardafvigelsen fortæller os hvordan observationerne i vores stikprøve
 afviger fra middelværdien. Ikke hvordan gennemsnittet ville ændre sig
@@ -778,6 +752,77 @@ eller endnu kortere:
 
 vi skal nok også lige have præciseret hvad det faktisk er der er på
 x-aksen. Observationernes afstand fra middelværdien, målt i standardafvigelser.
+
+## Og hvad bruger vi SEM til?
+
+Jo, vi har stikprøvens middelværdi. Og dens standardafvigelse. Og antallet af
+observationer. Og så har vi SEM. Og når vi har SEM, kan vi beregne et interval
+hvor vi er 95% sikre på indeholder populationens middelværdi:
+
+```{webr}
+x <- c(12.3, 11.7, 13.1, 12.8, 12.0, 11.9, 12.5, 13.0, 12.2, 12.6)
+
+mean_x <- mean(x)
+s      <- sd(x)
+n      <- length(x)
+sem    <- s / sqrt(n)
+
+alpha  <- 0.05
+t_crit <- qt(1 - alpha/2, df = n - 1)
+
+ci <- mean_x + c(-1, 1) * t_crit * sem
+ci
+```
+
+## qt?
+
+Normalfordelingen fortæller at 95% af observationerne ligger mellem -1.96 og 1.96
+standardafvigelser, $\sigma$ fra middelværdien. 
+
+Vi har jo (stort set altid) kun en stikprøve. Så vi kender kun s, ikke $\sigma$.
+
+Og vi vil nødig sige noget der er forkert. Så i stedet for normalfordelingen, 
+bruger vi t-fordelingen. Den er bredere og har tykkere haler end normalfordelingen.
+
+
+```{r}
+library(tidyverse)
+
+
+ggplot(data = data.frame(x = c(-4, 4)), aes(x)) +
+  stat_function(fun = dnorm, n = 101, args = list(mean = 0, sd = 1), color = "red") +   stat_function(fun = dt, n = 101, args = list(df = 5), color = "blue") +
+    ylab("") +
+    theme(line = element_blank(), rect = element_blank()) +
+    ggtitle("Normalfordelingen (rød) & t-fordelingen (blå)")
+
+```
+
+Det giver os et bredere interval i hvilket de 95% af observationerne ligger.
+Altså et mere konservativt skøn på intervallet - som er mere sikkert.
+
+t-fordelingen har også den fordel at den tager højde for hvor stor vores stikprøve
+er - så jo større stikprøven er, jo tættere kommer den på normalfordelingen.
+
+## type 1 og type 2 fejl
+
+Når vi laver statistik er vi ude efter at få svar på et spørgsmål. 
+
+Eksempelvis: Vi tester om en ny type medicin faktisk virker. 
+
+Det kan gå galt på to måder.
+
+Vi kan konkludere at 
+ja, det gør den. Også selvom den i virkeligheden _ikke_ gør. Det kalder vi en
+type 1 fejl.
+
+Vi kan også konkludere at, nej, det gør den ikke. Selvom den faktisk gør. 
+Det er en type 2 fejl. 
+
+Og det relaterer sig til hypotesetesten. Når vi forkaster null-hypotesen,
+og derfor "tror" på den alternative hypotese, så gør vi det fordi alpha, 
+p-værdien er tilpas lav. Så når p-værdien er 0.04 er vi ofte glade, for så
+forkaster vi null-hypotesen. de 0.04, svarende til 4% er risikoen for at vi begår
+en type 1 fejl.
 
 
 
@@ -805,22 +850,6 @@ Så - 95% af hastighederne vi har målt på landevejen ligger mellem disse
 to værdier. Og! vi kan antage at den fordeling også gælder i baggrundspopulationen
 (der altså er alle biler, også dem vi ikke målte på)
 
-## En gang til.
-
-Fordelingen af tilfældigt udtagne stikprøvers gennemsnit er altid 
-normalfordelt. 
-
-Tilbage til haem tallene. Det er en tilfældig stikprøve. Det vil sige at 
-den estimerer gennemsnittet for populationen. Men ikke præcist. Hvis vi
-tager en ny stikprøve, får vi et nyt gennemsnit. 
-
-Men. De forskellige gennemsnit er normalfordelte omkring gennemsnittet af
-populationen.
-
-OGSÅ SELVOM POPULATIONEN IKKE SELV ER NORMALFORDELT!
-
-
-SE, SEM og forskellen mellem dem og sd.
 
 
 ## Og så kan vi gå i gang med hypotesetests!
