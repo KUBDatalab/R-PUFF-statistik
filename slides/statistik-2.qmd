@@ -10,3 +10,7 @@ webr:
 ---
 
 {{< include ../_extensions/r-wasm/live/_knitr.qmd >}}
+
+
+Alternativet til at der er den sammenhæng vi måske ser, er at der ikke er en sammenhæng. p-værdien er risikoen
+for at vi begår en fejl ved at afvise alternativet.
